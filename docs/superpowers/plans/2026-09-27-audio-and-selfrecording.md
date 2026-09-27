@@ -78,26 +78,26 @@
 **Files:**
 - Modify: `site/workout/index.html`, `site/workout/monday.html` … `site/workout/sunday.html` (8 файлов)
 
-- [ ] **Step 1: Подключить в `<head>` каждого из 8 файлов:**
+- [x] **Step 1: Подключить в `<head>` каждого из 8 файлов:**
   ```html
   <script src="../assets/audio-manifest.js" defer></script>
   <script src="../assets/audio.js" defer></script>
   ```
   (в `workout/index.html` пути `assets/...` — проверить уровень вложенности: `site/workout/index.html` → `../assets/`).
 
-- [ ] **Step 2: Программная вставка кнопок (python-скриптом, однократно):**
+- [x] **Step 2: Программная вставка кнопок (python-скриптом, однократно):**
   - В `.word-card`: `<button class="audio-btn" data-audio-key="KEY" aria-label="Озвучить: WORD" title="Прослушать">SVG</button>` — ключ согласовать с манифестом (Task 1). Скрипт-вставчик: для пары `ship / sheep` — ключи через запятую не поддерживаем; одна кнопка озвучивает оба слова (манифест-хранит текст «ship. sheep.»).
   - В `.phrase-row` — кнопка слева от `.phrase-text` (ключ = текст фразы нормализованный).
   - В `.sentence-card` — аналогично.
   - Карточки-контрасты ударений в Sunday (`RE-cord / re-CORD`) — тексты в манифесте вручную («REcord. reCORD.»).
   - Отчёт вставщика: сколько карточек обработано/пропущено; список пропущенных (нет ключа) — вручную дописать в манифест.
 
-- [ ] **Step 3: Проверка**
+- [x] **Step 3: Проверка**
   - Python-чекер ссылок и src — 0 битых.
   - Grep-контроль: количество `data-audio-key` ≥ 95% от числа `.word-card` на странице.
   - Ручной просмотр 1–2 страниц в браузере.
 
-- [ ] **Step 4: Зафиксировать изменения в git**
+- [x] **Step 4: Зафиксировать изменения в git**
   - `git add site/workout/`
   - `git commit -m "feat: wire TTS audio buttons into workout gym pages (AUDIT 8.1)"`
 
