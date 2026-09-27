@@ -536,6 +536,143 @@ tr:hover td {
   color: var(--color-error);
 }
 
+/* Multi-page Workout Hub & Drill Styles */
+.workout-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.workout-card-day {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  border-top: 4px solid var(--color-accent);
+}
+
+.workout-card-day:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.workout-card-day.card-today {
+  border-top-color: var(--color-success);
+  background: #fdfefd;
+}
+
+.workout-card-day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.workout-card-day-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.workout-card-badge {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+.card-today .workout-card-badge {
+  background: #e8f5e9;
+  color: var(--color-success);
+}
+
+.workout-card-focus {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.workout-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  border-top: 1px solid var(--color-bg-alt);
+  padding-top: 0.75rem;
+}
+
+/* Spaced Repetition Box */
+.review-yesterday-box {
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-left: 4px solid #ffb300;
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+}
+
+.review-yesterday-box h3 {
+  margin-top: 0;
+  color: #b78103;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Practice Checklist item */
+.drill-item-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.drill-checkbox {
+  margin-top: 0.35rem;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.drill-content {
+  flex-grow: 1;
+}
+
+.tempo-steps {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tempo-chip {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+
 /* Workout Gym components */
 .workout-days-nav {
   display: flex;
