@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Среда (День 3): Sibilants & Affricates — Тренажёрный зал</title>
   <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/theme.js"></script>
 </head>
 <body>
 <div class="lesson-container">
@@ -39,7 +40,7 @@
       <div class="workout-stat-item">Длительность: <strong>35–40 минут</strong></div>
     </div>
     <div class="workout-controls">
-      <button class="btn-toggle-ipa" id="toggleIpaBtn" onclick="toggleIpaVisibility()">👁 Скрыть транскрипцию (IPA)</button>
+      <button class="btn-toggle-ipa" id="toggleIpaBtn" onclick="toggleIpaVisibility()"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>Скрыть транскрипцию (IPA)</button>
     </div>
   </div>
 
@@ -266,11 +267,11 @@ function toggleIpaVisibility() {
   body.classList.toggle('ipa-hidden');
   const isHidden = body.classList.contains('ipa-hidden');
   if (isHidden) {
-    btn.textContent = '👁 Показать транскрипцию (IPA)';
+    btn.innerHTML = '<svg viewBox=\"0 0 24 24\" width=\"15\" height=\"15\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align: middle; margin-right: 4px;\" aria-hidden=\"true\"><path d=\"M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24\"></path><line x1=\"1\" y1=\"1\" x2=\"23\" y2=\"23\"></line></svg>Показать транскрипцию (IPA)';
     btn.style.background = '#ffebee';
     btn.style.color = '#c62828';
   } else {
-    btn.textContent = '👁 Скрыть транскрипцию (IPA)';
+    btn.innerHTML = '<svg viewBox=\"0 0 24 24\" width=\"15\" height=\"15\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align: middle; margin-right: 4px;\" aria-hidden=\"true\"><path d=\"M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z\"></path><circle cx=\"12\" cy=\"12\" r=\"3\"></circle></svg>Скрыть транскрипцию (IPA)';
     btn.style.background = 'var(--color-accent-light)';
     btn.style.color = 'var(--color-accent)';
   }

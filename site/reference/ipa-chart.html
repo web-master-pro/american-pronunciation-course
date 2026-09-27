@@ -5,18 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Справочник: Таблица IPA для американского английского</title>
   <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/theme.js"></script>
   <style>
-    .ipa-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
-    .ipa-table th { background: var(--color-accent); color: white; padding: 0.5rem; text-align: center; font-size: 0.85rem; }
-    .ipa-table td { padding: 0.4rem 0.5rem; border: 1px solid var(--color-border); text-align: center; vertical-align: middle; }
-    .ipa-table td:first-child { font-weight: 600; background: var(--color-bg-alt); text-align: left; white-space: nowrap; }
-    .ipa-table .ipa { font-size: 1.1rem; color: var(--color-accent); font-weight: 700; }
-    .ipa-table .example { font-size: 0.8rem; color: var(--color-text-secondary); display: block; margin-top: 2px; }
+    .ipa-table-wrapper {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.5rem 0;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface);
+      box-shadow: var(--shadow-sm);
+    }
+    .ipa-table { width: 100%; border-collapse: collapse; margin: 0; font-size: 0.95rem; }
+    .ipa-table th { background: var(--color-accent); color: white; padding: 0.5rem 0.65rem; text-align: center; font-size: 0.85rem; white-space: nowrap; }
+    .ipa-table td { padding: 0.5rem 0.65rem; border: 1px solid var(--color-border); text-align: center; vertical-align: middle; }
+    .ipa-table td:first-child { font-weight: 600; background: var(--color-bg-alt); text-align: left; white-space: nowrap; position: sticky; left: 0; z-index: 1; }
+    .ipa-table .ipa { font-size: 1.15rem; color: var(--color-teal); font-weight: 700; font-family: var(--font-mono); }
+    .ipa-table .example { font-size: 0.78rem; color: var(--color-text-secondary); display: block; margin-top: 2px; }
     .vowel-table td { font-size: 0.95rem; }
     .vowel-table .ipa { font-size: 1.2rem; }
-    .stress-marks { font-family: var(--font-mono); font-size: 1.2rem; }
-    .quick-ref { background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: 6px; padding: 1.25rem; margin: 1.5rem 0; }
+    .stress-marks { font-family: var(--font-mono); font-size: 1.2rem; color: var(--color-accent); font-weight: bold; }
+    .quick-ref { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.25rem; margin: 1.5rem 0; box-shadow: var(--shadow-sm); overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .quick-ref h3 { margin-top: 0; }
+
+    @media (max-width: 480px) {
+      .ipa-table th, .ipa-table td {
+        padding: 0.4rem 0.45rem;
+        font-size: 0.82rem;
+      }
+      .ipa-table .ipa {
+        font-size: 1rem;
+      }
+      .ipa-table .example {
+        font-size: 0.72rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -44,6 +69,7 @@
   </div>
 
   <h2>Обозначения ударения</h2>
+  <div class="ipa-table-wrapper">
   <table class="ipa-table">
     <thead><tr><th>Обозначение</th><th>Значение</th><th>Пример</th></tr></thead>
     <tbody>
@@ -52,9 +78,11 @@
       <tr><td><span class="stress-marks">ː</span></td><td>Долгий гласный (обычно в британских словарях)</td><td><span class="ipa">/iː/</span> (bead)</td></tr>
     </tbody>
   </table>
+  </div>
 
   <h2>Согласные (Consonants)</h2>
 
+  <div class="ipa-table-wrapper">
   <table class="ipa-table">
     <thead>
       <tr>
@@ -141,6 +169,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
 
   <div class="marginnote">
     <strong>/ɹ/</strong> — правильный символ для американского R (многие словари упрощают до <code>/r/</code>). <strong>/j/</strong> — это не «дж», а «й» (как в <em>yes</em>).
@@ -150,6 +179,7 @@
 
   <h3>Простые гласные (Monophthongs)</h3>
 
+  <div class="ipa-table-wrapper">
   <table class="ipa-table vowel-table">
     <thead>
       <tr>
@@ -198,6 +228,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
 
   <div class="quick-ref">
     <h3>Быстрая шпаргалка: ключевые различия</h3>
@@ -212,6 +243,7 @@
 
   <h3>Дифтонги (Diphthongs)</h3>
 
+  <div class="ipa-table-wrapper">
   <table class="ipa-table">
     <thead><tr><th>Дифтонг</th><th>Пример</th><th>Траектория</th></tr></thead>
     <tbody>
@@ -222,11 +254,13 @@
       <tr><td><span class="ipa">/eɪ/</span></td><td>face, day, make</td><td>Close-mid front → near-close front</td></tr>
     </tbody>
   </table>
+  </div>
 
   <h2>R-colored vowels (Американские R-гласные)</h2>
 
   <p>Уникальная особенность американского английского — гласные с R-окраской:</p>
 
+  <div class="ipa-table-wrapper">
   <table class="ipa-table">
     <thead><tr><th>Символ</th><th>Пример</th><th>Описание</th></tr></thead>
     <tbody>
@@ -234,6 +268,7 @@
       <tr><td><span class="ipa">/ɚ/</span></td><td>butter, water, sister</td><td>Короткий R-цветной гласный (unstressed, в конце слов)</td></tr>
     </tbody>
   </table>
+  </div>
 
   <div class="quick-ref">
     <h3>Где найти IPA-транскрипцию любого слова</h3>
