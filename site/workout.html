@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ежедневный тренажерный зал произношения — General American English</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="lesson-container">
+
+  <!-- Top Navigation -->
+  <nav class="site-nav" aria-label="Навигация по курсу">
+    <div class="nav-breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span class="sep">/</span>
+      <span class="current">Тренажёрный зал произношения</span>
+    </div>
+    <div class="nav-links">
+      <a href="plan.html">План</a>
+      <a href="reference/ipa-chart.html">Таблица IPA</a>
+      <a href="resources.html">Ресурсы</a>
+      <a href="index.html">Все уроки</a>
+    </div>
+  </nav>
+
+  <div class="lesson-header">
+    <div class="lesson-number">Ежедневная практика</div>
+    <h1 class="lesson-title">Тренажёрный зал произношения (Daily Workout)</h1>
+    <p class="lesson-subtitle">Комплекс прогрессивных упражнений: от изолированных звуков и слов до беглых фраз и скоростных скороговорок</p>
+    <p class="lesson-mission">Цель: доведение кинематики речевого аппарата и General American фонем до полного автоматизма</p>
+  </div>
+
+  <div class="insight">
+    <strong>Методология тренировки до автоматизма (Motor Learning):</strong>
+    <p style="margin: 0.5rem 0 0 0;">
+      Произношение — это не знание правил, а <strong>мышечная память</strong>. Проводите в тренажёрном зале 15–20 минут каждый день.
+      Соблюдайте лесенку сложности: <em>Слово (контроль артикуляции) → Словосочетание (связка звуков) → Предложение (ритм и редукция)</em>.
+      Нажмите кнопку «Скрыть IPA», чтобы тренировать спонтанное чтение без подсказок!
+    </p>
+  </div>
+
+  <!-- Interactive Control Panel -->
+  <div class="workout-meta-bar">
+    <div class="workout-stats">
+      <div class="workout-stat-item">Формат: <strong>5 тренировочных блоков</strong></div>
+      <div class="workout-stat-item">Время: <strong>15–20 минут/день</strong></div>
+      <div class="workout-stat-item">Фокус: <strong>General American</strong></div>
+    </div>
+    <div class="workout-controls">
+      <button class="btn-toggle-ipa" id="toggleIpaBtn" onclick="toggleIpaVisibility()">👁 Скрыть транскрипцию (IPA)</button>
+      <button class="btn-action" onclick="resetCheckmarks()">↺ Сбросить отметки</button>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       БЛОК 1: АРТИКУЛЯЦИОННАЯ РАЗМИНКА
+       ======================================================== -->
+  <div class="drill-block">
+    <div class="drill-block-header">
+      <div class="badge-tempo">Разминка: 3 минуты</div>
+      <h2 class="drill-block-title">Блок 1: Артикуляционная гимнастика (Warm-Up)</h2>
+      <p class="drill-block-desc">Подготовка речевого аппарата: расслабление челюсти, подвижность языка и точное нахождение альвеолярного гребня.</p>
+    </div>
+
+    <div class="drill-list-phrases">
+      <div class="phrase-row">
+        <div class="phrase-text">1. «Сброс челюсти» (Jaw Drop)</div>
+        <div class="phrase-note">Положите палец на подбородок. Мягко опустите нижнюю челюсть на 2 пальца вниз без напряжения в височно-нижнечелюстном суставе. Произнесите расслабленный долгий звук <code>/ɑː/</code> как у врача. Повторите 5 раз.</div>
+      </div>
+      <div class="phrase-row">
+        <div class="phrase-text">2. «Поиск альвеол» (Alveolar Tap)</div>
+        <div class="phrase-note">Проведите кончиком языка по нёбу за верхними зубами вперед, пока не нащупаете выпуклый бугорок (альвеолярный гребень). Постучите кончиком языка: <code>/d/ - /d/ - /d/ - /t/ - /t/ - /t/</code>. Следите, чтобы язык НЕ касался зубов.</div>
+      </div>
+      <div class="phrase-row">
+        <div class="phrase-text">3. «Маятник: межзубный ↔ альвеолярный»</div>
+        <div class="phrase-note">Переключайте кончик языка: между зубами (<code>/θ/</code>) → на альвеолярный гребень (<code>/s/</code>). Выполняйте связку: <code>/θ/ - /s/ - /θ/ - /s/ - /θ/ - /s/</code> (10 циклов).</div>
+      </div>
+      <div class="phrase-row">
+        <div class="phrase-text">4. «Узел для американского R» (R-Bunched Position)</div>
+        <div class="phrase-note">Прижмите боковые края языка к верхним коренным зубам. Кончик языка отведите назад и удерживайте на весу (он не касается ничего во рту!). Потяните звук: <code>/ɹɹɹɹ/</code> (как мотор).</div>
+      </div>
+      <div class="phrase-row">
+        <div class="phrase-text">5. «Трубочка ↔ Улыбка» (Lip Rounding)</div>
+        <div class="phrase-note">Быстрое переключение губ: плотная круглая трубочка для <code>/w/</code> → свободная нейтральная позиция для <code>/v/</code> (нижняя губа касается верхних зубов). Произнесите: <em>wow — vow — wow — vow</em> (6 раз).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       БЛОК 2: ТРИАДА СОГЛАСНЫХ-МАРКЕРОВ АКЦЕНТА
+       ======================================================== -->
+  <div class="drill-block">
+    <div class="drill-block-header">
+      <div class="badge-tempo">Отработка: 5 минут</div>
+      <h2 class="drill-block-title">Блок 2: Триада согласных-маркеров (/θ-ð/, /ɹ/, Dark L, /w-v/)</h2>
+      <p class="drill-block-desc">Ключевые звуки, выдающие восточноевропейский акцент. Отработка позиционной дистрибуции: начало слова, середина, конец.</p>
+    </div>
+
+    <!-- Level 1: Words -->
+    <div class="drill-level">
+      <div class="drill-level-title">
+        <span class="badge-level">Уровень 1</span>
+        <span>Слова по позициям (Initial, Medial, Final)</span>
+      </div>
+
+      <h4 style="margin: 0.75rem 0 0.5rem; color: var(--color-accent);">1. Межзубные /θ/ (глухой) и /ð/ (звонкий)</h4>
+      <div class="drill-grid-words">
+        <div class="word-card">
+          <div class="word-text">think</div>
+          <div class="word-ipa">/θɪŋk/</div>
+          <div class="word-meaning">думать (начало /θ/)</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">author</div>
+          <div class="word-ipa">/ˈɔːθər/</div>
+          <div class="word-meaning">автор (середина /θ/)</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">breath</div>
+          <div class="word-ipa">/brɛθ/</div>
+          <div class="word-meaning">дыхание (конец /θ/)</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">these</div>
+          <div class="word-ipa">/ðiːz/</div>
+          <div class="word-meaning">эти (начало /ð/)</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">brother</div>
+          <div class="word-ipa">/ˈbrʌðər/</div>
+          <div class="word-meaning">брат (середина /ð/)</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">breathe</div>
+          <div class="word-ipa">/briːð/</div>
+          <div class="word-meaning">дышать (конец /ð/)</div>
+        </div>
+      </div>
+
+      <h4 style="margin: 1.25rem 0 0.5rem; color: var(--color-accent);">2. Американский /ɹ/ и Dark L [ɫ]</h4>
+      <div class="drill-grid-words">
+        <div class="word-card">
+          <div class="word-text">red</div>
+          <div class="word-ipa">/rɛd/</div>
+          <div class="word-meaning">красный (начальный R)</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">mirror</div>
+          <div class="word-ipa">/ˈmɪrər/</div>
+          <div class="word-meaning">зеркало (интервокальный R)</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">car</div>
+          <div class="word-ipa">/kɑːr/</div>
+          <div class="word-meaning">машина (финальный rhotic R)</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">light</div>
+          <div class="word-ipa">/laɪt/</div>
+          <div class="word-meaning">свет (светлый L перед гласным)</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">cold</div>
+          <div class="word-ipa">/koʊld/</div>
+          <div class="word-meaning">холод (Dark L перед согласным)</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">ball</div>
+          <div class="word-ipa">/bɔːl/</div>
+          <div class="word-meaning">мяч (финальный Dark L)</div>
+        </div>
+      </div>
+
+      <h4 style="margin: 1.25rem 0 0.5rem; color: var(--color-accent);">3. Дифференциация /w/ (губы в кольцо) и /v/ (губа к зубам)</h4>
+      <div class="drill-grid-words">
+        <div class="word-card">
+          <div class="word-text">west / vest</div>
+          <div class="word-ipa">/wɛst/ vs /vɛst/</div>
+          <div class="word-meaning">запад vs жилет</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">wet / vet</div>
+          <div class="word-ipa">/wɛt/ vs /vɛt/</div>
+          <div class="word-meaning">мокрый vs ветеринар</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">wine / vine</div>
+          <div class="word-ipa">/waɪn/ vs /vaɪn/</div>
+          <div class="word-meaning">вино vs лоза</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Level 2: Collocations / Phrases -->
+    <div class="drill-level">
+      <div class="drill-level-title">
+        <span class="badge-level">Уровень 2</span>
+        <span>Фразы и устойчивые сочетания (Collocations)</span>
+      </div>
+      <div class="drill-list-phrases">
+        <div class="phrase-row">
+          <div class="phrase-text">thirty-three theories</div>
+          <div class="phrase-ipa">/ˈθɜːrti θriː ˈθɪriz/</div>
+          <div class="phrase-note">Серия глухих /θ/ подряд без сваливания в русский звук [с].</div>
+        </div>
+        <div class="phrase-row">
+          <div class="phrase-text">breathe through that</div>
+          <div class="phrase-ipa">/briːð θruː ðæt/</div>
+          <div class="phrase-note">Чередование: звонкий /ð/ → глухой /θ/ → звонкий /ð/.</div>
+        </div>
+        <div class="phrase-row">
+          <div class="phrase-text">really raw carrots</div>
+          <div class="phrase-ipa">/ˈriːli rɔː ˈkærəts/</div>
+          <div class="phrase-note">Американский R без вибрации кончика языка (кончик неподвижен!).</div>
+        </div>
+        <div class="phrase-row">
+          <div class="phrase-text">little silver bell</div>
+          <div class="phrase-ipa">/ˈlɪtəl ˈsɪlvər bɛl/</div>
+          <div class="phrase-note">Серия звуков Dark L с подъемом задней спинки языка к мягкому нёбу.</div>
+        </div>
+        <div class="phrase-row">
+          <div class="phrase-text">very warm winter</div>
+          <div class="phrase-ipa">/ˈvɛri wɔːrm ˈwɪntər/</div>
+          <div class="phrase-note">Контраст: /v/ (губа к зубам) → /w/ (трубочка) → /w/ (трубочка).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Level 3: Density Sentences -->
+    <div class="drill-level">
+      <div class="drill-level-title">
+        <span class="badge-level">Уровень 3</span>
+        <span>Предложения повышенной плотности (Target Sentences)</span>
+      </div>
+      <div class="drill-list-sentences">
+        <div class="sentence-card">
+          <div class="sentence-text">1. <strong>Their mother</strong> <strong>thought</strong> that <strong>three brothers</strong> were <strong>worthy</strong>.</div>
+          <div class="sentence-ipa">/ðɛr ˈmʌðər θɔːt ðæt θriː ˈbrʌðərz wɜːr ˈwɜːrði/</div>
+          <div class="sentence-focus">Фокус: удержание языка между зубами при высокой скорости речи.</div>
+        </div>
+        <div class="sentence-card">
+          <div class="sentence-text">2. The <strong>railroad worker</strong> <strong>ordered</strong> <strong>four rare</strong> burgers.</div>
+          <div class="sentence-ipa">/ðə ˈreɪlroʊd ˈwɜːrkər ˈɔːrdərd fɔːr rɛr ˈbɜːrɡərz/</div>
+          <div class="sentence-focus">Фокус: 8 звуков /ɹ/ в одном предложении. Не допускайте русского щелкающего [р].</div>
+        </div>
+        <div class="sentence-card">
+          <div class="sentence-text">3. <strong>Victor vows</strong> to travel west in <strong>every winter wind</strong>.</div>
+          <div class="sentence-ipa">/ˈvɪktər vaʊz tə ˈtrævəl wɛst ɪn ˈɛvri ˈwɪntər wɪnd/</div>
+          <div class="sentence-focus">Фокус: автоматическое переключение мышц губ между /v/ и /w/.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       БЛОК 3: ГИМНАСТИКА ГЛАСНЫХ (VOWEL CONTRASTS)
+       ======================================================== -->
+  <div class="drill-block">
+    <div class="drill-block-header">
+      <div class="badge-tempo">Отработка: 5 минут</div>
+      <h2 class="drill-block-title">Блок 3: Контрасты гласных (Vowel Contrasts)</h2>
+      <p class="drill-block-desc">Различение критических пар: напряженные (tense) vs расслабленные (lax), долгота и степень раскрытия челюсти.</p>
+    </div>
+
+    <div class="table-responsive">
+      <table class="minimal-pairs-workout-table">
+        <thead>
+          <tr>
+            <th>Пара фонем</th>
+            <th>Слово A (Lax / Short)</th>
+            <th>Слово B (Tense / Long)</th>
+            <th>Тренировочное предложение на смысловой контраст</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>/ɪ/ vs /iː/</strong><br><small>Kit vs Fleece</small></td>
+            <td><strong>ship</strong> /ʃɪp/<br><strong>hit</strong> /hɪt/<br><strong>live</strong> /lɪv/</td>
+            <td><strong>sheep</strong> /ʃiːp/<br><strong>heat</strong> /hiːt/<br><strong>leave</strong> /liːv/</td>
+            <td>Did you feel the <strong>heat</strong> when the ball <strong>hit</strong> the net?<br><span class="hideable-ipa">/dɪd juː fiːl ðə hiːt wɛn ðə bɔːl hɪt ðə nɛt/</span></td>
+          </tr>
+          <tr>
+            <td><strong>/ɛ/ vs /æ/</strong><br><small>Dress vs Trap</small></td>
+            <td><strong>bed</strong> /bɛd/<br><strong>men</strong> /mɛn/<br><strong>head</strong> /hɛd/</td>
+            <td><strong>bad</strong> /bæd/<br><strong>man</strong> /mæn/<br><strong>had</strong> /hæd/</td>
+            <td>The <strong>bad</strong> <strong>man</strong> put the hat on the <strong>bed</strong>.<br><span class="hideable-ipa">/ðə bæd mæn pʊt ðə hæt ɑːn ðə bɛd/</span></td>
+          </tr>
+          <tr>
+            <td><strong>/ʌ/ vs /ɑː/</strong><br><small>Strut vs Palm</small></td>
+            <td><strong>cup</strong> /kʌp/<br><strong>color</strong> /ˈkʌlər/<br><strong>nut</strong> /nʌt/</td>
+            <td><strong>cop</strong> /kɑːp/<br><strong>collar</strong> /ˈkɑːlər/<br><strong>not</strong> /nɑːt/</td>
+            <td>The <strong>cop</strong> grabbed a <strong>cup</strong> of coffee in the park.<br><span class="hideable-ipa">/ðə kɑːp ɡræbd ə kʌp əv ˈkɔːfi ɪn ðə pɑːrk/</span></td>
+          </tr>
+          <tr>
+            <td><strong>/ʊ/ vs /uː/</strong><br><small>Foot vs Goose</small></td>
+            <td><strong>pull</strong> /pʊl/<br><strong>full</strong> /fʊl/<br><strong>look</strong> /lʊk/</td>
+            <td><strong>pool</strong> /puːl/<br><strong>fool</strong> /fuːl/<br><strong>Luke</strong> /luːk/</td>
+            <td>Don't <strong>pull</strong> the child into the deep <strong>pool</strong>.<br><span class="hideable-ipa">/doʊnt pʊl ðə tʃaɪld ˈɪntuː ðə diːp puːl/</span></td>
+          </tr>
+          <tr>
+            <td><strong>/ə/ vs /ɝ/</strong><br><small>Schwa vs Nurse</small></td>
+            <td><strong>sofa</strong> /ˈsoʊfə/<br><strong>ago</strong> /əˈɡoʊ/</td>
+            <td><strong>bird</strong> /bɜːrd/<br><strong>first</strong> /fɜːrst/</td>
+            <td>The <strong>first</strong> girl sat on a soft <strong>sofa</strong>.<br><span class="hideable-ipa">/ðə fɜːrst ɡɜːrl sæt ɑːn ə sɔːft ˈsoʊfə/</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       БЛОК 4: АМЕРИКАНСКИЙ РИТМ, FLAP T И СВЯЗНАЯ РЕЧЬ
+       ======================================================== -->
+  <div class="drill-block">
+    <div class="drill-block-header">
+      <div class="badge-tempo">Отработка: 4 минуты</div>
+      <h2 class="drill-block-title">Блок 4: Американский ритм, Flap T [ɾ] и редукции</h2>
+      <p class="drill-block-desc">Переход от отдельных слов к беглому потоку речи. Отработка Flap T, глоттальной смычки и безударных weak forms.</p>
+    </div>
+
+    <!-- Flap T Section -->
+    <div class="drill-level">
+      <div class="drill-level-title">
+        <span class="badge-level">Flap T [ɾ]</span>
+        <span>Легкий альвеолярный удар между гласными звуками</span>
+      </div>
+      <div class="drill-grid-words">
+        <div class="word-card">
+          <div class="word-text">water → [ˈwɑːɾər]</div>
+          <div class="word-meaning">не «уотер», а быстрое касание альвеол</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">better → [ˈbɛɾər]</div>
+          <div class="word-meaning">звучит ближе к быстрому мягкому [д]</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">city → [ˈsɪɾi]</div>
+          <div class="word-meaning">без придыхания, легкий удар</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">put it on → [pʊɾ ɪɾ ɑːn]</div>
+          <div class="word-meaning">двойной Flap T на границах слов</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">get out of here → [ɡɛɾ aʊɾ əv hɪr]</div>
+          <div class="word-meaning">беглая связка всей цепочки слов</div>
+        </div>
+        <div class="word-card">
+          <div class="word-text">not at all → [nɑːɾ əɾ ˈɔːl]</div>
+          <div class="word-meaning">звучит как одно плавное слово</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reductions and Weak Forms -->
+    <div class="drill-level">
+      <div class="drill-level-title">
+        <span class="badge-level">Weak Forms</span>
+        <span>Редукция грамматических слов до нейтрального гласного /ə/</span>
+      </div>
+      <div class="drill-list-phrases">
+        <div class="phrase-row">
+          <div class="phrase-text">I have to go → [aɪ hæftə ˈɡoʊ]</div>
+          <div class="phrase-note">Слово <em>to</em> превращается в /tə/, ударение только на <em>go</em>.</div>
+        </div>
+        <div class="phrase-row">
+          <div class="phrase-text">Cup of tea → [ˈkʌp ə ˈtiː]</div>
+          <div class="phrase-note">Предлог <em>of</em> редуцируется до /ə/ или связывается [əv].</div>
+        </div>
+        <div class="phrase-row">
+          <div class="phrase-text">Black and white → [ˌblæk ən ˈwaɪt]</div>
+          <div class="phrase-note">Союз <em>and</em> теряет /d/ и гласный, редуцируясь до носового [ən] или [n].</div>
+        </div>
+        <div class="phrase-row">
+          <div class="phrase-text">I can do it → [aɪ kən ˈduː ɪt]</div>
+          <div class="phrase-note">Модальный глагол <em>can</em> звучит слабо /kən/, а смысловой глагол <em>do</em> — ударно.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       БЛОК 5: СКОРОГОВОРКИ И СКОРОСТНЫЕ СЕТЫ (SPEED DRILLS)
+       ======================================================== -->
+  <div class="drill-block">
+    <div class="drill-block-header">
+      <div class="badge-tempo">Финал: 3 минуты</div>
+      <h2 class="drill-block-title">Блок 5: Скороговорки и марафон на выносливость</h2>
+      <p class="drill-block-desc">Тест на автоматизм: проговорите каждую фразу в 3 этапа скорости: Медленно (Slow) → Четко в темпе речи (Moderate) → Скорость носителя (Native Speed).</p>
+    </div>
+
+    <div class="drill-list-sentences">
+      <div class="sentence-card">
+        <div class="sentence-text">1. <em>Whether the weather is warm, whether the weather is hot, we have to put up with the weather, whether we like it or not.</em></div>
+        <div class="sentence-ipa">/ˈwɛðər ðə ˈwɛðər ɪz wɔːrm ... wɛðər wiː laɪk ɪt ɔːr nɑːt/</div>
+        <div class="sentence-focus">Фокус: бесконечная серия звуков /w/, /ð/ и Flap T в связке <em>put up with</em>.</div>
+      </div>
+
+      <div class="sentence-card">
+        <div class="sentence-text">2. <em>Red lorry, yellow lorry, red roller, yellow roller.</em></div>
+        <div class="sentence-ipa">/rɛd ˈlɔːri ˈjɛloʊ ˈlɔːri rɛd ˈroʊlər ˈjɛloʊ ˈroʊlər/</div>
+        <div class="sentence-focus">Фокус: моментальное переключение между американским /ɹ/ и латеральным /l/.</div>
+      </div>
+
+      <div class="sentence-card">
+        <div class="sentence-text">3. <em>She sells seashells by the seashore, and the shells she sells are seashells, I’m sure.</em></div>
+        <div class="sentence-ipa">/ʃiː sɛlz ˈsiːʃɛlz baɪ ðə ˈsiːʃɔːr ænd ðə ʃɛlz ʃiː sɛlz ɑːr ˈsiːʃɛlz aɪm ʃʊr/</div>
+        <div class="sentence-focus">Фокус: координация переднеязычных свистящих /s/ и шипящих /ʃ/ без смазывания.</div>
+      </div>
+
+      <div class="sentence-card">
+        <div class="sentence-text">4. <em>How much wood would a woodchuck chuck if a woodchuck could chuck wood?</em></div>
+        <div class="sentence-ipa">/haʊ mʌtʃ wʊd wʊd ə ˈwʊdtʃʌk tʃʌk ɪf ə ˈwʊdtʃʌk kʊd tʃʌk wʊd/</div>
+        <div class="sentence-focus">Фокус: краткий гласный /ʊ/ (как в <em>foot</em>), сонорный /w/ и аффриката /tʃ/.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <nav class="lesson-pagination" aria-label="Переход по урокам">
+    <a href="plan.html" class="pagination-btn prev">← План курса</a>
+    <a href="index.html" class="pagination-btn index">Оглавление курса</a>
+    <a href="reference/ipa-chart.html" class="pagination-btn next">Таблица IPA →</a>
+  </nav>
+
+  <div class="lesson-footer">
+    <p><strong>Рекомендация преподавателя:</strong> Сохраните эту страницу в закладки мобильного телефона и браузера. 15 минут в день с этим тренажёром заменят часы пассивного чтения теории.</p>
+    <p><strong>Методический совет:</strong> Записывайте прохождение Блока 5 на диктофон раз в неделю, чтобы отслеживать прогресс чистоты артикуляции.</p>
+  </div>
+
+</div>
+
+<script>
+function toggleIpaVisibility() {
+  const body = document.body;
+  const btn = document.getElementById('toggleIpaBtn');
+  body.classList.toggle('ipa-hidden');
+  if (body.classList.contains('ipa-hidden')) {
+    btn.textContent = '👁 Показать транскрипцию (IPA)';
+    btn.style.background = '#ffebee';
+    btn.style.color = '#c62828';
+    btn.style.borderColor = '#c62828';
+  } else {
+    btn.textContent = '👁 Скрыть транскрипцию (IPA)';
+    btn.style.background = 'var(--color-accent-light)';
+    btn.style.color = 'var(--color-accent)';
+    btn.style.borderColor = 'var(--color-accent)';
+  }
+}
+
+function resetCheckmarks() {
+  alert('Прогресс текущей тренировки обновлен. Начните сет с Блока 1 (Разминка)!');
+}
+</script>
+
+</body>
+</html>
