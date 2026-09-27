@@ -536,6 +536,271 @@ tr:hover td {
   color: var(--color-error);
 }
 
+/* Workout Gym components */
+.workout-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0 2rem;
+  font-family: var(--font-sans);
+}
+
+.workout-stats {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.workout-stat-item {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.workout-stat-item strong {
+  color: var(--color-accent);
+}
+
+.workout-controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.btn-toggle-ipa, .btn-action {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-toggle-ipa:hover, .btn-action:hover {
+  background: var(--color-accent);
+  color: white;
+}
+
+.drill-block {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.75rem;
+  margin: 2rem 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.drill-block-header {
+  border-bottom: 2px solid var(--color-bg-alt);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.drill-block-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.35rem;
+}
+
+.drill-block-desc {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.drill-level {
+  margin: 1.75rem 0;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+
+.drill-level-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.badge-level {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  background: var(--color-accent);
+  color: white;
+}
+
+.badge-tempo {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  background: #f0faf0;
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+
+.drill-grid-words {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
+
+.word-card {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.word-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.word-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.2rem;
+}
+
+.word-ipa {
+  font-family: 'Gentium Plus', 'Charis SIL', var(--font-serif);
+  font-size: 1rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.word-meaning {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.drill-list-phrases {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.phrase-row {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 4px;
+  padding: 0.85rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.phrase-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.phrase-ipa {
+  font-family: 'Gentium Plus', 'Charis SIL', var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--color-accent);
+}
+
+.phrase-note {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.drill-list-sentences {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sentence-card {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+}
+
+.sentence-text {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+}
+
+.sentence-text strong {
+  color: var(--color-accent);
+  text-decoration: underline dotted var(--color-accent);
+}
+
+.sentence-ipa {
+  font-family: 'Gentium Plus', 'Charis SIL', var(--font-serif);
+  font-size: 1rem;
+  color: var(--color-accent);
+  margin-bottom: 0.35rem;
+}
+
+.sentence-focus {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.minimal-pairs-workout-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: white;
+}
+
+.minimal-pairs-workout-table th {
+  background: var(--color-accent);
+  color: white;
+  padding: 0.6rem 0.85rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.minimal-pairs-workout-table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+}
+
+.ipa-hidden .word-ipa,
+.ipa-hidden .phrase-ipa,
+.ipa-hidden .sentence-ipa,
+.ipa-hidden .hideable-ipa {
+  display: none !important;
+}
+
 /* Links */
 a {
   color: var(--color-accent);
