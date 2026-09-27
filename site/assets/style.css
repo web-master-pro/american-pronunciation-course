@@ -18,7 +18,7 @@
   --font-serif: 'Source Serif 4', 'Georgia', serif;
   --font-sans: 'Source Sans 3', 'Helvetica Neue', sans-serif;
   --font-mono: 'Source Code Pro', 'Consolas', monospace;
-  --max-width: 680px;
+  --max-width: 1080px;
   --lesson-number: '';
 }
 
@@ -30,10 +30,11 @@ body {
   line-height: 1.75;
   color: var(--color-text);
   background: var(--color-bg);
-  padding: 2rem 1rem 4rem;
+  padding: 2rem 1.5rem 4rem;
 }
 
 .lesson-container {
+  width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
 }
@@ -149,15 +150,52 @@ body {
   visibility: hidden;
 }
 
+@media (max-width: 900px) {
+  body {
+    padding: 1.5rem 1.25rem 3.5rem;
+  }
+  .lesson-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.25rem;
+  }
+  .lesson-title {
+    font-size: 1.95rem;
+  }
+}
+
 @media (max-width: 600px) {
+  body {
+    padding: 1.25rem 0.75rem 3rem;
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
   .site-nav {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+  .site-nav .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .lesson-header {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1rem;
+  }
+  .lesson-title {
+    font-size: 1.65rem;
+  }
+  .lesson-subtitle {
+    font-size: 1rem;
   }
   .lesson-pagination {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     gap: 0.75rem;
+    padding: 0.75rem;
   }
   .pagination-btn.index {
     grid-column: 1 / -1;
@@ -173,6 +211,18 @@ body {
   .pagination-btn.next {
     justify-self: stretch;
     justify-content: center;
+  }
+  /* Ensure bare tables are scrollable on mobile without breaking viewport */
+  table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+  .marginnote, .insight, .tip, .exercise {
+    padding: 0.85rem 1rem;
+    margin: 1.25rem 0;
   }
 }
 
@@ -370,11 +420,22 @@ figcaption {
 }
 
 /* Tables */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
   font-size: 0.95rem;
+}
+
+.table-responsive table {
+  margin: 0;
 }
 
 th {
