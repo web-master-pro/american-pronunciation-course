@@ -1,7 +1,0 @@
-AddDefaultCharset UTF-8
-AddCharset UTF-8 .html .css .js .svg .txt
-
-RewriteEngine On
-RewriteCond %{HTTP:X-Forwarded-Proto} !=https
-RewriteCond %{HTTPS} off
-RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
