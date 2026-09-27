@@ -41,7 +41,7 @@
 - Create: `site/assets/audio.js`
 - Modify: `site/assets/style.css`
 
-- [ ] **Step 1: Создать `site/assets/audio.js`**
+- [x] **Step 1: Создать `site/assets/audio.js`**
   - Feature-detect: `const ttsSupported = 'speechSynthesis' in window`.
   - API модуля (глобальный `CourseAudio`): `init()` (обработчик на `DOMContentLoaded`), `speak(key)` — ищет ключ в `AUDIO_MANIFEST`, озвучивает `entry.text`; `toggle(btn)` — стоп/старт по кнопке.
   - Выбор голоса: приоритет `en-US` (`Google US English` → любой `en-US` → любой `en-*` → default); голоса грузятся асинхронно — слушатель `voiceschanged`.
@@ -51,23 +51,23 @@
   - Если у записи манифеста есть `entry.file` и файл существует — проигрывать `new Audio(entry.file)` вместо TTS (слот на будущее; в рамках задачи файлов нет, код пути предусмотреть).
   - Делегирование событий: один `click`-слушатель на `document` по селектору `.audio-btn[data-audio-key]` — чтобы кнопки работали и в статично вставленной разметке без индивидуальных `onclick`.
 
-- [ ] **Step 2: Создать `site/assets/audio-manifest.js`**
+- [x] **Step 2: Создать `site/assets/audio-manifest.js`**
   - Глобальный объект `AUDIO_MANIFEST = { 'ship': {text:'ship'}, ... }`.
   - Заполнить ключами тренажёра: программно извлечь `word-text` из `site/workout/*.html` (146 записей), разбить пары `ship / sheep` и контрасты `to → /tə/` на отдельные орфографические ключи; фразы из `.phrase-text` и `.sentence-text` — ключами целиком. Итоговый объём ~200–250 ключей.
   - Только орфография, без IPA; ключи в lower-case, пробелы → `-` (например `pick-it-up`; `BLACK bird / black BIRD` → ключи `black-bird-contrast` c текстом «blackbird. Black bird.» — для контрастных карточек Sunday текст формулируется вручную).
   - Плюс базовый набор для ipa-chart: 44 звука → примерные слова (`see`, `zoo`, `think`, `this`, …) — ключи вида `ipa-see`.
 
-- [ ] **Step 3: Стили в `site/assets/style.css`**
+- [x] **Step 3: Стили в `site/assets/style.css`**
   - `.audio-btn` — круглая/пилюльная кнопка-иконка (inline SVG динамика, наследует `currentColor`; размер ~1.6rem), состояния `:hover`, `.playing` (пульс/акцент), `.audio-unsupported {display:none}`.
   - Размещение: в `.word-card` кнопка в правом верхнем углу (делать `.word-card { position: relative }` НЕ ломая hover-трансформации); для `.phrase-row`/`.sentence-card` — inline перед текстом или в конце заголовка.
   - Проверить, что `.ipa-hidden .word-ipa` механика тренажёра не затронута.
   - Тёмная тема: использовать `var(--color-accent)`, `var(--color-surface)` — ничего хардкодить.
 
-- [ ] **Step 4: Дым-тест**
+- [x] **Step 4: Дым-тест**
   - Открыть локально одну страницу тренажёра с временно подключёнными скриптами, проверить консоль (0 ошибок), озвучку одной карточки.
   - Откатить временное подключение, если оно делалось вне Task 2.
 
-- [ ] **Step 5: Зафиксировать изменения в git**
+- [x] **Step 5: Зафиксировать изменения в git**
   - `git add site/assets/audio.js site/assets/audio-manifest.js site/assets/style.css`
   - `git commit -m "feat: add TTS audio engine + manifest + button styles (AUDIT 8.1)"`
 
