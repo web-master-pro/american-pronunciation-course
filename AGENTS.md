@@ -20,7 +20,9 @@
 - `site/reference/ipa-chart.html` — Интерактивная таблица всех звуков American English IPA с примерами.
 - `site/lessons/` — Уроки курса (`0001-speech-apparatus.html` ... `0038-final-assessment.html`).
 - `site/assets/style.css` — Единая таблица стилей курса (стили Эдварда Тафти: удобочитаемость, типографика, адаптивность).
-- `site/.htaccess` — Конфигурация веб-сервера для принудительной отдачи кодировки `UTF-8`.
+- `site/assets/theme.js` — Переключатель тем (system / light / dark) с сохранением в localStorage.
+- `site/assets/favicon.svg` — Иконка сайта (SVG), подключается на всех страницах.
+- `site/.htaccess` — Конфигурация Apache: принудительная отдача кодировки `UTF-8` и редирект на HTTPS.
 
 ### 2. Сервисные файлы проекта (корень)
 - `AGENTS.md` — Данное руководство для агентов.

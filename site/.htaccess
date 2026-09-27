@@ -1,10 +1,7 @@
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .svg .txt
+
 RewriteEngine On
 RewriteCond %{HTTP:X-Forwarded-Proto} !=https
-RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
-
-Redirect 301 /portfolio  https://web-master-pro.ru/projects
-Redirect 301 /dev  https://web-master-pro.ru/projects
-Redirect 301 /projects/rgsu-student-portal https://layout.rgsu.pro/projects/student-lk/
-
-# ErrorDocument 404 https://web-master-pro.ru/
-
+RewriteCond %{HTTPS} off
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
