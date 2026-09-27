@@ -467,7 +467,7 @@ p {
   line-height: 1.6;
 }
 
-/* Key insight: Teal Accent (Cyber Educational) */
+/* Ключевая мысль: бирюзовый акцент (Cyber Educational) */
 .insight {
   background: var(--color-teal-bg);
   border-left: 3.5px solid var(--color-teal);
