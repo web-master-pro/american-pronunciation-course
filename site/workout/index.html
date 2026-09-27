@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тренажёрный зал произношения — General American English</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="lesson-container">
+
+  <!-- Top Navigation -->
+  <nav class="site-nav" aria-label="Навигация по курсу">
+    <div class="nav-breadcrumbs">
+      <a href="../index.html">Главная</a>
+      <span class="sep">/</span>
+      <span class="current">Тренажёрный зал</span>
+    </div>
+    <div class="nav-links">
+      <a href="../plan.html">План</a>
+      <a href="../reference/ipa-chart.html">Таблица IPA</a>
+      <a href="../resources.html">Ресурсы</a>
+      <a href="../index.html">Все уроки</a>
+    </div>
+  </nav>
+
+  <div class="lesson-header">
+    <div class="lesson-number">Интенсивный тренажёр</div>
+    <h1 class="lesson-title">Тренажёрный зал произношения (Daily Workout Gym)</h1>
+    <p class="lesson-subtitle">7 автономных интенсивных программ на 30–40 минут практики с интервальным повторением и прогрессией сложности</p>
+  </div>
+
+  <div class="insight">
+    <strong>Методика 30–40 минут ежедневной практики (Deliberate Practice):</strong>
+    <p style="margin: 0.5rem 0 0 0;">
+      Постановка беглого акцента — это тренировка тонкой моторики языка, губ и нёба. Каждая ежедневная программа рассчитана на 30–40 минут интенсивной голосовой работы и включает:
+    </p>
+    <ul style="margin: 0.5rem 0 0 1.25rem;">
+      <li><strong>Вчерашний повтор (5 мин):</strong> экспресс-сет звуков предыдущего дня (Spaced Repetition для исключения забывания).</li>
+      <li><strong>Артикуляционная гимнастика (5 мин):</strong> целевой разогрев мышц под звуковую группу дня.</li>
+      <li><strong>Массив слов L1 (8 мин):</strong> отработка звуков в начале, середине и конце слова (Initial, Medial, Final).</li>
+      <li><strong>Устойчивые коллокации L2 (7 мин):</strong> беглые связки из 2–3 слов на координацию переключения.</li>
+      <li><strong>Предложения высокой плотности L3 (8 мин):</strong> предложения с предельной концентрацией фонем.</li>
+      <li><strong>Марафон и скороговорки (7 мин):</strong> тренировка выносливости на 3 скоростях (Slow → Moderate → Native Speed).</li>
+    </ul>
+  </div>
+
+  <div style="margin: 1.5rem 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; background: white; border: 1px solid var(--color-border); border-radius: 6px; padding: 1rem 1.25rem;">
+    <div>
+      <span style="font-family: var(--font-sans); font-size: 0.95rem; color: var(--color-text-secondary);">Хотите начать сразу?</span>
+    </div>
+    <button class="btn-action" style="font-size: 1rem; padding: 0.6rem 1.2rem; background: var(--color-success); color: white; border-color: var(--color-success);" onclick="goToToday()">📅 Открыть тренировку на сегодня →</button>
+  </div>
+
+  <!-- Weekly Programs Grid -->
+  <h2>Программы тренировок на каждый день недели</h2>
+  <div class="workout-hub-grid">
+
+    <!-- Day 1 -->
+    <a href="monday.html" class="workout-card-day" id="cardDay1">
+      <div class="workout-card-day-header">
+        <span class="workout-card-day-title">Понедельник</span>
+        <span class="workout-card-badge">День 1</span>
+      </div>
+      <div class="workout-card-focus">
+        <strong>The Accent Breaker:</strong> Межзубные /θ/ и /ð/, американский /ɹ/, Dark L [ɫ], контраст /w/-/v/, Flap T [ɾ] и дифференциация /ɪ/ vs /iː/.
+      </div>
+      <div class="workout-card-footer">
+        <span>Время: 35–40 мин</span>
+        <span>Начать →</span>
+      </div>
+    </a>
+
+    <!-- Day 2 -->
+    <a href="tuesday.html" class="workout-card-day" id="cardDay2">
+      <div class="workout-card-day-header">
+        <span class="workout-card-day-title">Вторник</span>
+        <span class="workout-card-badge">День 2</span>
+      </div>
+      <div class="workout-card-focus">
+        <strong>Explosive Precision & Stops:</strong> Взрывные пары /p-b/, /t-d/, /k-ɡ/, аспирация, неразомкнутые смычки (Unreleased Stops), Glottal Stop [ʔ] и открытый гласный /æ/.
+      </div>
+      <div class="workout-card-footer">
+        <span>Время: 35–40 мин</span>
+        <span>Начать →</span>
+      </div>
+    </a>
+
+    <!-- Day 3 -->
+    <a href="wednesday.html" class="workout-card-day" id="cardDay3">
+      <div class="workout-card-day-header">
+        <span class="workout-card-day-title">Среда</span>
+        <span class="workout-card-badge">День 3</span>
+      </div>
+      <div class="workout-card-focus">
+        <strong>Sibilants & Affricates:</strong> Свистящие и шипящие /s-z/, /ʃ-ʒ/, аффрикаты /tʃ-dʒ/, огубленные /ʊ/ vs /uː/ и разговорная палатализация (don't you, did you).
+      </div>
+      <div class="workout-card-footer">
+        <span>Время: 35–40 мин</span>
+        <span>Начать →</span>
+      </div>
+    </a>
+
+    <!-- Day 4 -->
+    <a href="thursday.html" class="workout-card-day" id="cardDay4">
+      <div class="workout-card-day-header">
+        <span class="workout-card-day-title">Четверг</span>
+        <span class="workout-card-badge">День 4</span>
+      </div>
+      <div class="workout-card-focus">
+        <strong>Nasal Resonance & Glides:</strong> Велярный носовой сонорный /ŋ/ vs /ŋɡ/, glide-linking [w] и [j], глубокие задние гласные /ʌ/ (Strut) vs /ɑː/ (Palm).
+      </div>
+      <div class="workout-card-footer">
+        <span>Время: 35–40 мин</span>
+        <span>Начать →</span>
+      </div>
+    </a>
+
+    <!-- Day 5 -->
+    <a href="friday.html" class="workout-card-day" id="cardDay5">
+      <div class="workout-card-day-header">
+        <span class="workout-card-day-title">Пятница</span>
+        <span class="workout-card-badge">День 5</span>
+      </div>
+      <div class="workout-card-focus">
+        <strong>R-Colored Vowels & Clusters:</strong> Все 7 типов R-гласных (/ɝ/, /ɚ/, /ɑːr/, /ɔːr/, /ɛr/, /ɪr/, /ʊr/), сложные кластеры согласных (str-, spl-, -ksts).
+      </div>
+      <div class="workout-card-footer">
+        <span>Время: 35–40 мин</span>
+        <span>Начать →</span>
+      </div>
+    </a>
+
+    <!-- Day 6 -->
+    <a href="saturday.html" class="workout-card-day" id="cardDay6">
+      <div class="workout-card-day-header">
+        <span class="workout-card-day-title">Суббота</span>
+        <span class="workout-card-badge">День 6</span>
+      </div>
+      <div class="workout-card-focus">
+        <strong>Connected Speech & Weak Forms:</strong> 25 ключевых слабых форм (to, for, can, of), слияние согласных (geminates), разговорные редукции (gonna, wanna, kinda).
+      </div>
+      <div class="workout-card-footer">
+        <span>Время: 35–40 мин</span>
+        <span>Начать →</span>
+      </div>
+    </a>
+
+    <!-- Day 7 -->
+    <a href="sunday.html" class="workout-card-day" id="cardDay7">
+      <div class="workout-card-day-header">
+        <span class="workout-card-day-title">Воскресенье</span>
+        <span class="workout-card-badge">День 7</span>
+      </div>
+      <div class="workout-card-focus">
+        <strong>Prosody, Intonation & Native Rhythm:</strong> Мелодика речи (контуры 2-3-1 и 2-3-3), stress-timing, деление на Thought Groups и большой связный марафон.
+      </div>
+      <div class="workout-card-footer">
+        <span>Время: 35–40 мин</span>
+        <span>Начать →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Bottom Navigation -->
+  <nav class="lesson-pagination" aria-label="Переход по страницам">
+    <a href="../plan.html" class="pagination-btn prev">← План курса</a>
+    <a href="../index.html" class="pagination-btn index">На главную</a>
+    <a href="monday.html" class="pagination-btn next">К Понедельнику (День 1) →</a>
+  </nav>
+
+  <div class="lesson-footer">
+    <p><strong>Золотое правило фонетики:</strong> Регулярность важнее единовременных подвигов. Занимайтесь по 35 минут каждый день по программе текущего дня, записывая себя на диктофон раз в неделю.</p>
+  </div>
+
+</div>
+
+<script>
+const daysMap = {
+  1: 'monday.html',
+  2: 'tuesday.html',
+  3: 'wednesday.html',
+  4: 'thursday.html',
+  5: 'friday.html',
+  6: 'saturday.html',
+  7: 'sunday.html'
+};
+
+function highlightToday() {
+  const d = new Date().getDay();
+  const dayIndex = d === 0 ? 7 : d;
+  const card = document.getElementById('cardDay' + dayIndex);
+  if (card) {
+    card.classList.add('card-today');
+    const badge = card.querySelector('.workout-card-badge');
+    if (badge) {
+      badge.textContent = 'Сегодня';
+    }
+  }
+}
+
+function goToToday() {
+  const d = new Date().getDay();
+  const dayIndex = d === 0 ? 7 : d;
+  window.location.href = daysMap[dayIndex];
+}
+
+document.addEventListener('DOMContentLoaded', highlightToday);
+</script>
+
+</body>
+</html>
