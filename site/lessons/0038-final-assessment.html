@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 38. Финальная оценка</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .congrats-banner {
+      text-align: center;
+      background: linear-gradient(135deg, #eff6ff, #dbeafe);
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+    }
+    .congrats-banner .big {
+      font-family: var(--font-sans);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+    }
+    .congrats-banner .sub {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+    }
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+    .phase-card {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 0.75rem;
+      text-align: center;
+    }
+    .phase-card .phase-num {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-accent);
+      margin-bottom: 0.2rem;
+    }
+    .phase-card .phase-name {
+      font-size: 0.75rem;
+      color: var(--color-text-secondary);
+    }
+    .assessment-section {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+    .assessment-section h3 {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--color-accent);
+    }
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .checklist li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.85rem;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li .check {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--color-border);
+      border-radius: 3px;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .checklist li .check.done {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+    .checklist li .lesson-ref {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      color: var(--color-text-muted);
+      margin-left: auto;
+      white-space: nowrap;
+    }
+    .lesson-table {
+      width: 100%;
+      font-size: 0.8rem;
+    }
+    .lesson-table td {
+      padding: 0.4rem 0.5rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .lesson-table td:first-child {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      white-space: nowrap;
+      width: 40px;
+    }
+    .lesson-table td:last-child {
+      color: var(--color-text-secondary);
+    }
+    .future-box {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+    .future-box h3 {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .future-box ul {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+    .future-box li {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+    @media (max-width: 600px) {
+      .phase-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+<div class="lesson-container">
+
+    <!-- Top Navigation -->
+  <nav class="site-nav" aria-label="Навигация по курсу">
+    <div class="nav-breadcrumbs">
+      <a href="../index.html">Главная</a>
+      <span class="sep">/</span>
+      <span class="current">Урок 38</span>
+    </div>
+    <div class="nav-links">
+      <a href="../plan.html">План</a>
+      <a href="../reference/ipa-chart.html">Таблица IPA</a>
+      <a href="../index.html">Все уроки</a>
+    </div>
+  </nav>
+
+<div class="lesson-header">
+    <div class="lesson-number">Урок 38 из 38</div>
+    <h1 class="lesson-title">Финальная оценка</h1>
+    <p class="lesson-subtitle">Подведение итогов: сравнение с начальным уровнем, self-assessment и план дальнейшей работы</p>
+    <p class="lesson-mission">Миссия: <a href="../mission.html">Чистое американское произношение без акцента</a> · Фаза 5: Интеграция</p>
+  </div>
+
+  <!-- ===== Поздравление ===== -->
+  <div class="congrats-banner">
+    <div class="big">Поздравляем!</div>
+    <div class="sub">Вы прошли все 38 уроков курса English Phonetics. Это огромное достижение!</div>
+  </div>
+
+  <!-- ===== Секция 1 ===== -->
+  <h2>Путь, который вы прошли</h2>
+
+  <div class="phase-grid">
+    <div class="phase-card">
+      <div class="phase-num">Фаза 0</div>
+      <div class="phase-name">Фундамент<br>Уроки 1-3</div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">Фаза 1</div>
+      <div class="phase-name">Согласные<br>Уроки 4-14</div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">Фаза 2</div>
+      <div class="phase-name">Гласные<br>Уроки 15-22</div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">Фаза 3-4</div>
+      <div class="phase-name">Связная речь<br>Уроки 23-32</div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">Фаза 5</div>
+      <div class="phase-name">Интеграция<br>Уроки 33-38</div>
+    </div>
+  </div>
+
+  <!-- ===== Секция 2 ===== -->
+  <h2>Self-Assessment: произношение согласных</h2>
+
+  <div class="assessment-section">
+    <h3>Согласные звуки</h3>
+    <ul class="checklist">
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /p/, /b/ - правильная аспирация и bilabial closure <span class="lesson-ref">уроки 4-5</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /t/, /d/ - alveolar, flap [ɾ] между гласными <span class="lesson-ref">уроки 5-6</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /k/, /ɡ/ - velar, нет "raspy" звука <span class="lesson-ref">урок 5</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /f/, /v/ - labiodental, нижняя губа к зубам <span class="lesson-ref">урок 7</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /θ/, /ð/ - язык между зубами <span class="lesson-ref">урок 6</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /s/, /z/ - alveolar fricative, чистый шипящий <span class="lesson-ref">урок 8</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /ʃ/, /ʒ/ - post-alveolar <span class="lesson-ref">урок 9</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /tʃ/, /dʒ/ - affricates <span class="lesson-ref">урок 10</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /m/, /n/, /ŋ/ - nasals, нет добавления /g/ <span class="lesson-ref">урок 11</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /ɹ/ - American R, кончик загнут <span class="lesson-ref">урок 12</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /l/ - lateral, light vs. dark <span class="lesson-ref">урок 13</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /w/, /j/ - approximants <span class="lesson-ref">уроки 13-14</span></li>
+    </ul>
+  </div>
+
+  <!-- ===== Секция 3 ===== -->
+  <h2>Self-Assessment: произношение гласных</h2>
+
+  <div class="assessment-section">
+    <h3>Гласные звуки</h3>
+    <ul class="checklist">
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /iː/ vs. /ɪ/ - долгий vs. короткий <span class="lesson-ref">урок 15</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /ɛ/ vs. /æ/ - bed vs. bad <span class="lesson-ref">урок 16</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /ʌ/ vs. /ɑː/ - cut vs. cot <span class="lesson-ref">урок 17</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /ʊ/ vs. /uː/ - pull vs. pool <span class="lesson-ref">урок 18</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /ɔː/ vs. /oʊ/ - caught vs. coat <span class="lesson-ref">уроки 19-20</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> Diphthongs: /aɪ/, /aʊ/, /ɔɪ/ <span class="lesson-ref">урок 21</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> /ə/ (schwa) и /ɝ/ (R-colored) <span class="lesson-ref">урок 22</span></li>
+    </ul>
+  </div>
+
+  <!-- ===== Секция 4 ===== -->
+  <h2>Self-Assessment: связная речь</h2>
+
+  <div class="assessment-section">
+    <h3>Word Stress, Sentence Stress и Prosody</h3>
+    <ul class="checklist">
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> Word stress - ставлю ударение правильно <span class="lesson-ref">урок 23</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> Sentence stress - выделяю ключевые слова <span class="lesson-ref">урок 24</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> Rhythm - чередование долгих и коротких <span class="lesson-ref">урок 25</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> Linking - связываю слова <span class="lesson-ref">урок 26</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> Reductions - сокращения (gonna, wanna, etc.) <span class="lesson-ref">урок 27</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> Intonation - восходящая и нисходящая <span class="lesson-ref">урок 28</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> Connected speech -unciation на скорости <span class="lesson-ref">урок 32</span></li>
+    </ul>
+  </div>
+
+  <!-- ===== Секция 5 ===== -->
+  <h2>Self-Assessment: интегрированные навыки</h2>
+
+  <div class="assessment-section">
+    <h3>Практические навыки</h3>
+    <ul class="checklist">
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> Shadowing - могу shadow 30+ секунд <span class="lesson-ref">урок 33</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> Minimal pairs - различаю все проблемные пары <span class="lesson-ref">урок 34</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> Problem sounds - уверенно произношу /æ/, /θ/, /ɹ/, /ɪ/, /ŋ/ <span class="lesson-ref">урок 35</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> Prosody in conversation - понимаю turn-taking cues <span class="lesson-ref">урок 36</span></li>
+      <li><span class="check" onclick="this.classList.toggle('done')"></span> Reading aloud - читаю вслух с правильной prosody <span class="lesson-ref">урок 37</span></li>
+    </ul>
+  </div>
+
+  <!-- ===== Секция 6 ===== -->
+  <h2>Все 38 уроков: полный список</h2>
+
+  <table class="lesson-table">
+    <tr><td>1</td><td>Speech apparatus</td><td>3</td><td>Sound classification</td></tr>
+    <tr><td>2</td><td>IPA alphabet</td><td>4</td><td>Plosives: /p/ and /b/</td></tr>
+    <tr><td>5</td><td>Plosives: /t/ and /d/</td><td>6</td><td>Fricatives: /θ/ and /ð/</td></tr>
+    <tr><td>7</td><td>Fricatives: /f/ and /v/</td><td>8</td><td>Fricatives: /s/ and /z/</td></tr>
+    <tr><td>9</td><td>Fricatives: /ʃ/, /ʒ/, /h/</td><td>10</td><td>Affricates: /tʃ/ and /dʒ/</td></tr>
+    <tr><td>11</td><td>Nasals: /m/, /n/, /ŋ/</td><td>12</td><td>Approximant: /ɹ/</td></tr>
+    <tr><td>13</td><td>Lateral /l/, Approximant /w/</td><td>14</td><td>Approximant: /j/</td></tr>
+    <tr><td>15</td><td>Vowels: /iː/ and /ɪ/</td><td>16</td><td>Vowels: /ɛ/ and /æ/</td></tr>
+    <tr><td>17</td><td>Vowels: /ʌ/ and /ɑː/</td><td>18</td><td>Vowels: /uː/ and /ʊ/</td></tr>
+    <tr><td>19</td><td>Vowels: /ɔː/ and /oʊ/</td><td>20</td><td>Vowels: /ɑː/ and /ɔː/</td></tr>
+    <tr><td>21</td><td>Diphthongs</td><td>22</td><td>Schwa and R-colored vowels</td></tr>
+    <tr><td>23</td><td>Word stress</td><td>24</td><td>Sentence stress</td></tr>
+    <tr><td>25</td><td>Rhythm</td><td>26</td><td>Linking</td></tr>
+    <tr><td>27</td><td>Reductions</td><td>28</td><td>Intonation</td></tr>
+    <tr><td>29</td><td>Flap T and Glottal Stop</td><td>30</td><td>Elision</td></tr>
+    <tr><td>31</td><td>Assimilation</td><td>32</td><td>Connected speech</td></tr>
+    <tr><td>33</td><td>Shadowing</td><td>34</td><td>Minimal pairs</td></tr>
+    <tr><td>35</td><td>Problem sounds</td><td>36</td><td>Prosody in conversation</td></tr>
+    <tr><td>37</td><td>Reading aloud</td><td>38</td><td>Final assessment</td></tr>
+  </table>
+
+  <!-- ===== Секция 7 ===== -->
+  <h2>Области для дальнейшей работы</h2>
+
+  <div class="future-box">
+    <h3>Продолжайте тренироваться</h3>
+    <ul>
+      <li><strong>Ежедневный shadowing (15-20 минут)</strong> - лучший способ поддерживать и улучшать произношение</li>
+      <li><strong>Записывайте себя</strong> - сравнивайте с носителями раз в неделю</li>
+      <li><strong>Разговорная практика</strong> - применяйте навыки в реальных диалогах</li>
+      <li><strong>Подкасты и TED Talks</strong> - слушайте и shadowing каждый день</li>
+      <li><strong>Проблемные звуки</strong> - возвращайтесь к урокам 33-35 при необходимости</li>
+    </ul>
+  </div>
+
+  <div class="insight">
+    <strong>Помните:</strong> Произношение - это навык, а не знание. Как и игра на музыкальном инструменте, оно требует постоянной практики. Вы построили прочный фундамент. Теперь - поддерживайте его!
+  </div>
+
+  <div class="congrats-banner">
+    <div class="big">Удачи!</div>
+    <div class="sub">Вы сделали всё возможное. Теперь ваш успех зависит от постоянной практики. Уверенного вам произношения!</div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <!-- Bottom Navigation -->
+  <nav class="lesson-pagination" aria-label="Переход по урокам">
+    <a href="0037-reading-aloud.html" class="pagination-btn prev">← Урок 37</a>
+    <a href="../index.html" class="pagination-btn index">Оглавление курса</a>
+    <span class="pagination-placeholder"></span>
+  </nav>
+
+  <div class="lesson-footer">
+    <p><strong>Предыдущий урок:</strong> <a href="0037-reading-aloud.html">&larr; Урок 37: Reading Aloud</a></p>
+    <p><strong>На главную:</strong> <a href="../index.html">К списку уроков</a></p>
+    <p><strong>Есть вопросы?</strong> Спросите у меня - я ваш учитель и могу помочь с любыми непонятными моментами!</p>
+  </div>
+
+</div>
+
+</body>
+</html>

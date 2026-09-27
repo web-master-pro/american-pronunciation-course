@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 34. Minimal Pairs: финальная проработка</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .pair-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .pair-card {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .pair-card .symbols {
+      font-family: 'Gentium Plus', 'Charis SIL', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+    }
+    .pair-card .symbols .vs {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      margin: 0 0.3rem;
+    }
+    .pair-card .examples {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+    }
+    .pair-card .examples em {
+      font-style: italic;
+    }
+    .pair-card .category {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-accent);
+      margin-top: 0.5rem;
+    }
+    .listen-prompt {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--color-accent-light);
+      border: 1px solid var(--color-accent);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+    }
+    .listen-prompt .icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .listen-prompt .text {
+      font-size: 0.9rem;
+    }
+    .listen-prompt .text strong {
+      color: var(--color-accent);
+    }
+    .section-vowel, .section-consonant {
+      border-left: 3px solid;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+    .section-vowel { border-color: #3b82f6; }
+    .section-consonant { border-color: #10b981; }
+    @media (max-width: 600px) {
+      .pair-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="lesson-container">
+
+    <!-- Top Navigation -->
+  <nav class="site-nav" aria-label="Навигация по курсу">
+    <div class="nav-breadcrumbs">
+      <a href="../index.html">Главная</a>
+      <span class="sep">/</span>
+      <span class="current">Урок 34</span>
+    </div>
+    <div class="nav-links">
+      <a href="../plan.html">План</a>
+      <a href="../reference/ipa-chart.html">Таблица IPA</a>
+      <a href="../index.html">Все уроки</a>
+    </div>
+  </nav>
+
+<div class="lesson-header">
+    <div class="lesson-number">Урок 34 из 38</div>
+    <h1 class="lesson-title">Minimal Pairs: финальная проработка</h1>
+    <p class="lesson-subtitle">Комплексный обзор всех проблемных пар звуков, которые вы изучали на протяжении курса</p>
+    <p class="lesson-mission">Миссия: <a href="../mission.html">Чистое американское произношение без акцента</a> · Фаза 5: Интеграция</p>
+  </div>
+
+  <!-- ===== Секция 1 ===== -->
+  <h2>Что такое Minimal Pairs?</h2>
+
+  <p><strong>Minimal Pairs</strong> — это слова, которые отличаются <strong>только одним звуком</strong>. Например: <em>ship</em> /ʃɪp/ и <em>sheep</em> /ʃiːp/. Разница только в гласном: /ɪ/ vs. /iː/. Если вы не чувствуете эту разницу — значит, ваш мозг «сворачивает» два разных звука в один.</p>
+
+  <p>На протяжении курса мы работали с отдельными звуками. Теперь пора собрать всё вместе и <strong>отработать все проблемные пары</strong>.</p>
+
+  <div class="insight">
+    <strong>Зачем это нужно:</strong> Если вы не различаете ship/sheep, то можете сказать «I live on a sheep» вместо «I live on a ship» (ну, это утрированный пример, но смысл ясен). На практике неправильный гласный может сделать вас непонятным.
+  </div>
+
+  <!-- ===== Секция 2 ===== -->
+  <h2>Гласные пары</h2>
+
+  <div class="section-vowel">
+    <h3>/ɪ/ vs. /iː/ — короткий vs. долгий передний гласный</h3>
+
+    <div class="pair-grid">
+      <div class="pair-card">
+        <div class="symbols">/ɪ/ <span class="vs">vs.</span> /iː/</div>
+        <div class="examples"><em>ship</em> / <em>sheep</em></div>
+        <div class="category">Front vowels</div>
+      </div>
+      <div class="pair-card">
+        <div class="symbols">/ɪ/ <span class="vs">vs.</span> /iː/</div>
+        <div class="examples"><em>sit</em> / <em>seat</em></div>
+        <div class="category">Front vowels</div>
+      </div>
+    </div>
+
+    <div class="marginnote">
+      <strong>Ключевое различие:</strong> /ɪ/ — короткий, расслабленный, язык ниже. /iː/ — долгий, напряжённый, язык выше, губы растянуты в улыбке.
+    </div>
+  </div>
+
+  <div class="section-vowel">
+    <h3>/ɛ/ vs. /æ/ — средний vs. низкий передний гласный</h3>
+
+    <div class="pair-grid">
+      <div class="pair-card">
+        <div class="symbols">/ɛ/ <span class="vs">vs.</span> /æ/</div>
+        <div class="examples"><em>bed</em> / <em>bad</em></div>
+        <div class="category">Front vowels</div>
+      </div>
+      <div class="pair-card">
+        <div class="symbols">/ɛ/ <span class="vs">vs.</span> /æ/</div>
+        <div class="examples"><em>pen</em> / <em>pan</em></div>
+        <div class="category">Front vowels</div>
+      </div>
+    </div>
+
+    <div class="marginnote">
+      <strong>Ключевое различие:</strong> /ɛ/ — челюсть открыта умеренно. /æ/ — челюсть опущена максимально, язык натянут вперёд. Это самая «проблемная» пара для русскоговорящих.
+    </div>
+  </div>
+
+  <div class="section-vowel">
+    <h3>/ʌ/ vs. /ɑː/ — central vs. задний низкий</h3>
+
+    <div class="pair-grid">
+      <div class="pair-card">
+        <div class="symbols">/ʌ/ <span class="vs">vs.</span> /ɑː/</div>
+        <div class="examples"><em>cut</em> / <em>cot</em></div>
+        <div class="category">Central vs. Back</div>
+      </div>
+      <div class="pair-card">
+        <div class="symbols">/ʌ/ <span class="vs">vs.</span> /ɑː/</div>
+        <div class="examples"><em>duck</em> / <em>doc</em></div>
+        <div class="category">Central vs. Back</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-vowel">
+    <h3>/ʊ/ vs. /uː/ — короткий vs. долгий задний гласный</h3>
+
+    <div class="pair-grid">
+      <div class="pair-card">
+        <div class="symbols">/ʊ/ <span class="vs">vs.</span> /uː/</div>
+        <div class="examples"><em>pull</em> / <em>pool</em></div>
+        <div class="category">Back vowels</div>
+      </div>
+      <div class="pair-card">
+        <div class="symbols">/ʊ/ <span class="vs">vs.</span> /uː/</div>
+        <div class="examples"><em>full</em> / <em>fool</em></div>
+        <div class="category">Back vowels</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-vowel">
+    <h3>/ɔː/ vs. /oʊ/ — длинный vs. дифтонг</h3>
+
+    <div class="pair-grid">
+      <div class="pair-card">
+        <div class="symbols">/ɔː/ <span class="vs">vs.</span> /oʊ/</div>
+        <div class="examples"><em>caught</em> / <em>coat</em></div>
+        <div class="category">Back vowels</div>
+      </div>
+      <div class="pair-card">
+        <div class="symbols">/ɔː/ <span class="vs">vs.</span> /oʊ/</div>
+        <div class="examples"><em>saw</em> / <em>so</em></div>
+        <div class="category">Back vowels</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Секция 3 ===== -->
+  <h2>Согласные пары</h2>
+
+  <div class="section-consonant">
+    <h3>/θ/ vs. /s/ — dental vs. alveolar фрикатив</h3>
+
+    <div class="pair-grid">
+      <div class="pair-card">
+        <div class="symbols">/θ/ <span class="vs">vs.</span> /s/</div>
+        <div class="examples"><em>think</em> / <em>sink</em></div>
+        <div class="category">Voiceless fricatives</div>
+      </div>
+      <div class="pair-card">
+        <div class="symbols">/θ/ <span class="vs">vs.</span> /s/</div>
+        <div class="examples"><em>three</em> / <em>free</em></div>
+        <div class="category">Voiceless fricatives</div>
+      </div>
+    </div>
+
+    <div class="marginnote">
+      <strong>Ключевое различие:</strong> /θ/ — кончик языка между зубами. /s/ — кончик языка за зубами, на альвеолах. Видно в зеркале: при /θ/ язык виден между зубами.
+    </div>
+  </div>
+
+  <div class="section-consonant">
+    <h3>/ð/ vs. /d/ — dental vs. alveolar</h3>
+
+    <div class="pair-grid">
+      <div class="pair-card">
+        <div class="symbols">/ð/ <span class="vs">vs.</span> /d/</div>
+        <div class="examples"><em>this</em> / <em>dis</em></div>
+        <div class="category">Voiced stops/fricatives</div>
+      </div>
+      <div class="pair-card">
+        <div class="symbols">/ð/ <span class="vs">vs.</span> /d/</div>
+        <div class="examples"><em>then</em> / <em>den</em></div>
+        <div class="category">Voiced stops/fricatives</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-consonant">
+    <h3>/ɹ/ vs. /l/ — rhotic vs. lateral</h3>
+
+    <div class="pair-grid">
+      <div class="pair-card">
+        <div class="symbols">/ɹ/ <span class="vs">vs.</span> /l/</div>
+        <div class="examples"><em>right</em> / <em>light</em></div>
+        <div class="category">Approximants</div>
+      </div>
+      <div class="pair-card">
+        <div class="symbols">/ɹ/ <span class="vs">vs.</span> /l/</div>
+        <div class="examples"><em>road</em> / <em>load</em></div>
+        <div class="category">Approximants</div>
+      </div>
+    </div>
+
+    <div class="marginnote">
+      <strong>Ключевое различие:</strong> /ɹ/ — кончик языка загнут вверх, не касается ничего. /l/ — кончик языка касается альвеол. Попробуйте: скажите «la-la-la», затем замените на «ra-ra-ra» — кончик языка должен оторваться от альвеол.
+    </div>
+  </div>
+
+  <div class="section-consonant">
+    <h3>/w/ vs. /v/ — bilabial vs. labiodental</h3>
+
+    <div class="pair-grid">
+      <div class="pair-card">
+        <div class="symbols">/w/ <span class="vs">vs.</span> /v/</div>
+        <div class="examples"><em>west</em> / <em>vest</em></div>
+        <div class="category">Labial sounds</div>
+      </div>
+      <div class="pair-card">
+        <div class="symbols">/w/ <span class="vs">vs.</span> /v/</div>
+        <div class="examples"><em>wine</em> / <em>vine</em></div>
+        <div class="category">Labial sounds</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Секция 4 ===== -->
+  <h2>Практика: послушай и определи</h2>
+
+  <div class="listen-prompt">
+    <div class="icon">🎧</div>
+    <div class="text">
+      <strong>Упражнение:</strong> Прослушайте пару слов. Какое слово вы услышали — первое или второе? Запишите ответ, затем проверьте по ключу.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <p><strong>Пара 1:</strong> <em>ship</em> или <em>sheep</em>? (Лучше: /ʃɪp/ или /ʃiːp/?)</p>
+    <p><strong>Пара 2:</strong> <em>bed</em> или <em>bad</em>? (/bɛd/ или /bæd/?)</p>
+    <p><strong>Пара 3:</strong> <em>think</em> или <em>sink</em>? (/θɪŋk/ или /sɪŋk/?)</p>
+    <p><strong>Пара 4:</strong> <em>right</em> или <em>light</em>? (/ɹaɪt/ или /laɪt/?)</p>
+    <p><strong>Пара 5:</strong> <em>west</em> или <em>vest</em>? (/wɛst/ или /vɛst/?)</p>
+    <p><strong>Пара 6:</strong> <em>caught</em> или <em>coat</em>? (/kɔːt/ или /koʊt/?)</p>
+    <p><strong>Пара 7:</strong> <em>pull</em> или <em>pool</em>? (/pʊl/ или /puːl/?)</p>
+    <p><strong>Пара 8:</strong> <em>cut</em> или <em>cot</em>? (/kʌt/ или /kɑːt/?)</p>
+  </div>
+
+  <div class="tip">
+    <strong>Ключ:</strong> Используйте <a href="https://tophonetics.com" target="_blank">ToPhonetics.com</a> или <a href="https://forvo.com" target="_blank">Forvo</a> для прослушивания. Запишите свой голос и сравнивайте. Shadowing с minimal pairs — отличная практика!
+  </div>
+
+  <!-- ===== Quiz ===== -->
+  <h2>Проверь себя</h2>
+
+  <div class="quiz" id="quiz1">
+    <p class="quiz-question">1. В паре ship/sheep разница в каком звуке?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">/ʃ/ vs. /s/</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', true)">/ɪ/ vs. /iː/</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">/p/ vs. /b/</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz1-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz2">
+    <p class="quiz-question">2. Чем /θ/ отличается от /s/?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz2', true)">Местом образования: dental vs. alveolar</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Звонкостью</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Ничем, это один звук</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz2-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz3">
+    <p class="quiz-question">3. Какая пара является самой проблемной для русскоговорящих?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">/p/ vs. /b/</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', true)">/ɛ/ vs. /æ/</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">/m/ vs. /n/</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz3-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz4">
+    <p class="quiz-question">4. Как правильно произнести /θ/?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">Кончик языка за зубами, на альвеолах</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', true)">Кончик языка между зубами</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">Губы округлены</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz4-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz5">
+    <p class="quiz-question">5. Что такое minimal pair?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Два одинаковых слова</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Два длинных слова</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', true)">Два слова, различающихся только одним звуком</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz5-feedback"></div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <!-- Bottom Navigation -->
+  <nav class="lesson-pagination" aria-label="Переход по урокам">
+    <a href="0033-shadowing.html" class="pagination-btn prev">← Урок 33</a>
+    <a href="../index.html" class="pagination-btn index">Оглавление курса</a>
+    <a href="0035-problem-sounds.html" class="pagination-btn next">Урок 35 →</a>
+  </nav>
+
+  <div class="lesson-footer">
+    <p><strong>Предыдущий урок:</strong> <a href="0033-shadowing.html">← Урок 33: Shadowing — техника</a></p>
+    <p><strong>Следующий урок:</strong> <a href="0035-problem-sounds.html">Урок 35: Problem Sounds: глубокая проработка →</a></p>
+    <p><strong>Есть вопросы?</strong> Спросите у меня — я ваш учитель и могу помочь с любыми непонятными моментами!</p>
+  </div>
+
+</div>
+
+<script>
+function checkAnswer(button, quizId, isCorrect) {
+  const quiz = document.getElementById(quizId);
+  const feedback = document.getElementById(quizId + '-feedback');
+  const buttons = quiz.querySelectorAll('.quiz-options button');
+
+  buttons.forEach(b => {
+    b.disabled = true;
+    b.style.cursor = 'default';
+  });
+
+  if (isCorrect) {
+    button.classList.add('correct');
+    feedback.textContent = '✓ Верно!';
+    feedback.className = 'quiz-feedback show correct';
+  } else {
+    button.classList.add('wrong');
+    buttons.forEach(b => {
+      if (b.getAttribute('onclick').includes('true')) {
+        b.classList.add('correct');
+      }
+    });
+    feedback.textContent = '✗ Неверно. Правильный ответ выделен зелёным.';
+    feedback.className = 'quiz-feedback show wrong';
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 3. Гласные vs. Согласные: систематика</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .classification-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .class-card {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem;
+    }
+    .class-card h4 {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--color-accent);
+    }
+    .class-card .ipa-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    .class-card .ipa-row span {
+      font-family: 'Gentium Plus', 'Charis SIL', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      background: var(--color-accent-light);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+    .phoneme-box {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+    .phoneme-box .phoneme-symbol {
+      font-family: 'Gentium Plus', 'Charis SIL', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      flex-shrink: 0;
+      min-width: 60px;
+      text-align: center;
+    }
+    .phoneme-box .phoneme-info {
+      flex: 1;
+    }
+    .phoneme-box .phoneme-info h4 {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .phoneme-box .phoneme-info p {
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+    .phoneme-box .allophones {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      background: var(--color-bg-alt);
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      margin-top: 0.4rem;
+    }
+    .chart-row {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      margin: 1rem 0;
+    }
+    .chart-label {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.85rem;
+      width: 140px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding-right: 1rem;
+      color: var(--color-text-secondary);
+    }
+    .chart-cells {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      flex: 1;
+    }
+    .chart-cells .cell {
+      font-family: 'Gentium Plus', 'Charis SIL', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      background: white;
+      border: 1px solid var(--color-border);
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      text-align: center;
+      min-width: 40px;
+    }
+    .chart-cells .cell.empty {
+      background: transparent;
+      border: 1px dashed var(--color-border);
+      color: var(--color-text-muted);
+    }
+    .comparison-highlight td:first-child {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .comparison-highlight td:nth-child(2) {
+      color: var(--color-accent);
+    }
+    .vowel-chart {
+      display: grid;
+      grid-template-columns: auto 1fr 1fr 1fr auto;
+      gap: 0;
+      margin: 1.5rem 0;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+    }
+    .vowel-chart .corner { }
+    .vowel-chart .col-header {
+      text-align: center;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      padding: 0.4rem 0.5rem;
+    }
+    .vowel-chart .row-header {
+      writing-mode: horizontal-tb;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      padding: 0.5rem 0.75rem;
+      display: flex;
+      align-items: center;
+    }
+    .vowel-chart .vowel-cell {
+      text-align: center;
+      padding: 0.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      background: white;
+    }
+    .vowel-chart .vowel-cell .sym {
+      font-family: 'Gentium Plus', 'Charis SIL', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      display: block;
+    }
+    .vowel-chart .vowel-cell .ex {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      font-style: italic;
+    }
+    .vowel-chart .vowel-cell.empty {
+      background: transparent;
+      border-color: transparent;
+    }
+    @media (max-width: 600px) {
+      .classification-grid { grid-template-columns: 1fr; }
+      .phoneme-box { flex-direction: column; text-align: center; }
+      .chart-row { flex-direction: column; }
+      .chart-label { width: auto; padding: 0 0 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="lesson-container">
+
+    <!-- Top Navigation -->
+  <nav class="site-nav" aria-label="Навигация по курсу">
+    <div class="nav-breadcrumbs">
+      <a href="../index.html">Главная</a>
+      <span class="sep">/</span>
+      <span class="current">Урок 3</span>
+    </div>
+    <div class="nav-links">
+      <a href="../plan.html">План</a>
+      <a href="../reference/ipa-chart.html">Таблица IPA</a>
+      <a href="../index.html">Все уроки</a>
+    </div>
+  </nav>
+
+<div class="lesson-header">
+    <div class="lesson-number">Урок 3 из 38</div>
+    <h1 class="lesson-title">Гласные vs. Согласные: систематика</h1>
+    <p class="lesson-subtitle">Классификация звуков, понятие фонемы и аллофона — почему одни звуки «похожи», а другие нет</p>
+    <p class="lesson-mission">Миссия: <a href="../mission.html">Чистое американское произношение без акцента</a> · Фаза 0: Фундамент</p>
+  </div>
+
+  <!-- ===== Секция 1 ===== -->
+  <h2>Зачем классифицировать звуки?</h2>
+
+  <p>В <a href="0001-speech-apparatus.html">уроке 1</a> мы узнали, что звуки создаются речевым аппаратом. В <a href="0002-ipa-alphabet.html">уроке 2</a> — научились читать IPA-транскрипцию. Теперь пора разобраться: <em>почему</em> одни звуки «похожи», а другие — нет, и как эта систематика поможет нам в постановке произношения.</p>
+
+  <p>Классификация звуков — это не абстрактная теория. Это <strong>практический инструмент</strong>: когда вы понимаете, <em>что именно</em> делает ваш речевой аппарат для каждого звука, вы можете:</p>
+  <ul>
+    <li>Быстро поставить новый звук, опираясь на знакомую артикуляцию</li>
+    <li>Понять, почему русские и английские звуки «не совпадают»</li>
+    <li>Систематически отличать звуки друг от друга на слух</li>
+  </ul>
+
+  <div class="insight">
+    <strong>Аналогия:</strong> Представьте, что вы учитесь водить машину. Если вы понимаете, что делает сцепление, коробка передач и руль — вы быстрее научитесь. Точно так же: понимание артикуляции = быстрое освоение произношения.
+  </div>
+
+  <!-- ===== Секция 2 ===== -->
+  <h2>Два мира звуков: согласные и гласные</h2>
+
+  <p>Мы уже кратко упоминали это в уроке 1. Теперь углубимся.</p>
+
+  <div class="classification-grid">
+    <div class="class-card">
+      <h4>Согласные (Consonants)</h4>
+      <p>Воздух <strong>встречает препятствие</strong> — полное или частичное. Язык, губы или зубы создают сужение или преграду для потока воздуха.</p>
+      <p><strong>Ключевой принцип:</strong> согласные описываются <em>два параметра</em> — <strong>место</strong> образования и <strong>способ</strong> образования.</p>
+      <div class="ipa-row">
+        <span>/p/</span><span>/b/</span><span>/t/</span><span>/d/</span><span>/k/</span><span>/ɡ/</span>
+        <span>/f/</span><span>/v/</span><span>/θ/</span><span>/ð/</span><span>/s/</span><span>/z/</span>
+        <span>/ʃ/</span><span>/ʒ/</span><span>/h/</span><span>/tʃ/</span><span>/dʒ/</span>
+        <span>/m/</span><span>/n/</span><span>/ŋ/</span><span>/ɹ/</span><span>/l/</span><span>/w/</span><span>/j/</span>
+      </div>
+    </div>
+    <div class="class-card">
+      <h4>Гласные (Vowels)</h4>
+      <p>Воздух проходит <strong>свободно</strong>, без препятствий. Звук определяется <em>позицией языка</em> и <em>формой губ</em>.</p>
+      <p><strong>Ключевой принцип:</strong> гласные описываются <em>три параметра</em> — <strong>высота</strong> языка, <strong>ряд</strong> (передний/задний), <strong>округление</strong> губ.</p>
+      <div class="ipa-row">
+        <span>/iː/</span><span>/ɪ/</span><span>/ɛ/</span><span>/æ/</span><span>/ɑː/</span>
+        <span>/ɔː/</span><span>/uː/</span><span>/ʊ/</span><span>/ʌ/</span><span>/ə/</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>Главное отличие:</strong> согласные классифицируются по <em>месту и способу образования</em> (что делает воздух). Гласные — по <em>позиции языка и губ</em> (как резонирует полость рта). Это принципиально разные системы описания.
+  </div>
+
+  <!-- ===== Секция 3 ===== -->
+  <h2>Классификация согласных: Place + Manner</h2>
+
+  <p>Каждый согласный звук описывается двумя ключевыми параметрами:</p>
+
+  <h3>Место образования (Place of Articulation)</h3>
+  <p><em>Где</em> во рту возникает сужение или преграда?</p>
+
+  <table class="comparison-highlight">
+    <thead>
+      <tr>
+        <th>Место</th>
+        <th>Где именно</th>
+        <th>Примеры в English</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Билабиальные (Bilabial)</td>
+        <td>Обе губы смыкаются</td>
+        <td><code>/p/</code>, <code>/b/</code>, <code>/m/</code></td>
+      </tr>
+      <tr>
+        <td>Лабиодентальные (Labiodental)</td>
+        <td>Нижняя губа → верхние зубы</td>
+        <td><code>/f/</code>, <code>/v/</code></td>
+      </tr>
+      <tr>
+        <td>Дентальные (Dental)</td>
+        <td>Кончик языка → между зубами</td>
+        <td><code>/θ/</code>, <code>/ð/</code></td>
+      </tr>
+      <tr>
+        <td>Альвеолярные (Alveolar)</td>
+        <td>Кончик языка → бугорок за зубами</td>
+        <td><code>/t/</code>, <code>/d/</code>, <code>/n/</code>, <code>/s/</code>, <code>/z/</code>, <code>/l/</code></td>
+      </tr>
+      <tr>
+        <td>Постальвеолярные (Post-alveolar)</td>
+        <td>Спинка языка → за альвеолами</td>
+        <td><code>/ʃ/</code>, <code>/ʒ/</code>, <code>/tʃ/</code>, <code>/dʒ/</code></td>
+      </tr>
+      <tr>
+        <td>Палатальные (Palatal)</td>
+        <td>Спинка языка → твёрдое нёбо</td>
+        <td><code>/j/</code></td>
+      </tr>
+      <tr>
+        <td>Велярные (Velar)</td>
+        <td>Задняя часть языка → мягкое нёбо</td>
+        <td><code>/k/</code>, <code>/ɡ/</code>, <code>/ŋ/</code></td>
+      </tr>
+      <tr>
+        <td>Глоттальные (Glottal)</td>
+        <td>Голосовые складки в гортани</td>
+        <td><code>/h/</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="marginnote">
+    <strong>Для русскоговорящих:</strong> русский /т/ — <em>зубной</em> (язык к зубам), английский /t/ — <em>альвеолярный</em> (язык к бугорку). Разница в миллиметрах, но она слышна. Это ключевое различие, которое мы проработаем в уроке 5.
+  </div>
+
+  <h3>Способ образования (Manner of Articulation)</h3>
+  <p><em>Как</em> воздух проходит через сужение?</p>
+
+  <table class="comparison-highlight">
+    <thead>
+      <tr>
+        <th>Способ</th>
+        <th>Что происходит с воздухом</th>
+        <th>Звуки</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Взрывные (Plosives)</td>
+        <td>Полная смычка → «взрыв» воздуха</td>
+        <td><code>/p/</code> <code>/b/</code> <code>/t/</code> <code>/d/</code> <code>/k/</code> <code>/ɡ/</code></td>
+      </tr>
+      <tr>
+        <td>Фрикативы (Fricatives)</td>
+        <td>Воздух проходит через узкую щель → шум</td>
+        <td><code>/f/</code> <code>/v/</code> <code>/θ/</code> <code>/ð/</code> <code>/s/</code> <code>/z/</code> <code>/ʃ/</code> <code>/ʒ/</code> <code>/h/</code></td>
+      </tr>
+      <tr>
+        <td>Аффрикаты (Affricates)</td>
+        <td>Взрывной → фрикатив (комбинация)</td>
+        <td><code>/tʃ/</code> <code>/dʒ/</code></td>
+      </tr>
+      <tr>
+        <td>Носовые (Nasals)</td>
+        <td>Рот закрыт, воздух идёт через нос</td>
+        <td><code>/m/</code> <code>/n/</code> <code>/ŋ/</code></td>
+      </tr>
+      <tr>
+        <td>Аппроксиманты (Approximants)</td>
+        <td>Сужение есть, но препятствия нет — воздух почти свободен</td>
+        <td><code>/ɹ/</code> <code>/l/</code> <code>/w/</code> <code>/j/</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="insight">
+    <strong>Почему это важно для произношения:</strong> Если вы знаете, что /t/ — это <em>альвеолярный взрывной</em>, вы понимаете: (1) кончик языка должен коснуться альвеол, (2) воздух должен полностью остановиться, (3) затем произойти «взрыв». Это три шага артикуляции, которые можно потренировать отдельно.
+  </div>
+
+  <!-- ===== Секция 4 ===== -->
+  <h2>Классификация гласных: высота, ряд, округление</h2>
+
+  <p>Гласные описываются тремя параметрами. Карта гласных — это по сути «срез» вашего рта:</p>
+
+  <h3>Высота языка (Height)</h3>
+  <ul>
+    <li><strong>High (высокий)</strong> — язык приподнят близко к нёбу: /iː/, /uː/</li>
+    <li><strong>Mid (средний)</strong> — язык в средней позиции: /ɛ/, /ə/, /ɔː/</li>
+    <li><strong>Low (низкий)</strong> — язык опущен, челюсть широко открыта: /æ/, /ɑː/</li>
+  </ul>
+
+  <h3>Ряд (Backness)</h3>
+  <ul>
+    <li><strong>Front (передний)</strong> — напряжённая передняя часть языка: /iː/, /ɪ/, /ɛ/, /æ/</li>
+    <li><strong>Central (центральный)</strong> — язык в нейтральной позиции: /ə/, /ʌ/</li>
+    <li><strong>Back (задний)</strong> — задняя часть языка приподнята: /uː/, /ʊ/, /ɔː/, /ɑː/</li>
+  </ul>
+
+  <h3>Округление губ (Lip Rounding)</h3>
+  <ul>
+    <li><strong>Rounded (округлённые)</strong> — губы округлены: /uː/, /ʊ/, /ɔː/</li>
+    <li><strong>Unrounded (неокруглённые)</strong> — губы растянуты или нейтральны: /iː/, /ɪ/, /ɛ/, /æ/, /ɑː/, /ə/, /ʌ/</li>
+  </ul>
+
+  <h3>Карта гласных American English</h3>
+
+  <div class="vowel-chart">
+    <div class="corner"></div>
+    <div class="col-header">Front</div>
+    <div class="col-header">Central</div>
+    <div class="col-header">Back</div>
+    <div class="corner"></div>
+
+    <div class="row-header">High</div>
+    <div class="vowel-cell"><span class="sym">iː</span><span class="ex">bead</span></div>
+    <div class="vowel-cell empty"></div>
+    <div class="vowel-cell"><span class="sym">uː</span><span class="ex">boot</span></div>
+    <div class="row-header">rounded →</div>
+
+    <div class="row-header">High-mid</div>
+    <div class="vowel-cell"><span class="sym">ɪ</span><span class="ex">bid</span></div>
+    <div class="vowel-cell empty"></div>
+    <div class="vowel-cell"><span class="sym">ʊ</span><span class="ex">book</span></div>
+    <div class="row-header"></div>
+
+    <div class="row-header">Mid</div>
+    <div class="vowel-cell"><span class="sym">ɛ</span><span class="ex">bed</span></div>
+    <div class="vowel-cell"><span class="sym">ə</span><span class="ex">about</span></div>
+    <div class="vowel-cell"><span class="sym">ɔː</span><span class="ex">bought</span></div>
+    <div class="row-header"></div>
+
+    <div class="row-header">Low-mid</div>
+    <div class="vowel-cell"><span class="sym">æ</span><span class="ex">bad</span></div>
+    <div class="vowel-cell empty"></div>
+    <div class="vowel-cell empty"></div>
+    <div class="row-header"></div>
+
+    <div class="row-header">Low</div>
+    <div class="vowel-cell empty"></div>
+    <div class="vowel-cell empty"></div>
+    <div class="vowel-cell"><span class="sym">ɑː</span><span class="ex">bot</span></div>
+    <div class="row-header"></div>
+  </div>
+
+  <div class="marginnote">
+    Заметьте: чем <strong>ниже</strong> язык — тем шире открывается челюсть. Звук <code>/æ/</code> (как в <em>cat</em>) требует самого широкого раскрытия для передних гласных. Это одна из самых «проблемных» позиций для русскоговорящих — мы вернёмся к ней в уроке 16.
+  </div>
+
+  <!-- ===== Секция 5 ===== -->
+  <h2>Phoneme vs. Allophone: важнейшее различие</h2>
+
+  <p>Это понятие — ключ ко всему курсу. Без него невозможно понять, почему одни звуки «считаются одними», а другие — разными.</p>
+
+  <h3>Фонема (Phoneme)</h3>
+  <p><strong>Фонема</strong> — это абстрактная единица языка, <em>минимальный звук, способный менять значение слова</em>. Фонемы записываются между косых чёрточек: <code>/t/</code>, <code>/p/</code>, <code>/æ/</code>.</p>
+
+  <p>Пример: слова <em>pin</em> и <em>bin</em> различаются только одним звуком — <code>/p/</code> vs. <code>/b/</code>. Значит, <code>/p/</code> и <code>/b/</code> — это <strong>разные фонемы</strong> английского языка.</p>
+
+  <h3>Аллофон (Allophone)</h3>
+  <p><strong>Аллофон</strong> — это <em>реальный вариант</em> фонемы, который произносится в конкретном контексте. Аллофоны одной фонемы <strong>не меняют значение слова</strong> — их различают только фонетики.</p>
+
+  <div class="phoneme-box">
+    <div class="phoneme-symbol">/t/</div>
+    <div class="phoneme-info">
+      <h4>Фонема /t/ в American English</h4>
+      <p>Одна фонема — но минимум три разных произношения:</p>
+      <div class="allophones">
+        <strong>Аллофоны:</strong><br>
+        • <strong>Aspirated [tʰ]</strong> — в начале слога: <em>top</em>, <em>stand</em><br>
+        • <strong>Flap [ɾ]</strong> — между гласными: <em>water</em>, <em>city</em>, <em>better</em><br>
+        • <strong>Glottal stop [ʔ]</strong> — перед носовыми: <em>cotton</em>, <em>certain</em><br>
+        • <strong>Unreleased [t̚]</strong> — в конце слова перед другим согласным: <em>football</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="phoneme-box">
+    <div class="phoneme-symbol">/ə/</div>
+    <div class="phoneme-info">
+      <h4>Фонема /ə/ (schwa)</h4>
+      <p>Самый частый звук в английском. Появляется в каждом безударном слоге:</p>
+      <div class="allophones">
+        <strong>Примеры:</strong><br>
+        • <em>about</em> = <code>/əˈbaʊt/</code> — первый слог<br>
+        • <em>banana</em> = <code>/bəˈnænə/</code> — первый и третий слоги<br>
+        • <em>problem</em> = <code>/ˈprɑːbləm/</code> — второй слог
+      </div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <strong>Почему это важно:</strong> Когда вы слышите, что «американцы говорят <em>wadder</em> вместо <em>water</em>» — на самом деле они произносят <strong>ту же фонему</strong> <code>/t/</code>, но её <em>аллофон</em> в этой позиции — flap <code>[ɾ]</code>. Это не «ошибка» и не «другой звук» — это нормальное фонетическое явление.
+  </div>
+
+  <!-- ===== Секция 6 ===== -->
+  <h2>Почему одни звуки «похожи», а другие — нет?</h2>
+
+  <p>Звуки «похожи», когда они:</p>
+  <ul>
+    <li>Имеют <strong>одно место образования</strong> (например, /t/ и /d/ — оба альвеолярные)</li>
+    <li>Имеют <strong>один способ образования</strong> (например, /s/ и /ʃ/ — оба фрикативы)</li>
+    <li>Отличаются <strong>только одним параметром</strong> (звонкость, место, способ)</li>
+  </ul>
+
+  <p>Звуки <strong>непохожи</strong>, когда они различаются по <em>обеим</em> осям:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Пара</th>
+        <th>Место</th>
+        <th>Способ</th>
+        <th>Звонкость</th>
+        <th>Вывод</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/t/</code> — <code>/d/</code></td>
+        <td>Одно (альвеолярные)</td>
+        <td>Одно (взрывные)</td>
+        <td>Разная</td>
+        <td>Похожи (пара)</td>
+      </tr>
+      <tr>
+        <td><code>/s/</code> — <code>/z/</code></td>
+        <td>Одно (альвеолярные)</td>
+        <td>Одно (фрикативы)</td>
+        <td>Разная</td>
+        <td>Похожи (пара)</td>
+      </tr>
+      <tr>
+        <td><code>/t/</code> — <code>/k/</code></td>
+        <td>Разное</td>
+        <td>Одно (взрывные)</td>
+        <td>Одно (глухие)</td>
+        <td>Отличаются</td>
+      </tr>
+      <tr>
+        <td><code>/s/</code> — <code>/t/</code></td>
+        <td>Одно (альвеолярные)</td>
+        <td>Разное</td>
+        <td>Одно (глухие)</td>
+        <td>Отличаются</td>
+      </tr>
+      <tr>
+        <td><code>/p/</code> — <code>/z/</code></td>
+        <td>Разное</td>
+        <td>Разное</td>
+        <td>Разная</td>
+        <td>Совершенно разные</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tip">
+    <strong>Минимальные пары (Minimal Pairs)</strong> — это слова, различающиеся только одним звуком. Например: <em>pat</em> / <em>bat</em>, <em>sit</em> / <em>fit</em>, <em>think</em> / <em>sink</em>. Минимальные пары — лучший способ тренировать различие похожих звуков. Мы будем активно использовать их на протяжении всего курса.
+  </div>
+
+  <!-- ===== Секция 7 ===== -->
+  <h2>Сводная таблица: все согласные American English</h2>
+
+  <p>Вот полная таблица — каждый согласный описан по месту, способу и звонкости:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Bilabial</th>
+        <th>Labiodental</th>
+        <th>Dental</th>
+        <th>Alveolar</th>
+        <th>Post-alv.</th>
+        <th>Palatal</th>
+        <th>Velar</th>
+        <th>Glottal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Plosive</strong></td>
+        <td><code>/p/</code> <code>/b/</code></td>
+        <td></td>
+        <td></td>
+        <td><code>/t/</code> <code>/d/</code></td>
+        <td></td>
+        <td></td>
+        <td><code>/k/</code> <code>/ɡ/</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><strong>Fricative</strong></td>
+        <td></td>
+        <td><code>/f/</code> <code>/v/</code></td>
+        <td><code>/θ/</code> <code>/ð/</code></td>
+        <td><code>/s/</code> <code>/z/</code></td>
+        <td><code>/ʃ/</code> <code>/ʒ/</code></td>
+        <td></td>
+        <td></td>
+        <td><code>/h/</code></td>
+      </tr>
+      <tr>
+        <td><strong>Affricate</strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><code>/tʃ/</code> <code>/dʒ/</code></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><strong>Nasal</strong></td>
+        <td><code>/m/</code></td>
+        <td></td>
+        <td></td>
+        <td><code>/n/</code></td>
+        <td></td>
+        <td></td>
+        <td><code>/ŋ/</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><strong>Approximant</strong></td>
+        <td><code>/w/</code></td>
+        <td></td>
+        <td></td>
+        <td><code>/ɹ/</code> <code>/l/</code></td>
+        <td></td>
+        <td><code>/j/</code></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="marginnote">
+    Каждая клетка — это «координата» звука. Когда вы видите, что <code>/t/</code> и <code>/d/</code> стоят в одной клетке — значит, они отличаются <strong>только звонкостью</strong>. Это делает их « парой» — и объясняет, почему они так «похожи» на слух.
+  </div>
+
+  <!-- ===== Секция 8 ===== -->
+  <h2>Гласные vs. Согласные: сводная таблица</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Параметр</th>
+        <th>Согласные</th>
+        <th>Гласные</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Поток воздуха</strong></td>
+        <td>Препятствие (полное или частичное)</td>
+        <td>Свободный поток</td>
+      </tr>
+      <tr>
+        <td><strong>Описание по</strong></td>
+        <td>Место + способ образования + звонкость</td>
+        <td>Высота + ряд + округление губ</td>
+      </tr>
+      <tr>
+        <td><strong>Число звуков (AmE)</strong></td>
+        <td>24 согласных</td>
+        <td>12–15 гласных (включая дифтонги)</td>
+      </tr>
+      <tr>
+        <td><strong>Роль в слоге</strong></td>
+        <td>Обычно в начале или конце слога</td>
+        <td>Ядро (середина) слога — всегда один</td>
+      </tr>
+      <tr>
+        <td><strong>Видимость</strong></td>
+        <td>Часто видны (губы смыкаются, язык виден)</td>
+        <td>Позиция языка скрыта внутри рта</td>
+      </tr>
+      <tr>
+        <td><strong>Типичная ошибка русскоговорящих</strong></td>
+        <td>Неправильное место образования</td>
+        <td>Неправильная высота/ряд → «русские» гласные</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ===== Секция 9 ===== -->
+  <h2>Проверь себя</h2>
+
+  <div class="quiz" id="quiz1">
+    <p class="quiz-question">1. Чем фонема отличается от аллофона?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">Фонема — длинный звук, аллофон — короткий</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', true)">Фонема различает значения слов, аллофон — вариант произношения одной фонемы</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">Фонема — русский звук, аллофон — английский</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz1-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz2">
+    <p class="quiz-question">2. Что является ядром (средней частью) слога?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Согласный</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', true)">Гласный</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Любой звук</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz2-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz3">
+    <p class="quiz-question">3. Звуки /t/ и /d/ отличаются по какому параметру?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">Месту образования</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">Способу образования</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', true)">Только по звонкости</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz3-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz4">
+    <p class="quiz-question">4. Какой звук является аллофоном фонемы /t/ в слове <em>water</em>?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">Aspirated [tʰ]</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', true)">Flap [ɾ]</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">Glottal stop [ʔ]</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz4-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz5">
+    <p class="quiz-question">5. Какой параметр описывает гласные, но <em>не</em> используется для согласных?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Место образования</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Способ образования</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', true)">Высота языка</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz5-feedback"></div>
+  </div>
+
+  <!-- ===== Секция 10 ===== -->
+  <h2>Практика на дом</h2>
+
+  <div class="exercise">
+    <p><strong>Задание 1: Карты артикуляции.</strong> Произнесите по очереди все согласные из таблицы (по клеткам). Обратите внимание на <em>место</em> образования: где язык? где губы? Запишите 3 звука, которые даются hardest всего.</p>
+    <p><strong>Задание 2: Минимальные пары.</strong> Прослушайте и сравните (используйте <a href="https://forvo.com" target="_blank">Forvo</a> или <a href="https://tophonetics.com" target="_blank">ToPhonetics.com</a>):<br>
+    <code>/p/</code> — <code>/b/</code>: pat / bat, pin / bin, pull / bull<br>
+    <code>/t/</code> — <code>/d/</code>: ten / den, tie / die, write / ride<br>
+    <code>/s/</code> — <code>/z/</code>: sip / zip,rice / rise, base / bays</p>
+    <p><strong>Задание 3: Карта гласных.</strong> Произнесите 5 гласных подряд: /iː/ → /ɛ/ → /æ/ → /ɑː/ → /uː/. Почувствуйте, как язык движется: передний-высокий → передний-низкий → задний-низкий → задний-высокий. Повторите 5 раз.</p>
+    <p><strong>Задание 4: Видео.</strong> Посмотрите на <a href="https://rachelsenglish.com" target="_blank">Rachel's English</a> видео о разнице между согласными и гласными — она показывает позиции языка для разных классов звуков.</p>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <!-- Bottom Navigation -->
+  <nav class="lesson-pagination" aria-label="Переход по урокам">
+    <a href="0002-ipa-alphabet.html" class="pagination-btn prev">← Урок 2</a>
+    <a href="../index.html" class="pagination-btn index">Оглавление курса</a>
+    <a href="0004-plosives-p-b.html" class="pagination-btn next">Урок 4 →</a>
+  </nav>
+
+  <div class="lesson-footer">
+    <p><strong>Связанные уроки:</strong>
+      <a href="0002-ipa-alphabet.html">← Урок 2: Международный фонетический алфавит (IPA)</a> ·
+      <a href="0004-plosives-p-b.html">Урок 4: /p/ и /b/ — губные взрывные →</a>
+    </p>
+    <p><strong>Справочник:</strong> <a href="../reference/ipa-chart.html">Таблица IPA для американского английского</a></p>
+    <p><strong>Источник:</strong> <a href="https://americanipachart.com" target="_blank">Interactive American IPA Chart</a> — интерактивная таблица IPA с аудио.</p>
+    <p><strong>Есть вопросы?</strong> Спросите у меня — я ваш учитель и могу помочь с любыми непонятными моментами!</p>
+  </div>
+
+</div>
+
+<script>
+function checkAnswer(button, quizId, isCorrect) {
+  const quiz = document.getElementById(quizId);
+  const feedback = document.getElementById(quizId + '-feedback');
+  const buttons = quiz.querySelectorAll('.quiz-options button');
+
+  buttons.forEach(b => {
+    b.disabled = true;
+    b.style.cursor = 'default';
+  });
+
+  if (isCorrect) {
+    button.classList.add('correct');
+    feedback.textContent = '✓ Верно!';
+    feedback.className = 'quiz-feedback show correct';
+  } else {
+    button.classList.add('wrong');
+    buttons.forEach(b => {
+      if (b.getAttribute('onclick').includes('true')) {
+        b.classList.add('correct');
+      }
+    });
+    feedback.textContent = '✗ Неверно. Правильный ответ выделен зелёным.';
+    feedback.className = 'quiz-feedback show wrong';
+  }
+}
+</script>
+
+</body>
+</html>

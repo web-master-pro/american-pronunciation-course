@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 36. Prosody in Conversation</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .intonation-example {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+    .intonation-example .arrow {
+      font-size: 2rem;
+      flex-shrink: 0;
+      width: 50px;
+      text-align: center;
+    }
+    .intonation-example .arrow.up { color: #3b82f6; }
+    .intonation-example .arrow.down { color: #ef4444; }
+    .intonation-example .info h4 {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+    .intonation-example .info p {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+    }
+    .dialogue-box {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+    .dialogue-box .line {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+    }
+    .dialogue-box .line:last-child { margin-bottom: 0; }
+    .dialogue-box .speaker {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--color-accent);
+      min-width: 30px;
+    }
+    .dialogue-box .text {
+      flex: 1;
+    }
+    .dialogue-box .note {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+    .emotion-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .emotion-card {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .emotion-card h4 {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .emotion-card .pitch {
+      font-family: 'Gentium Plus', 'Charis SIL', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .emotion-card .pitch.high { color: #3b82f6; }
+    .emotion-card .pitch.low { color: #ef4444; }
+    .emotion-card .pitch.wide { color: #8b5cf6; }
+    .emotion-card .pitch.narrow { color: #f59e0b; }
+    .emotion-card p {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+    }
+    .turn-taking {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: var(--color-bg-alt);
+      border-radius: 6px;
+    }
+    .turn-taking .cue {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+    .turn-taking .cue-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--color-accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.8rem;
+    }
+    @media (max-width: 600px) {
+      .emotion-grid { grid-template-columns: 1fr; }
+      .intonation-example { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="lesson-container">
+
+    <!-- Top Navigation -->
+  <nav class="site-nav" aria-label="Навигация по курсу">
+    <div class="nav-breadcrumbs">
+      <a href="../index.html">Главная</a>
+      <span class="sep">/</span>
+      <span class="current">Урок 36</span>
+    </div>
+    <div class="nav-links">
+      <a href="../plan.html">План</a>
+      <a href="../reference/ipa-chart.html">Таблица IPA</a>
+      <a href="../index.html">Все уроки</a>
+    </div>
+  </nav>
+
+<div class="lesson-header">
+    <div class="lesson-number">Урок 36 из 38</div>
+    <h1 class="lesson-title">Prosody in Conversation</h1>
+    <p class="lesson-subtitle">Естественная интонация в диалоге: как звучит живой американский английский</p>
+    <p class="lesson-mission">Миссия: <a href="../mission.html">Чистое американское произношение без акцента</a> · Фаза 5: Интеграция</p>
+  </div>
+
+  <!-- ===== Секция 1 ===== -->
+  <h2>Что такое Prosody?</h2>
+
+  <p><strong>Prosody</strong> — это «музыка речи». Она включает:</p>
+  <ul>
+    <li><strong>Intonation</strong> — мелодия голоса (восходящая, нисходящая)</li>
+    <li><strong>Stress</strong> — акцент на слогах и словах</li>
+    <li><strong>Rhythm</strong> — чередование долгих и коротких элементов</li>
+    <li><strong>Tempo</strong> — скорость речи</li>
+    <li><strong>Pauses</strong> — паузы</li>
+  </ul>
+
+  <p>Вы можете произносить каждый звук идеально, но если ваша prosody «плоская» — вы будете звучать как робот. Prosody делает речь <strong>живой и естественной</strong>.</p>
+
+  <div class="insight">
+    <strong>Аналогия:</strong> Prosody — это как музыкальная партия. Текст — это ноты, а prosody — как вы их играете: громко/тихо, быстро/медленно, с акцентами. Один и тот же текст звучит по-разному в зависимости от prosody.
+  </div>
+
+  <!-- ===== Секция 2 ===== -->
+  <h2>Интонация в вопросах и ответах</h2>
+
+  <h3>Вопросы (Questions)</h3>
+
+  <div class="intonation-example">
+    <div class="arrow up">↑</div>
+    <div class="info">
+      <h4>Yes/No Questions — восходящая интонация</h4>
+      <p>Are you coming? ( ↑ ) · Do you like coffee? ( ↑ ) · Is it ready? ( ↑ )</p>
+    </div>
+  </div>
+
+  <div class="intonation-example">
+    <div class="arrow down">↓</div>
+    <div class="info">
+      <h4>Wh- Questions — нисходящая интонация</h4>
+      <p>Where are you going? ( ↓ ) · What do you think? ( ↓ ) · How are you? ( ↓ )</p>
+    </div>
+  </div>
+
+  <h3>Ответы (Answers)</h3>
+
+  <div class="intonation-example">
+    <div class="arrow down">↓</div>
+    <div class="info">
+      <h4>Утвердительные ответы — нисходящая интонация</h4>
+      <p>Yes, I am. ( ↓ ) · Sure, let's go. ( ↓ ) · I think so. ( ↓ )</p>
+    </div>
+  </div>
+
+  <div class="intonation-example">
+    <div class="arrow up">↑</div>
+    <div class="info">
+      <h4>Неуверенные ответы — восходящая интонация</h4>
+      <p>Maybe? ( ↑ ) · I guess so? ( ↑ ) · Not sure... ( ↑ )</p>
+    </div>
+  </div>
+
+  <div class="marginnote">
+    <strong>Важно:</strong> В реальном разговоре интонация не всегда строго восходящая или нисходящая. Американцы часто используют <strong>slightly rising</strong> (слегка восходящую) в конце повествовательных предложений, чтобы показать вовлечённость.
+  </div>
+
+  <!-- ===== Секция 3 ===== -->
+  <h2>Эмоции и pitch range</h2>
+
+  <p><strong>Pitch range</strong> — диапазон высоты голоса. Разные эмоции = разный диапазон:</p>
+
+  <div class="emotion-grid">
+    <div class="emotion-card">
+      <h4>Возбуждение / Радость</h4>
+      <span class="pitch high">↑ Высокий pitch</span>
+      <p>Голос поднимается, широкий диапазон. «Oh my God, that's amazing!»</p>
+    </div>
+    <div class="emotion-card">
+      <h4>Серьёзность / Грусть</h4>
+      <span class="pitch low">↓ Низкий pitch</span>
+      <p>Голос опускается, узкий диапазон. «I'm sorry for your loss.»</p>
+    </div>
+    <div class="emotion-card">
+      <h4>Восхищение</h4>
+      <span class="pitch wide">↕ Широкий диапазон</span>
+      <p>От низкого к высокому: «That is... incredible!»</p>
+    </div>
+    <div class="emotion-card">
+      <h4>Скука / Апатия</h4>
+      <span class="pitch narrow">→ Узкий диапазон</span>
+      <p>Монотонный, без изменений: «Yeah, whatever.»</p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>Практика:</strong> Скажите «Really?» 5 раз с разными эмоциями: удивление, скептицизм, радость, злость, скука. Обратите внимание на разницу в pitch.
+  </div>
+
+  <!-- ===== Секция 4 ===== -->
+  <h2>Turn-taking cues в диалоге</h2>
+
+  <p>В живом разговоре люди используют prosodic cues, чтобы показать, что они закончили говорить и передают слово:</p>
+
+  <div class="turn-taking">
+    <div class="cue">
+      <span class="cue-icon">↓</span>
+      <span><strong>Нисходящая интонация</strong> в конце фразы = «Я закончил»</span>
+    </div>
+    <div class="cue">
+      <span class="cue-icon">⏸</span>
+      <span><strong>Пауза</strong> после фразы = «Ваша очередь»</span>
+    </div>
+    <div class="cue">
+      <span class="cue-icon">↑</span>
+      <span><strong>Восходящая интонация</strong> = «Я хочу продолжить» или «Вы согласны?»</span>
+    </div>
+    <div class="cue">
+      <span class="cue-icon">🔊</span>
+      <span><strong>Уменьшение громкости</strong> в конце фразы = «Я заканчиваю»</span>
+    </div>
+  </div>
+
+  <div class="marginnote">
+    <strong>Совет:</strong> Слушайте подкасты или смотрите интервью на YouTube. Обратите внимание на паузы и интонацию в конце фраз — это cues для turn-taking.
+  </div>
+
+  <!-- ===== Секция 5 ===== -->
+  <h2>Практика: shadowing диалога</h2>
+
+  <div class="dialogue-box">
+    <div class="line">
+      <span class="speaker">A:</span>
+      <div class="text">
+        <div>Hey, have you been to that new restaurant downtown?</div>
+        <div class="note">↑ (yes/no question, rising intonation)</div>
+      </div>
+    </div>
+    <div class="line">
+      <span class="speaker">B:</span>
+      <div class="text">
+        <div>No, not yet. Is it any good?</div>
+        <div class="note">↓ then ↑ (statement then question)</div>
+      </div>
+    </div>
+    <div class="line">
+      <span class="speaker">A:</span>
+      <div class="text">
+        <div>Oh, it's amazing! The pasta is incredible.</div>
+        <div class="note">↑ wide pitch range (excitement)</div>
+      </div>
+    </div>
+    <div class="line">
+      <span class="speaker">B:</span>
+      <div class="text">
+        <div>Really? I love good pasta. When should we go?</div>
+        <div class="note">↑ then ↓ (surprise then wh-question)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <p><strong>Задание:</strong> Найдите диалог из любимого TV show (30–60 секунд). Выполните shadowing всего диалога, обращая внимание на:</p>
+    <ol>
+      <li>Интонацию вопросов и ответов</li>
+      <li>Эмоциональный pitch range</li>
+      <li>Паузы и turn-taking cues</li>
+      <li>Ритм и скорость</li>
+    </ol>
+    <p>Запишите себя и сравните с оригиналом. Сколько cues вы передали?</p>
+  </div>
+
+  <!-- ===== Quiz ===== -->
+  <h2>Проверь себя</h2>
+
+  <div class="quiz" id="quiz1">
+    <p class="quiz-question">1. Какая интонация у yes/no вопросов?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">Нисходящая</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', true)">Восходящая</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">Монотонная</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz1-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz2">
+    <p class="quiz-question">2. Как cue показать, что вы закончили говорить?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Повысить голос</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', true)">Нисходящая интонация + пауза</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Говорить быстрее</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz2-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz3">
+    <p class="quiz-question">3. Что такое prosody?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">Произношение отдельных звуков</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', true)">Мелодия, ритм и темп речи</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">Правильное ударение в словах</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz3-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz4">
+    <p class="quiz-question">4. Какой pitch range соответствует радости?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">Низкий, узкий</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', true)">Высокий, широкий</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">Монотонный</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz4-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz5">
+    <p class="quiz-question">5. Какая интонация у wh- вопросов (What, Where, How)?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz5', true)">Нисходящая</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Восходящая</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Волнообразная</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz5-feedback"></div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <!-- Bottom Navigation -->
+  <nav class="lesson-pagination" aria-label="Переход по урокам">
+    <a href="0035-problem-sounds.html" class="pagination-btn prev">← Урок 35</a>
+    <a href="../index.html" class="pagination-btn index">Оглавление курса</a>
+    <a href="0037-reading-aloud.html" class="pagination-btn next">Урок 37 →</a>
+  </nav>
+
+  <div class="lesson-footer">
+    <p><strong>Предыдущий урок:</strong> <a href="0035-problem-sounds.html">← Урок 35: Problem Sounds: глубокая проработка</a></p>
+    <p><strong>Следующий урок:</strong> <a href="0037-reading-aloud.html">Урок 37: Reading Aloud →</a></p>
+    <p><strong>Есть вопросы?</strong> Спросите у меня — я ваш учитель и могу помочь с любыми непонятными моментами!</p>
+  </div>
+
+</div>
+
+<script>
+function checkAnswer(button, quizId, isCorrect) {
+  const quiz = document.getElementById(quizId);
+  const feedback = document.getElementById(quizId + '-feedback');
+  const buttons = quiz.querySelectorAll('.quiz-options button');
+
+  buttons.forEach(b => {
+    b.disabled = true;
+    b.style.cursor = 'default';
+  });
+
+  if (isCorrect) {
+    button.classList.add('correct');
+    feedback.textContent = '✓ Верно!';
+    feedback.className = 'quiz-feedback show correct';
+  } else {
+    button.classList.add('wrong');
+    buttons.forEach(b => {
+      if (b.getAttribute('onclick').includes('true')) {
+        b.classList.add('correct');
+      }
+    });
+    feedback.textContent = '✗ Неверно. Правильный ответ выделен зелёным.';
+    feedback.className = 'quiz-feedback show wrong';
+  }
+}
+</script>
+
+</body>
+</html>

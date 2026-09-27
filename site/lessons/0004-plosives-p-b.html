@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 4. /p/ и /b/ — Губные взрывные</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .sound-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+    .sound-card .phoneme-symbol {
+      font-family: 'Gentium Plus', 'Charis SIL', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      flex-shrink: 0;
+      min-width: 60px;
+      text-align: center;
+    }
+    .sound-card .phoneme-info {
+      flex: 1;
+    }
+    .sound-card .phoneme-info h4 {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .sound-card .phoneme-info p {
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+    .aspiration-demo {
+      display: flex;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .aspiration-demo .demo-box {
+      flex: 1;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .aspiration-demo .demo-box h4 {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: var(--color-accent);
+    }
+    .aspiration-demo .demo-box .big-ipa {
+      font-family: 'Gentium Plus', 'Charis SIL', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      display: block;
+      margin: 0.4rem 0;
+    }
+    .aspiration-demo .demo-box p {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+    }
+    .minimal-pair-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .minimal-pair-row:last-child {
+      border-bottom: none;
+    }
+    .minimal-pair-row .word-a {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      min-width: 80px;
+    }
+    .minimal-pair-row .slash {
+      color: var(--color-text-muted);
+    }
+    .minimal-pair-row .word-b {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      min-width: 80px;
+    }
+    .minimal-pair-row .ipa-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+      margin-left: auto;
+    }
+    @media (max-width: 600px) {
+      .aspiration-demo { flex-direction: column; }
+      .sound-card { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="lesson-container">
+
+    <!-- Top Navigation -->
+  <nav class="site-nav" aria-label="Навигация по курсу">
+    <div class="nav-breadcrumbs">
+      <a href="../index.html">Главная</a>
+      <span class="sep">/</span>
+      <span class="current">Урок 4</span>
+    </div>
+    <div class="nav-links">
+      <a href="../plan.html">План</a>
+      <a href="../reference/ipa-chart.html">Таблица IPA</a>
+      <a href="../index.html">Все уроки</a>
+    </div>
+  </nav>
+
+<div class="lesson-header">
+    <div class="lesson-number">Урок 4 из 38</div>
+    <h1 class="lesson-title">/p/ и /b/ — Губные взрывные</h1>
+    <p class="lesson-subtitle">Первые согласные, которые мы поставим — и главный урок об aspiration</p>
+    <p class="lesson-mission">Миссия: <a href="../mission.html">Чистое американское произношение без акцента</a> · Фаза 1: Блок A — Согласные</p>
+  </div>
+
+  <!-- ===== Секция 1 ===== -->
+  <h2>Начинаем ставить звуки</h2>
+
+  <p>Теория позади — теперь начинаем <strong>практику</strong>. Мы пройдём согласные звуки английского языка группами, начиная с самых простых. <code>/p/</code> и <code>/b/</code> — первая пара, потому что их артикуляция интуитивно понятна: обе губы смыкаются и размыкаются.</p>
+
+  <p>Как вы помните из <a href="0003-sound-classification.html">урока 3</a>, <code>/p/</code> и <code>/b/</code> — это <strong>билабиальные взрывные</strong> (bilabial plosives). Они отличаются только одним параметром: <strong>звонкостью</strong>. <code>/p/</code> — глухой, <code>/b/</code> — звонкий.</p>
+
+  <div class="insight">
+    <strong>Ключевая мысль:</strong> Русские «п» и «б» <em>похожи</em> на английские, но есть важные различия: (1) в английском <code>/p/</code> в начале слога сильно придыхательный (aspirated), (2) английский <code>/b/</code> «слабее» русского «б» — он не такой взрывной. Эти нюансы делают разницу между «с русским акцентом» и «по-американски».
+  </div>
+
+  <!-- ===== Секция 2 ===== -->
+  <h2>Артикуляция: как произносить /p/ и /b/</h2>
+
+  <div class="sound-card">
+    <div class="phoneme-symbol">/p/</div>
+    <div class="phoneme-info">
+      <h4>/p/ — глухой билабиальный взрывной</h4>
+      <p><strong>Место:</strong> Обе губы плотно смыкаются.</p>
+      <p><strong>Способ:</strong> Воздух на мгновение полностью блокируется губами. Затем губы размыкаются — воздух «взрывается» наружу.</p>
+      <p><strong>Голосовые связки:</strong> Не вибрируют (глухой звук).</p>
+      <p><strong>Примеры:</strong> <em>pin, pay, stop, map</em></p>
+    </div>
+  </div>
+
+  <div class="sound-card">
+    <div class="phoneme-symbol">/b/</div>
+    <div class="phoneme-info">
+      <h4>/b/ — звонкий билабиальный взрывной</h4>
+      <p><strong>Место:</strong> То же — обе губы смыкаются.</p>
+      <p><strong>Способ:</strong> То же — полная блокировка, затем «взрыв».</p>
+      <p><strong>Голосовые связки:</strong> Вибрируют (звонкий звук).</p>
+      <p><strong>Примеры:</strong> <em>bin, bay, job, cab</em></p>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <p><strong>Практика:</strong> Прижмите губы друг к другу. Наберите воздух за губами. Резко разомкните губы — почувствуйте «взрыв» воздуха. Повторите: <code>/p/</code>... <code>/p/</code>... <code>/p/</code>. Теперь добавьте голос: <code>/b/</code>... <code>/b/</code>... <code>/b/</code>. Вибрация в горле — вот различие.</p>
+  </div>
+
+  <!-- ===== Секция 3 ===== -->
+  <h2>Aspiration (придыхание): главный секрет /p/</h2>
+
+  <p>Это <strong>самое важное различие</strong> между русским и английским <code>/p/</code>. В американском английском <code>/p/</code> в начале слога перед гласным произносится с сильным придыханием — <strong>аспирацией</strong> [pʰ]. Это означает, что после «взрыва» губ следует мощный выдох воздуха.</p>
+
+  <div class="aspiration-demo">
+    <div class="demo-box">
+      <h4>Aspirated [pʰ]</h4>
+      <span class="big-ipa">pin</span>
+      <p>При произношении поднесите руку ко рту — вы почувствуете <strong>сильную</strong> струю воздуха после <code>/p/</code>.</p>
+    </div>
+    <div class="demo-box">
+      <h4>Unaspirated [p]</h4>
+      <span class="big-ipa">spin</span>
+      <p>После <code>/s/</code> придыхания <strong>нет</strong> — <code>/p/</code> звучит «мягче», без струи воздуха.</p>
+    </div>
+  </div>
+
+  <div class="marginnote">
+    <strong>Почему так?</strong> В английском <code>/s/</code> уже создаёт поток воздуха, поэтому после него аспирация не нужна. Это правило действует для всех глухих взрывных: <code>/p/, /t/, /k/</code> — аспирированы в начале слога, но <strong>не</strong> аспирированы после <code>/s/</code>.
+  </div>
+
+  <div class="tip">
+    <strong>Тест для проверки:</strong> Поднесите тонкую полоску бумаги к губам. Произнесите <em>pin</em> — бумага должна отклониться. Произнесите <em>spin</em> — бумага почти не сдвинется. Если разница заметна — вы всё делаете правильно!
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Контекст</th>
+        <th>Произношение</th>
+        <th>Aspiration</th>
+        <th>Примеры</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/p/</code> в начале слога перед гласным</td>
+        <td>[pʰ]</td>
+        <td>Сильная</td>
+        <td><em>pin, pay, pop, park</em></td>
+      </tr>
+      <tr>
+        <td><code>/p/</code> после <code>/s/</code></td>
+        <td>[p]</td>
+        <td>Нет</td>
+        <td><em>spin, spin, spot, spark</em></td>
+      </tr>
+      <tr>
+        <td><code>/p/</code> в конце слога</td>
+        <td>[p] или [p̚]</td>
+        <td>Нет</td>
+        <td><em>stop, cup, map</em></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ===== Секция 4 ===== -->
+  <h2>/p/ vs. /b/: звонкость и её нюансы</h2>
+
+  <p>Различие между <code>/p/</code> и <code>/b/</code> — в работе голосовых связок. Проверим:</p>
+
+  <div class="exercise">
+    <p><strong>Тест на звонкость:</strong> Приложите пальцы к горлу (адамово яблоко). Произнесите <code>/p/</code>... <code>/p/</code>... <code>/p/</code> — связки <strong>не</strong> вибрируют. Теперь <code>/b/</code>... <code>/b/</code>... <code>/b/</code> — почувствуйте лёгкую вибрацию. Удерживайте <code>/b/</code> дольше: <code>/bbbbb/</code> — вибрация должна быть отчётливой.</p>
+  </div>
+
+  <div class="insight">
+    <strong>Важный нюанс:</strong> Английский <code>/b/</code> обычно <strong>слабее</strong> русского «б». В русском «б» — это мощный взрыв (как в слове «банка»). В английском <code>/b/</code> взрыв мягче, голосовые связки включаются <em>до</em> или <em>во время</em> размыкания губ (a phenomenon called <strong>prevoicing</strong>). Русскоговорящие часто делают английский <code>/b/</code> слишком «ударным» — старайтесь делать его мягче.
+  </div>
+
+  <!-- ===== Секция 5 ===== -->
+  <h2>Минимальные пары: тренируем различие</h2>
+
+  <p>Минимальные пары — слова, различающиеся только одним звуком. Это лучший способ привыкнуть к различию <code>/p/</code> и <code>/b/</code>:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th><code>/p/</code></th>
+        <th><code>/b/</code></th>
+        <th>Смысл</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>pat</em> [pʰæt]</td>
+        <td><em>bat</em> [bæt]</td>
+        <td>хлопать / летучая мышь</td>
+      </tr>
+      <tr>
+        <td><em>pin</em> [pʰɪn]</td>
+        <td><em>bin</em> [bɪn]</td>
+        <td>булавка / корзина</td>
+      </tr>
+      <tr>
+        <td><em>cap</em> [kʰæp]</td>
+        <td><em>cab</em> [kʰæb]</td>
+        <td>шапка / кэб</td>
+      </tr>
+      <tr>
+        <td><em>pie</em> [pʰaɪ]</td>
+        <td><em>buy</em> [baɪ]</td>
+        <td>пирог / покупать</td>
+      </tr>
+      <tr>
+        <td><em>poke</em> [pʰoʊk]</td>
+        <td><em>boat</em> [boʊt]</td>
+        <td>тыкать / лодка</td>
+      </tr>
+      <tr>
+        <td><em>pull</em> [pʰʊl]</td>
+        <td><em>bull</em> [bʊl]</td>
+        <td>тянуть / бык</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="exercise">
+    <p><strong>Упражнение:</strong> Произнесите каждую пару медленно, затем быстрее. Обратите внимание на струю воздуха после <code>/p/</code> (в <em>pat, pin, cap, pie</em>) и на вибрацию горла в <code>/b/</code> (в <em>bat, bin, cab, buy</em>).</p>
+  </div>
+
+  <!-- ===== Секция 6 ===== -->
+  <h2>Типичные ошибки русскоговорящих</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Ошибка</th>
+        <th>Почему</th>
+        <th>Как исправить</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Слабая или отсутствующая аспирация <code>/p/</code></td>
+        <td>В русском <code>п</code> нет аспирации</td>
+        <td>Тест с бумагой: <em>pin</em> должен «задувать» полоску</td>
+      </tr>
+      <tr>
+        <td>Слишком «ударный» <code>/b/</code></td>
+        <td>Русский <code>б</code> — мощный взрыв</td>
+        <td>Делайте <code>/b/</code> мягче, «ленивее»</td>
+      </tr>
+      <tr>
+        <td>Не различают <code>/p/</code> и <code>/b/</code> в конце слов</td>
+        <td>В русском финальное обеззвучивание</td>
+        <td>В английском <code>/b/</code> в конце слова всё ещё звонкий!</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="marginnote">
+    <strong>Ключевое:</strong> В русском языке звонкие согласные в конце слова обеззвучиваются («хлеб» → [хлэп]). В английском это <strong>не происходит</strong> — <code>/b/</code> в <em>cab</em> остаётся звонким. Это одна из главных причин «русского акцента».
+  </div>
+
+  <!-- ===== Секция 7 ===== -->
+  <h2>Практические фразы</h2>
+
+  <div class="exercise">
+    <p><strong>Прочитайте эти фразы вслух, обращая внимание на аспирацию <code>/p/</code> и звонкость <code>/b/</code>:</strong></p>
+    <ol>
+      <li><em>Please, please, please</em> — почувствуйте струю воздуха на каждом <code>/p/</code></li>
+      <li><em>Big black bag</em> — всё <code>/b/</code>, без аспирации</li>
+      <li><em>A piece of pie</em> — <code>/p/</code> аспирирован в начале (<em>piece</em>, <em>pie</em>), нет аспирации в <em>of</em></li>
+      <li><em>Bob bought a bike</em> — чередование <code>/b/</code> и безударных слогов</li>
+      <li><em>Pass the pepper, please</em> — серия аспирированных <code>/p/</code></li>
+    </ol>
+  </div>
+
+  <!-- ===== Quiz ===== -->
+  <h2>Проверь себя</h2>
+
+  <div class="quiz" id="quiz1">
+    <p class="quiz-question">1. Чем <code>/p/</code> отличается от <code>/b/</code>?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">Местом образования (губы vs. зубы)</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">Способом образования</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', true)">Звонкостью: /p/ глухой, /b/ звонкий</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz1-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz2">
+    <p class="quiz-question">2. В каком слове <code>/p/</code> аспирирован [pʰ]?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz2', true)">pin</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">spin</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">stop</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz2-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz3">
+    <p class="quiz-question">3. Почему в слове <em>spin</em> нет аспирации после <code>/p/</code>?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">Потому что <code>/p/</code> — звонкий</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', true)">Потому что <code>/p/</code> идёт после <code>/s/</code></button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">Потому что <code>/p/</code> в конце слова</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz3-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz4">
+    <p class="quiz-question">4. Какое из этих слов заканчивается на звонкий <code>/b/</code>?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">cap</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">stop</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', true)">cab</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz4-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz5">
+    <p class="quiz-question">5. Как проверить, что вы правильно произносите аспирацию <code>/p/</code>?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Приложить пальцы к горлу</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', true)">Поднести полоску бумаги к губам — она должна отклониться</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Закрыть нос — воздух не должен идти через нос</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz5-feedback"></div>
+  </div>
+
+  <!-- ===== Практика на дом ===== -->
+  <h2>Практика на дом</h2>
+
+  <div class="exercise">
+    <p><strong>Задание 1: Тест с бумагой.</strong> Поднесите полоску бумаги к губам. Произнесите 10 слов с <code>/p/</code> в начале слога: <em>pin, pay, park, pie, pull, pig, pot, pen, pan, pet</em>. Бумага должна отклоняться каждый раз.</p>
+    <p><strong>Задание 2: Минимальные пары на слух.</strong> Прослушайте пары на <a href="https://forvo.com" target="_blank">Forvo</a>: <em>pat/bat, pin/bin, cap/cab, pie/buy, pull/bull</em>. Определите на слух, где <code>/p/</code>, а где <code>/b/</code>.</p>
+    <p><strong>Задание 3: Фразы.</strong> Произнесите 5 раз каждую фразу из секции 6. Запишите себя на телефон и прослушайте.</p>
+    <p><strong>Задание 4: Видео.</strong> Посмотрите на <a href="https://rachelsenglish.com" target="_blank">Rachel's English</a> видео о <code>/p/</code> и <code>/b/</code> — она показывает позицию губ и объясняет аспирацию.</p>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <!-- Bottom Navigation -->
+  <nav class="lesson-pagination" aria-label="Переход по урокам">
+    <a href="0003-sound-classification.html" class="pagination-btn prev">← Урок 3</a>
+    <a href="../index.html" class="pagination-btn index">Оглавление курса</a>
+    <a href="0005-plosives-t-d.html" class="pagination-btn next">Урок 5 →</a>
+  </nav>
+
+  <div class="lesson-footer">
+    <p><strong>Предыдущий урок:</strong> <a href="0003-sound-classification.html">← Урок 3: Классификация звуков</a></p>
+    <p><strong>Следующий урок:</strong> <a href="0005-plosives-t-d.html">Урок 5: /t/ и /d/ — Альвеолярные взрывные →</a></p>
+    <p><strong>Рекомендуемые ресурсы:</strong> <a href="https://rachelsenglish.com" target="_blank">Rachel's English</a> — серия «P as in Pate» и «B as in Boy». <a href="https://tophonetics.com" target="_blank">ToPhonetics.com</a> — для проверки транскрипции.</p>
+    <p><strong>Есть вопросы?</strong> Спросите у меня — я ваш учитель и могу помочь с любыми непонятными моментами!</p>
+  </div>
+
+</div>
+
+<script>
+function checkAnswer(button, quizId, isCorrect) {
+  const quiz = document.getElementById(quizId);
+  const feedback = document.getElementById(quizId + '-feedback');
+  const buttons = quiz.querySelectorAll('.quiz-options button');
+
+  buttons.forEach(b => {
+    b.disabled = true;
+    b.style.cursor = 'default';
+  });
+
+  if (isCorrect) {
+    button.classList.add('correct');
+    feedback.textContent = '✓ Верно!';
+    feedback.className = 'quiz-feedback show correct';
+  } else {
+    button.classList.add('wrong');
+    buttons.forEach(b => {
+      if (b.getAttribute('onclick').includes('true')) {
+        b.classList.add('correct');
+      }
+    });
+    feedback.textContent = '✗ Неверно. Правильный ответ выделен зелёным.';
+    feedback.className = 'quiz-feedback show wrong';
+  }
+}
+</script>
+
+</body>
+</html>

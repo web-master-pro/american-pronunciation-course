@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 35. Problem Sounds: глубокая проработка</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .problem-rank {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+    .problem-rank .rank-badge {
+      font-family: var(--font-sans);
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: white;
+      background: var(--color-accent);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .problem-rank .rank-content h4 {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+    .problem-rank .rank-content .ipa-big {
+      font-family: 'Gentium Plus', 'Charis SIL', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+    .problem-rank .rank-content p {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      margin-top: 0.3rem;
+    }
+    .drill-box {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1rem;
+      margin: 0.75rem 0;
+    }
+    .drill-box h5 {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 0.4rem;
+    }
+    .drill-box p {
+      font-size: 0.85rem;
+      margin-bottom: 0.3rem;
+    }
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    .checklist li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.9rem;
+    }
+    .checklist li .check {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--color-border);
+      border-radius: 4px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .checklist li .check.done {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: white;
+    }
+    .comparison-tip {
+      display: flex;
+      gap: 1rem;
+      margin: 0.75rem 0;
+    }
+    .comparison-tip .wrong-way, .comparison-tip .right-way {
+      flex: 1;
+      padding: 0.75rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+    }
+    .comparison-tip .wrong-way {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+    }
+    .comparison-tip .right-way {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+    }
+    .comparison-tip .label {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .wrong-way .label { color: #dc2626; }
+    .right-way .label { color: #16a34a; }
+    @media (max-width: 600px) {
+      .comparison-tip { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<div class="lesson-container">
+
+    <!-- Top Navigation -->
+  <nav class="site-nav" aria-label="Навигация по курсу">
+    <div class="nav-breadcrumbs">
+      <a href="../index.html">Главная</a>
+      <span class="sep">/</span>
+      <span class="current">Урок 35</span>
+    </div>
+    <div class="nav-links">
+      <a href="../plan.html">План</a>
+      <a href="../reference/ipa-chart.html">Таблица IPA</a>
+      <a href="../index.html">Все уроки</a>
+    </div>
+  </nav>
+
+<div class="lesson-header">
+    <div class="lesson-number">Урок 35 из 38</div>
+    <h1 class="lesson-title">Problem Sounds: глубокая проработка</h1>
+    <p class="lesson-subtitle">Топ-5 проблемных звуков для русскоговорящих: почему они сложны и как их отработать</p>
+    <p class="lesson-mission">Миссия: <a href="../mission.html">Чистое американское произношение без акцента</a> · Фаза 5: Интеграция</p>
+  </div>
+
+  <!-- ===== Секция 1 ===== -->
+  <h2>Топ-5 проблемных звуков</h2>
+
+  <p>На основе анализа типичных ошибок русскоговорящих, вот <strong>пять звуков</strong>, которые вызывают наибольшие трудности. Ранжированы по частоте и серьёзности ошибок.</p>
+
+  <div class="problem-rank">
+    <div class="rank-badge">1</div>
+    <div class="rank-content">
+      <h4>/æ/ — как в <em>cat</em>, <em>bad</em>, <em>man</em></h4>
+      <span class="ipa-big">/æ/</span>
+      <p>Низкий передний гласный. Русский язык не имеет этого звука. Русскоговорящие обычно подменяют его на /ɛ/ (как «э») или /a/ (как «а»).</p>
+    </div>
+  </div>
+
+  <div class="problem-rank">
+    <div class="rank-badge">2</div>
+    <div class="rank-content">
+      <h4>/θ/ и /ð/ — как в <em>think</em> и <em>this</em></h4>
+      <span class="ipa-big">/θ/ /ð/</span>
+      <p>Дентальные фрикативы. Русский язык не имеет звуков с языком между зубами. Подменяются на /s/ и /z/ или /t/ и /d/.</p>
+    </div>
+  </div>
+
+  <div class="problem-rank">
+    <div class="rank-badge">3</div>
+    <div class="rank-content">
+      <h4>/ɹ/ — как в <em>red</em>, <em>car</em>, <em>world</em></h4>
+      <span class="ipa-big">/ɹ/</span>
+      <p>Американский r. Русский «р» — альвеолярный дрожащий, английский — post-alveolar approximant. Совершенно разная артикуляция.</p>
+    </div>
+  </div>
+
+  <div class="problem-rank">
+    <div class="rank-badge">4</div>
+    <div class="rank-content">
+      <h4>/ɪ/ — как in <em>sit</em>, <em>big</em>, <em>happy</em></h4>
+      <span class="ipa-big">/ɪ/</span>
+      <p>Короткий передний гласный. Русскоговорящие подменяют его на /iː/ (долгий «и»). «Sheep» vs. «ship» — классическая ошибка.</p>
+    </div>
+  </div>
+
+  <div class="problem-rank">
+    <div class="rank-badge">5</div>
+    <div class="rank-content">
+      <h4>/ŋ/ — как в <em>sing</em>, <em>bank</em>, <em>think</em></h4>
+      <span class="ipa-big">/ŋ/</span>
+      <p>Велярный носовой. Русскоговорящие часто добавляют /g/ после: «sing» → «sing-g». Или подменяют на /n/.</p>
+    </div>
+  </div>
+
+  <!-- ===== Секция 2 ===== -->
+  <h2>Проработка: /æ/</h2>
+
+  <p><strong>Почему это сложно:</strong> В русском языке нет звука, где челюсть опущена максимально, а язык натянут вперёд. Русское «а» — задний гласный, а /æ/ — передний.</p>
+
+  <div class="comparison-tip">
+    <div class="wrong-way">
+      <div class="label">✗ Ошибка</div>
+      <p>Говорите <em>cat</em> как «кэт» с русским «э» → /kɛt/</p>
+    </div>
+    <div class="right-way">
+      <div class="label">✓ Правильно</div>
+      <p>Челюсть опущена, язык натянут вперёд, губы слегка растянуты → /kæt/</p>
+    </div>
+  </div>
+
+  <div class="drill-box">
+    <h5>ДрILL 1: Уголки рта</h5>
+    <p>Скажите «ааа» с русским «а». Затем начните растягивать уголки рта в стороны (как улыбка), не закрывая челюсть. Вы должны услышать, как звук меняется: /ɑː/ → /æ/.</p>
+  </div>
+
+  <div class="drill-box">
+    <h5>ДрILL 2: Метроном</h5>
+    <p>Произнесите: cat — cat — cat (медленно). Каждый раз проверяйте: челюсть опущена? Язык вперёд? Запишите и сравните.</p>
+  </div>
+
+  <div class="drill-box">
+    <h5>ДрILL 3: Минимальные пары</h5>
+    <p>bed / bad, set / sat, pen / pan, men / man. Произносите пары, фокусируясь на разнице.</p>
+  </div>
+
+  <!-- ===== Секция 3 ===== -->
+  <h2>Проработка: /θ/ и /ð/</h2>
+
+  <p><strong>Почему это сложно:</strong> Русский язык не использует язык между зубами для создания шума. Это требует новой артикуляционной привычки.</p>
+
+  <div class="comparison-tip">
+    <div class="wrong-way">
+      <div class="label">✗ Ошибка</div>
+      <p><em>think</em> → «синк» (/sɪŋk/). Язык за зубами.</p>
+    </div>
+    <div class="right-way">
+      <div class="label">✓ Правильно</div>
+      <p><em>think</em> → /θɪŋk/. Кончик языка между зубами, воздух проходит через щель.</p>
+    </div>
+  </div>
+
+  <div class="drill-box">
+    <h5>ДрILL 1: Зеркало</h5>
+    <p>Встаньте перед зеркалом. Высуньте кончик языка между зубами (1–2 мм). Произнесите «sss». Затем медленно выдвигайте язык вперёд, пока звук не станет «thhh». Это /θ/.</p>
+  </div>
+
+  <div class="drill-box">
+    <h5>ДрILL 2: Звонкий вариант</h5>
+    <p>Та же позиция, но с голосом: «zzz» → «thhh». Это /ð/. Проверьте: горло вибрирует? Если да — правильно.</p>
+  </div>
+
+  <div class="drill-box">
+    <h5>ДрILL 3: Предложения</h5>
+    <p>«I think this is the thinnest one.» — 4 раза в день, медленно, с фокусом на каждом /θ/ и /ð/.</p>
+  </div>
+
+  <!-- ===== Секция 4 ===== -->
+  <h2>Проработка: /ɹ/</h2>
+
+  <p><strong>Почему это сложно:</strong> Русский «р» — кончик языка вибрирует на альвеолах. Английский /ɹ/ — кончик загнут вверх, вибрации нет, звук создаётся резонансом.</p>
+
+  <div class="comparison-tip">
+    <div class="wrong-way">
+      <div class="label">✗ Ошибка</div>
+      <p>Русский «р» с вибрацией кончика языка. Звук «жёсткий».</p>
+    </div>
+    <div class="right-way">
+      <div class="label">✓ Правильно</div>
+      <p>Кончик языка загнут вверх, не касается ничего. Звук «мягкий», «плавный».</p>
+    </div>
+  </div>
+
+  <div class="drill-box">
+    <h5>ДрILL 1: «Дабл»</h5>
+    <p>Произнесите «d-d-d» (быстро). Затем добавьте гласный: «duh-duh-duh». Теперь медленно тяните: «drrr-rrr-rrr». Кончик языка должен быть загнут вверх и не касаться альвеол.</p>
+  </div>
+
+  <div class="drill-box">
+    <h5>ДрILL 2: Перед гласными</h5>
+    <p>ree, raw, row, ray, rye. Обратите внимание: кончик языка всегда загнут, никогда не касается альвеол.</p>
+  </div>
+
+  <div class="drill-box">
+    <h5>ДрILL 3: В конце слов</h5>
+    <p>car, far, door, beer, here. Американский /ɹ/ слышен даже в конце слова (в отличие от британского).</p>
+  </div>
+
+  <!-- ===== Секция 5 ===== -->
+  <h2>Проработка: /ɪ/</h2>
+
+  <p><strong>Почему это сложно:</strong> Русский «и» — всегда долгий и напряжённый. /ɪ/ — короткий и расслабленный. Русскоговорящие не чувствуют разницу.</p>
+
+  <div class="comparison-tip">
+    <div class="wrong-way">
+      <div class="label">✗ Ошибка</div>
+      <p><em>ship</em> → «шип» (/ʃiːp/). Слишком долгий и напряжённый гласный.</p>
+    </div>
+    <div class="right-way">
+      <div class="label">✓ Правильно</div>
+      <p><em>ship</em> → /ʃɪp/. Короткий, расслабленный, язык ниже.</p>
+    </div>
+  </div>
+
+  <div class="drill-box">
+    <h5>ДрILL 1: Расслабь челюсть</h5>
+    <p>Произнесите «ииии» (долгий). Затем быстро расслабьте челюсть — звук должен стать короче и «глуше». Это /ɪ/.</p>
+  </div>
+
+  <div class="drill-box">
+    <h5>ДрILL 2: Пара и/ɪ</h5>
+    <p>seat / sit, beat / bit, feet / fit, heat / hit. Произносите пары, фокусируясь на разнице: /iː/ — длинный, напряжённый; /ɪ/ — короткий, расслабленный.</p>
+  </div>
+
+  <!-- ===== Секция 6 ===== -->
+  <h2>Проработка: /ŋ/</h2>
+
+  <p><strong>Почему это сложно:</strong> Русский язык имеет /n/, но не /ŋ/. Русскоговорящие добавляют /g/ после («sing-g») или заменяют на /n/.</p>
+
+  <div class="comparison-tip">
+    <div class="wrong-way">
+      <div class="label">✗ Ошибка</div>
+      <p><em>sing</em> → «син-g» или «син». Добавление /g/ или подмена на /n/.</p>
+    </div>
+    <div class="right-way">
+      <div class="label">✓ Правильно</div>
+      <p><em>sing</em> → /sɪŋ/. Задняя часть языка касается мягкого нёба, воздух через нос. Без /g/.</p>
+    </div>
+  </div>
+
+  <div class="drill-box">
+    <h5>ДрILL 1: Без «g»</h5>
+    <p>Произнесите «sing». Затем удерживайте конечный звук, не добавляя /g/. Должен быть только носовой звук «ng».</p>
+  </div>
+
+  <div class="drill-box">
+    <h5>ДрILL 2: Минимальные пары</h5>
+    <p>sing / sin, ring / win, long / lawn. Обратите внимание: /ŋ/ — задний носовой, /n/ — передний.</p>
+  </div>
+
+  <!-- ===== Секция 7 ===== -->
+  <h2>Self-Assessment Checklist</h2>
+
+  <p>Отметьте каждый пункт, когда вы уверенно произносите звук:</p>
+
+  <ul class="checklist">
+    <li><span class="check" onclick="this.classList.toggle('done')"></span> /æ/ — могу произнести «cat» с правильным гласным</li>
+    <li><span class="check" onclick="this.classList.toggle('done')"></span> /æ/ — различаю bed/bad на слух</li>
+    <li><span class="check" onclick="this.classList.toggle('done')"></span> /θ/ — кончик языка между зубами, без /s/</li>
+    <li><span class="check" onclick="this.classList.toggle('done')"></span> /ð/ — различаю this/dis на слух</li>
+    <li><span class="check" onclick="this.classList.toggle('done')"></span> /ɹ/ — кончик загнут, нет вибрации</li>
+    <li><span class="check" onclick="this.classList.toggle('done')"></span> /ɹ/ — различаю right/light на слух</li>
+    <li><span class="check" onclick="this.classList.toggle('done')"></span> /ɪ/ — короткий и расслабленный</li>
+    <li><span class="check" onclick="this.classList.toggle('done')"></span> /ɪ/ — различаю ship/sheep на слух</li>
+    <li><span class="check" onclick="this.classList.toggle('done')"></span> /ŋ/ — нет добавления /g/ в конце</li>
+    <li><span class="check" onclick="this.classList.toggle('done')"></span> /ŋ/ — различаю sing/sin на слух</li>
+  </ul>
+
+  <!-- ===== Quiz ===== -->
+  <h2>Проверь себя</h2>
+
+  <div class="quiz" id="quiz1">
+    <p class="quiz-question">1. Какой звук занимает первое место в топе проблемных?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">/θ/</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', true)">/æ/</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">/ɹ/</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz1-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz2">
+    <p class="quiz-question">2. Какой типичный русскоговорящий /ŋ/?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Подмена на /m/</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', true)">Добавление /g/ после</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Подмена на /h/</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz2-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz3">
+    <p class="quiz-question">3. Как правильно произнести /ɹ/?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">Кончик языка вибрирует на альвеолах</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', true)">Кончик языка загнут вверх, не касается ничего</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">Губы округлены</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz3-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz4">
+    <p class="quiz-question">4. Чем /ɪ/ отличается от /iː/?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">Местом образования</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', true)">/ɪ/ короче и расслабленнее</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">/ɪ/ — звонкий, /iː/ — глухой</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz4-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz5">
+    <p class="quiz-question">5. Какой дрILL помогает отработать /æ/?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Вибрация кончика языка</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', true)">Растягивание уголков рта при произнесении «ааа»</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Добавление /g/ после носового</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz5-feedback"></div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <!-- Bottom Navigation -->
+  <nav class="lesson-pagination" aria-label="Переход по урокам">
+    <a href="0034-minimal-pairs.html" class="pagination-btn prev">← Урок 34</a>
+    <a href="../index.html" class="pagination-btn index">Оглавление курса</a>
+    <a href="0036-prosody-conversation.html" class="pagination-btn next">Урок 36 →</a>
+  </nav>
+
+  <div class="lesson-footer">
+    <p><strong>Предыдущий урок:</strong> <a href="0034-minimal-pairs.html">← Урок 34: Minimal Pairs: финальная проработка</a></p>
+    <p><strong>Следующий урок:</strong> <a href="0036-prosody-conversation.html">Урок 36: Prosody in Conversation →</a></p>
+    <p><strong>Есть вопросы?</strong> Спросите у меня — я ваш учитель и могу помочь с любыми непонятными моментами!</p>
+  </div>
+
+</div>
+
+<script>
+function checkAnswer(button, quizId, isCorrect) {
+  const quiz = document.getElementById(quizId);
+  const feedback = document.getElementById(quizId + '-feedback');
+  const buttons = quiz.querySelectorAll('.quiz-options button');
+
+  buttons.forEach(b => {
+    b.disabled = true;
+    b.style.cursor = 'default';
+  });
+
+  if (isCorrect) {
+    button.classList.add('correct');
+    feedback.textContent = '✓ Верно!';
+    feedback.className = 'quiz-feedback show correct';
+  } else {
+    button.classList.add('wrong');
+    buttons.forEach(b => {
+      if (b.getAttribute('onclick').includes('true')) {
+        b.classList.add('correct');
+      }
+    });
+    feedback.textContent = '✗ Неверно. Правильный ответ выделен зелёным.';
+    feedback.className = 'quiz-feedback show wrong';
+  }
+}
+</script>
+
+</body>
+</html>

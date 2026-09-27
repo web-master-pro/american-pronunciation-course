@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Американское произношение без акцента — Полный курс</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .course-hero {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .course-hero h1 {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .course-hero .tagline {
+      font-family: var(--font-sans);
+      font-size: 1.15rem;
+      color: var(--color-text-secondary);
+      max-width: 500px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.6;
+    }
+    .course-hero .meta {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+    .course-hero .meta span {
+      margin: 0 0.75rem;
+    }
+    .phase-block {
+      margin: 2.5rem 0;
+    }
+    .phase-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .phase-number {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: white;
+      background: var(--color-accent);
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .phase-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .phase-desc {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .phase-result {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--color-success);
+      background: #f0faf0;
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      margin-top: 1rem;
+      border-left: 3px solid var(--color-success);
+    }
+    .lesson-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .lesson-list li {
+      margin-bottom: 0;
+    }
+    .lesson-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 1rem;
+      text-decoration: none;
+      color: var(--color-text);
+      border-bottom: 1px solid var(--color-border);
+      transition: all 0.15s;
+    }
+    .lesson-link:hover {
+      background: var(--color-accent-light);
+      border-bottom-color: var(--color-accent);
+    }
+    .lesson-num {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--color-accent);
+      min-width: 28px;
+      text-align: right;
+    }
+    .lesson-name {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .lesson-name .ipa-inline {
+      font-family: 'Gentium Plus', 'Charis SIL', serif;
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+    .lesson-tag {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      color: var(--color-text-muted);
+      margin-left: auto;
+      white-space: nowrap;
+    }
+    .resources-section {
+      margin: 3rem 0;
+      padding: 1.5rem;
+      background: var(--color-bg-alt);
+      border-radius: 6px;
+      border: 1px solid var(--color-border);
+    }
+    .resources-section h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+    .resources-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .resource-card {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1rem;
+    }
+    .resource-card h4 {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: var(--color-accent);
+    }
+    .resource-card p {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.3rem;
+      line-height: 1.5;
+    }
+    .resource-card a {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+    }
+    .reference-links {
+      margin: 2rem 0;
+    }
+    .reference-links h2 {
+      font-size: 1.3rem;
+    }
+    .reference-links ul {
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding: 0;
+    }
+    .reference-links li {
+      margin-bottom: 0.4rem;
+    }
+    .reference-links a {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+    }
+    @media (max-width: 600px) {
+      .course-hero h1 { font-size: 1.8rem; }
+      .resources-grid { grid-template-columns: 1fr; }
+      .lesson-link { flex-wrap: wrap; }
+      .lesson-tag { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="lesson-container">
+
+  <!-- ===== HERO ===== -->
+  <div class="course-hero">
+    <h1>Американское произношение<br>без акцента</h1>
+    <p class="tagline">Полный курс от постановки отдельных звуков до свободной связной речи. 38 уроков с упражнениями, тестами и практическими заданиями.</p>
+    <div style="margin: 1.25rem 0; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+      <a href="lessons/0001-speech-apparatus.html" class="pagination-btn index" style="font-size: 1rem; padding: 0.6rem 1.2rem; background: var(--color-accent); color: white; border-color: var(--color-accent);">Начать с Урока 1 →</a>
+      <a href="plan.html" class="pagination-btn" style="font-size: 1rem; padding: 0.6rem 1.2rem;">План курса</a>
+      <a href="reference/ipa-chart.html" class="pagination-btn" style="font-size: 1rem; padding: 0.6rem 1.2rem;">Таблица IPA</a>
+      <a href="resources.html" class="pagination-btn" style="font-size: 1rem; padding: 0.6rem 1.2rem;">Ресурсы</a>
+    </div>
+    <p class="meta">
+      <span>38 уроков</span>
+      <span>5 фаз</span>
+      <span>General American English</span>
+    </p>
+  </div>
+
+  <!-- ===== МИССИЯ ===== -->
+  <div class="insight">
+    <strong>Цель курса:</strong> Добиться чистого американского произношения, звучащего как у носителя General American English, чтобы свободно и уверенно общаться без foreign accent. Подробнее: <a href="mission.html">Миссия курса</a>.
+  </div>
+
+  <!-- ===== ФАЗА 0 ===== -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-number">Фаза 0</span>
+      <span class="phase-title">Фундамент</span>
+    </div>
+    <p class="phase-desc">Знакомство с речевым аппаратом, IPA и базовыми понятиями фонетики</p>
+    <ul class="lesson-list">
+      <li>
+        <a href="lessons/0001-speech-apparatus.html" class="lesson-link">
+          <span class="lesson-num">01</span>
+          <span class="lesson-name">Речевой аппарат и звукопроизводство</span>
+          <span class="lesson-tag">Артикуляция</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0002-ipa-alphabet.html" class="lesson-link">
+          <span class="lesson-num">02</span>
+          <span class="lesson-name">Международный фонетический алфавит (IPA)</span>
+          <span class="lesson-tag">Транскрипция</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0003-sound-classification.html" class="lesson-link">
+          <span class="lesson-num">03</span>
+          <span class="lesson-name">Гласные vs. Согласные: систематика</span>
+          <span class="lesson-tag">Классификация</span>
+        </a>
+      </li>
+    </ul>
+    <div class="phase-result">Результат: понимаете, КАК производятся звуки, и читаете IPA-транскрипцию.</div>
+  </div>
+
+  <!-- ===== ФАЗА 1 ===== -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-number">Фаза 1</span>
+      <span class="phase-title">Согласные — Систематическая постановка</span>
+    </div>
+    <p class="phase-desc">Каждый звук = артикуляция + типичные ошибки русскоговорящих + упражнения</p>
+    <ul class="lesson-list">
+      <li>
+        <a href="lessons/0004-plosives-p-b.html" class="lesson-link">
+          <span class="lesson-num">04</span>
+          <span class="lesson-name"><span class="ipa-inline">/p/</span> и <span class="ipa-inline">/b/</span> — Губные взрывные</span>
+          <span class="lesson-tag">Взрывные</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0005-plosives-t-d.html" class="lesson-link">
+          <span class="lesson-num">05</span>
+          <span class="lesson-name"><span class="ipa-inline">/t/</span> и <span class="ipa-inline">/d/</span> — Альвеолярные взрывные</span>
+          <span class="lesson-tag">Взрывные</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0006-fricatives-th.html" class="lesson-link">
+          <span class="lesson-num">06</span>
+          <span class="lesson-name"><span class="ipa-inline">/θ/</span> и <span class="ipa-inline">/ð/</span> — Дентальные фрикативы</span>
+          <span class="lesson-tag">Фрикативы</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0007-fricatives-f-v.html" class="lesson-link">
+          <span class="lesson-num">07</span>
+          <span class="lesson-name"><span class="ipa-inline">/f/</span> и <span class="ipa-inline">/v/</span> — Зубно-губные фрикативы</span>
+          <span class="lesson-tag">Фрикативы</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0008-fricatives-s-z.html" class="lesson-link">
+          <span class="lesson-num">08</span>
+          <span class="lesson-name"><span class="ipa-inline">/s/</span> и <span class="ipa-inline">/z/</span> — Альвеолярные фрикативы</span>
+          <span class="lesson-tag">Фрикативы</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0009-fricatives-sh-zh-h.html" class="lesson-link">
+          <span class="lesson-num">09</span>
+          <span class="lesson-name"><span class="ipa-inline">/ʃ/</span>, <span class="ipa-inline">/ʒ/</span>, <span class="ipa-inline">/h/</span> — Постальвеолярные и глоттальный</span>
+          <span class="lesson-tag">Фрикативы</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0010-affricates-ch-j.html" class="lesson-link">
+          <span class="lesson-num">10</span>
+          <span class="lesson-name"><span class="ipa-inline">/tʃ/</span> и <span class="ipa-inline">/dʒ/</span> — Аффрикаты</span>
+          <span class="lesson-tag">Аффрикаты</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0011-nasals-m-n-ng.html" class="lesson-link">
+          <span class="lesson-num">11</span>
+          <span class="lesson-name"><span class="ipa-inline">/m/</span>, <span class="ipa-inline">/n/</span>, <span class="ipa-inline">/ŋ/</span> — Носовые сонорные</span>
+          <span class="lesson-tag">Носовые</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0012-approximant-r.html" class="lesson-link">
+          <span class="lesson-num">12</span>
+          <span class="lesson-name"><span class="ipa-inline">/ɹ/</span> — Американский R</span>
+          <span class="lesson-tag">Аппроксимант</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0013-lateral-l-w.html" class="lesson-link">
+          <span class="lesson-num">13</span>
+          <span class="lesson-name"><span class="ipa-inline">/l/</span> и <span class="ipa-inline">/w/</span> — Латеральный и лабиовелярный</span>
+          <span class="lesson-tag">Аппроксимант</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0014-approximant-y.html" class="lesson-link">
+          <span class="lesson-num">14</span>
+          <span class="lesson-name"><span class="ipa-inline">/j/</span> — Палатальный аппроксимант</span>
+          <span class="lesson-tag">Аппроксимант</span>
+        </a>
+      </li>
+    </ul>
+    <div class="phase-result">Результат: каждый согласный звук поставлен с правильной артикуляцией.</div>
+  </div>
+
+  <!-- ===== ФАЗА 2 ===== -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-number">Фаза 2</span>
+      <span class="phase-title">Гласные — Систематическая постановка</span>
+    </div>
+    <p class="phase-desc">American vowels — самые сложные для русскоговорящих. Много minimal pairs.</p>
+    <ul class="lesson-list">
+      <li>
+        <a href="lessons/0015-vowels-i-long.html" class="lesson-link">
+          <span class="lesson-num">15</span>
+          <span class="lesson-name"><span class="ipa-inline">/ɪ/</span> vs. <span class="ipa-inline">/iː/</span> — Kit vs. Fleece</span>
+          <span class="lesson-tag">Tense / Lax</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0016-vowels-e-ae.html" class="lesson-link">
+          <span class="lesson-num">16</span>
+          <span class="lesson-name"><span class="ipa-inline">/ɛ/</span> vs. <span class="ipa-inline">/æ/</span> — Dress vs. Trap</span>
+          <span class="lesson-tag">Челюсть</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0017-vowels-uh-ah.html" class="lesson-link">
+          <span class="lesson-num">17</span>
+          <span class="lesson-name"><span class="ipa-inline">/ʌ/</span> vs. <span class="ipa-inline">/ɑː/</span> — Strut vs. Palm</span>
+          <span class="lesson-tag">Центр / Задний</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0018-vowels-u-uh.html" class="lesson-link">
+          <span class="lesson-num">18</span>
+          <span class="lesson-name"><span class="ipa-inline">/uː/</span> vs. <span class="ipa-inline">/ʊ/</span> — Goose vs. Foot</span>
+          <span class="lesson-tag">Tense / Lax</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0019-vowels-aw-oh.html" class="lesson-link">
+          <span class="lesson-num">19</span>
+          <span class="lesson-name"><span class="ipa-inline">/ɔː/</span> vs. <span class="ipa-inline">/oʊ/</span> — Thought vs. Goat</span>
+          <span class="lesson-tag">Монофтонг / Дифтонг</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0020-vowels-ah-aw.html" class="lesson-link">
+          <span class="lesson-num">20</span>
+          <span class="lesson-name"><span class="ipa-inline">/ɑː/</span> vs. <span class="ipa-inline">/ɔː/</span> — cot-caught merger</span>
+          <span class="lesson-tag">Диалекты</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0021-diphthongs.html" class="lesson-link">
+          <span class="lesson-num">21</span>
+          <span class="lesson-name"><span class="ipa-inline">/aɪ/</span>, <span class="ipa-inline">/aʊ/</span>, <span class="ipa-inline">/ɔɪ/</span> — Дифтонги</span>
+          <span class="lesson-tag">Дифтонги</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0022-vowels-schwa-r.html" class="lesson-link">
+          <span class="lesson-num">22</span>
+          <span class="lesson-name"><span class="ipa-inline">/ə/</span> (schwa) и <span class="ipa-inline">/ɝ/</span> (R-colored)</span>
+          <span class="lesson-tag">Schwa</span>
+        </a>
+      </li>
+    </ul>
+    <div class="phase-result">Результат: все гласные поставлены. Различаете пары на слух и в произношении.</div>
+  </div>
+
+  <!-- ===== ФАЗА 3 ===== -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-number">Фаза 3</span>
+      <span class="phase-title">Связывание и кластеры</span>
+    </div>
+    <p class="phase-desc">От отдельных звуков — к сочетаниям звуков</p>
+    <ul class="lesson-list">
+      <li>
+        <a href="lessons/0023-clusters.html" class="lesson-link">
+          <span class="lesson-num">23</span>
+          <span class="lesson-name">Consonant Clusters — Сочетания согласных</span>
+          <span class="lesson-tag">Кластеры</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0024-linking.html" class="lesson-link">
+          <span class="lesson-num">24</span>
+          <span class="lesson-name">Linking — Словосвязывание</span>
+          <span class="lesson-tag">Связывание</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0025-elision-reductions.html" class="lesson-link">
+          <span class="lesson-num">25</span>
+          <span class="lesson-name">Elision и Reductions — Проглатывания и редукции</span>
+          <span class="lesson-tag">Редукция</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0026-syllable-stress.html" class="lesson-link">
+          <span class="lesson-num">26</span>
+          <span class="lesson-name">Syllable Stress — Ударение в слогах</span>
+          <span class="lesson-tag">Ударение</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0027-word-stress.html" class="lesson-link">
+          <span class="lesson-num">27</span>
+          <span class="lesson-name">Word Stress Patterns — Паттерны ударения</span>
+          <span class="lesson-tag">Ударение</span>
+        </a>
+      </li>
+    </ul>
+    <div class="phase-result">Результат: произносите слова и словосочетания естественно, не «выговаривая» каждый звук.</div>
+  </div>
+
+  <!-- ===== ФАЗА 4 ===== -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-number">Фаза 4</span>
+      <span class="phase-title">Связная речь</span>
+    </div>
+    <p class="phase-desc">Фразы, предложения, естественный ритм</p>
+    <ul class="lesson-list">
+      <li>
+        <a href="lessons/0028-sentence-stress.html" class="lesson-link">
+          <span class="lesson-num">28</span>
+          <span class="lesson-name">Sentence Stress — Ударение в предложении</span>
+          <span class="lesson-tag">Стресс</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0029-intonation.html" class="lesson-link">
+          <span class="lesson-num">29</span>
+          <span class="lesson-name">Intonation: основы</span>
+          <span class="lesson-tag">Интонация</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0030-rhythm-timing.html" class="lesson-link">
+          <span class="lesson-num">30</span>
+          <span class="lesson-name">Rhythm и Timing</span>
+          <span class="lesson-tag">Ритм</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0031-thought-groups.html" class="lesson-link">
+          <span class="lesson-num">31</span>
+          <span class="lesson-name">Thought Groups и Pausing</span>
+          <span class="lesson-tag">Паузы</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0032-connected-speech.html" class="lesson-link">
+          <span class="lesson-num">32</span>
+          <span class="lesson-name">Connected Speech: полная практика</span>
+          <span class="lesson-tag">Интеграция</span>
+        </a>
+      </li>
+    </ul>
+    <div class="phase-result">Результат: речь звучит естественно и ритмично, как у носителя.</div>
+  </div>
+
+  <!-- ===== ФАЗА 5 ===== -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-number">Фаза 5</span>
+      <span class="phase-title">Автоматизм и тонкая настройка</span>
+    </div>
+    <p class="phase-desc">От «знаю как» до «делаю автоматически»</p>
+    <ul class="lesson-list">
+      <li>
+        <a href="lessons/0033-shadowing.html" class="lesson-link">
+          <span class="lesson-num">33</span>
+          <span class="lesson-name">Shadowing — техника</span>
+          <span class="lesson-tag">Подражание</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0034-minimal-pairs.html" class="lesson-link">
+          <span class="lesson-num">34</span>
+          <span class="lesson-name">Minimal Pairs: финальная проработка</span>
+          <span class="lesson-tag">Пары</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0035-problem-sounds.html" class="lesson-link">
+          <span class="lesson-num">35</span>
+          <span class="lesson-name">Problem Sounds: глубокая проработка</span>
+          <span class="lesson-tag">Проблемные</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0036-prosody-conversation.html" class="lesson-link">
+          <span class="lesson-num">36</span>
+          <span class="lesson-name">Prosody in Conversation</span>
+          <span class="lesson-tag">Диалог</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0037-reading-aloud.html" class="lesson-link">
+          <span class="lesson-num">37</span>
+          <span class="lesson-name">Reading Aloud — Практика чтения вслух</span>
+          <span class="lesson-tag">Чтение</span>
+        </a>
+      </li>
+      <li>
+        <a href="lessons/0038-final-assessment.html" class="lesson-link">
+          <span class="lesson-num">38</span>
+          <span class="lesson-name">Финальная оценка</span>
+          <span class="lesson-tag">Итог</span>
+        </a>
+      </li>
+    </ul>
+    <div class="phase-result">Результат: произношение автоматизировано. Речь звучит естественно в спонтанном общении.</div>
+  </div>
+
+  <!-- ===== Справочные разделы ===== -->
+  <div class="reference-links">
+    <h2>Разделы курса и справочники</h2>
+    <ul>
+      <li><a href="mission.html"><strong>Миссия курса</strong></a> — цели, критерии успеха и границы программы</li>
+      <li><a href="plan.html"><strong>План обучения (5 фаз)</strong></a> — детальный обзор всех 38 уроков</li>
+      <li><a href="reference/ipa-chart.html"><strong>Таблица IPA для American English</strong></a> — все звуки с примерами и обозначениями</li>
+      <li><a href="resources.html"><strong>Каталог ресурсов</strong></a> — лучшие учебники, словари и видеоканалы</li>
+    </ul>
+  </div>
+
+  <!-- ===== Ресурсы ===== -->
+  <div class="resources-section">
+    <h2>Рекомендуемые ресурсы</h2>
+    <div class="resources-grid">
+      <div class="resource-card">
+        <h4>Rachel's English</h4>
+        <p>#1 ресурс по произношению. 600+ видео на основе артикуляционной фонетики. Визуальные объяснения позиций языка и губ.</p>
+        <a href="https://rachelsenglish.com" target="_blank">rachelsenglish.com →</a>
+      </div>
+      <div class="resource-card">
+        <h4>Sounds American</h4>
+        <p>Канал логопеда-профессионала. Видео по каждому звуку с примерами ошибок и упражнениями.</p>
+        <a href="https://www.youtube.com/@SoundsAmerican" target="_blank">YouTube →</a>
+      </div>
+      <div class="resource-card">
+        <h4>ToPhonetics</h4>
+        <p>Конвертер текста в IPA-транскрипцию (американский вариант). Незаменимый инструмент.</p>
+        <a href="https://tophonetics.com" target="_blank">tophonetics.com →</a>
+      </div>
+      <div class="resource-card">
+        <h4>Merriam-Webster</h4>
+        <p>Американский словарь с IPA-транскрипцией и аудиопроизношением.</p>
+        <a href="https://www.merriam-webster.com" target="_blank">merriam-webster.com →</a>
+      </div>
+      <div class="resource-card">
+        <h4>ELSA Speak</h4>
+        <p>AI-приложение для фонемного анализа произношения. Автоматический фидбэк.</p>
+        <a href="https://elsaspeak.com" target="_blank">elsaspeak.com →</a>
+      </div>
+      <div class="resource-card">
+        <h4>Forvo</h4>
+        <p>Глобальный аудиословарь с записями носителей из разных стран.</p>
+        <a href="https://forvo.com" target="_blank">forvo.com →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Ключевые принципы ===== -->
+  <div class="insight">
+    <strong>Ключевые принципы курса:</strong><br>
+    Записывай себя — только запись покажет правду. Слушай активно — распознавание = производство. Маленькими порциями — один звук за урок, но глубоко. Повторяй — автоматизм важнее понимания. Сравнивай — всегда сравнивай с образцом носителя.
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <div class="lesson-footer">
+    <p><strong>Начните с первого урока:</strong> <a href="lessons/0001-speech-apparatus.html">Урок 1. Речевой аппарат и звукопроизводство →</a></p>
+    <p><strong>О курсе:</strong> <a href="plan.html">Полный план курса</a> · <a href="mission.html">Миссия</a> · <a href="resources.html">Все ресурсы</a> · <a href="reference/ipa-chart.html">Таблица IPA</a></p>
+    <p><strong>Есть вопросы?</strong> Спросите у меня — я ваш учитель и могу помочь с любыми непонятными моментами!</p>
+  </div>
+
+</div>
+</body>
+</html>

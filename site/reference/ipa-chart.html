@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Справочник: Таблица IPA для американского английского</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .ipa-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+    .ipa-table th { background: var(--color-accent); color: white; padding: 0.5rem; text-align: center; font-size: 0.85rem; }
+    .ipa-table td { padding: 0.4rem 0.5rem; border: 1px solid var(--color-border); text-align: center; vertical-align: middle; }
+    .ipa-table td:first-child { font-weight: 600; background: var(--color-bg-alt); text-align: left; white-space: nowrap; }
+    .ipa-table .ipa { font-size: 1.1rem; color: var(--color-accent); font-weight: 700; }
+    .ipa-table .example { font-size: 0.8rem; color: var(--color-text-secondary); display: block; margin-top: 2px; }
+    .vowel-table td { font-size: 0.95rem; }
+    .vowel-table .ipa { font-size: 1.2rem; }
+    .stress-marks { font-family: var(--font-mono); font-size: 1.2rem; }
+    .quick-ref { background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: 6px; padding: 1.25rem; margin: 1.5rem 0; }
+    .quick-ref h3 { margin-top: 0; }
+  </style>
+</head>
+<body>
+<div class="lesson-container">
+
+  <!-- Top Navigation -->
+  <nav class="site-nav" aria-label="Навигация по курсу">
+    <div class="nav-breadcrumbs">
+      <a href="../index.html">Главная</a>
+      <span class="sep">/</span>
+      <span class="current">Таблица IPA</span>
+    </div>
+    <div class="nav-links">
+      <a href="../mission.html">Миссия</a>
+      <a href="../plan.html">План</a>
+      <a href="../resources.html">Ресурсы</a>
+      <a href="../index.html">Все уроки</a>
+    </div>
+  </nav>
+
+  <div class="lesson-header">
+    <div class="lesson-number">Справочник</div>
+    <h1 class="lesson-title">Таблица IPA для American English</h1>
+    <p class="lesson-subtitle">Все звуки General American English с примерами и обозначениями</p>
+  </div>
+
+  <h2>Обозначения ударения</h2>
+  <table class="ipa-table">
+    <thead><tr><th>Обозначение</th><th>Значение</th><th>Пример</th></tr></thead>
+    <tbody>
+      <tr><td><span class="stress-marks">ˈ</span></td><td>Сильное ударение (перед ударным слогом)</td><td><span class="ipa">ˈ</span>kæt (cat)</td></tr>
+      <tr><td><span class="stress-marks">ˌ</span></td><td>Слабое (вторичное) ударение</td><td><span class="ipa">ˌ</span>kæmə<span class="ipa">ˈ</span>ɹɑː (camera)</td></tr>
+      <tr><td><span class="stress-marks">ː</span></td><td>Долгий гласный (обычно в британских словарях)</td><td><span class="ipa">/iː/</span> (bead)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Согласные (Consonants)</h2>
+
+  <table class="ipa-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Bilabial</th>
+        <th>Labio-dental</th>
+        <th>Dental</th>
+        <th>Alveolar</th>
+        <th>Post-alveolar</th>
+        <th>Velar</th>
+        <th>Glottal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Plosive</td>
+        <td><span class="ipa">p</span><span class="example">pin</span><span class="ipa">b</span><span class="example">bin</span></td>
+        <td></td>
+        <td></td>
+        <td><span class="ipa">t</span><span class="example">tin</span><span class="ipa">d</span><span class="example">din</span></td>
+        <td></td>
+        <td><span class="ipa">k</span><span class="example">kit</span><span class="ipa">ɡ</span><span class="example">gift</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Fricative</td>
+        <td></td>
+        <td><span class="ipa">f</span><span class="example">fin</span><span class="ipa">v</span><span class="example">vine</span></td>
+        <td><span class="ipa">θ</span><span class="example">think</span><span class="ipa">ð</span><span class="example">this</span></td>
+        <td><span class="ipa">s</span><span class="example">sin</span><span class="ipa">z</span><span class="example">zip</span></td>
+        <td><span class="ipa">ʃ</span><span class="example">ship</span><span class="ipa">ʒ</span><span class="example">vision</span></td>
+        <td></td>
+        <td><span class="ipa">h</span><span class="example">hat</span></td>
+      </tr>
+      <tr>
+        <td>Affricate</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><span class="ipa">tʃ</span><span class="example">church</span><span class="ipa">dʒ</span><span class="example">judge</span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Nasal</td>
+        <td><span class="ipa">m</span><span class="example">man</span></td>
+        <td></td>
+        <td></td>
+        <td><span class="ipa">n</span><span class="example">nine</span></td>
+        <td></td>
+        <td><span class="ipa">ŋ</span><span class="example">sing</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Lateral</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><span class="ipa">l</span><span class="example">let</span></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Approximant</td>
+        <td><span class="ipa">w</span><span class="example">wet</span></td>
+        <td></td>
+        <td></td>
+        <td><span class="ipa">ɹ</span><span class="example">red</span></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Palatal approx.</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><span class="ipa">j</span><span class="example">yes</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="marginnote">
+    <strong>/ɹ/</strong> — правильный символ для американского R (многие словари упрощают до <code>/r/</code>). <strong>/j/</strong> — это не «дж», а «й» (как в <em>yes</em>).
+  </div>
+
+  <h2>Гласные (Vowels)</h2>
+
+  <h3>Простые гласные (Monophthongs)</h3>
+
+  <table class="ipa-table vowel-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Front</th>
+        <th>Central</th>
+        <th>Back</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>High (close)</td>
+        <td><span class="ipa">iː</span><span class="example">bead /bid/</span></td>
+        <td></td>
+        <td><span class="ipa">uː</span><span class="example">boot /but/</span></td>
+      </tr>
+      <tr>
+        <td>Near-close</td>
+        <td><span class="ipa">ɪ</span><span class="example">bid /bɪd/</span></td>
+        <td></td>
+        <td><span class="ipa">ʊ</span><span class="example">book /bʊk/</span></td>
+      </tr>
+      <tr>
+        <td>Close-mid</td>
+        <td><span class="ipa">e</span><span class="example">bed /bed/</span></td>
+        <td><span class="ipa">ə</span><span class="example">about /əˈbaʊt/</span></td>
+        <td><span class="ipa">o</span><span class="example">boat /bot/</span></td>
+      </tr>
+      <tr>
+        <td>Open-mid</td>
+        <td><span class="ipa">ɛ</span><span class="example">bet /bɛt/</span></td>
+        <td></td>
+        <td><span class="ipa">ɔː</span><span class="example">bought /bɔːt/</span></td>
+      </tr>
+      <tr>
+        <td>Near-open</td>
+        <td><span class="ipa">æ</span><span class="example">bat /bæt/</span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Open</td>
+        <td></td>
+        <td></td>
+        <td><span class="ipa">ɑː</span><span class="example">bot /bɑːt/</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="quick-ref">
+    <h3>Быстрая шпаргалка: ключевые различия</h3>
+    <table style="width:100%; border-collapse: collapse; font-size: 0.95rem;">
+      <tr><td style="padding: 0.3rem; border-bottom: 1px solid var(--color-border);"><span class="ipa">/iː/</span> vs. <span class="ipa">/ɪ/</span></td><td style="padding: 0.3rem; border-bottom: 1px solid var(--color-border);">bead vs. bid — напряжённый vs. расслабленный</td></tr>
+      <tr><td style="padding: 0.3rem; border-bottom: 1px solid var(--color-border);"><span class="ipa">/ɛ/</span> vs. <span class="ipa">/æ/</span></td><td style="padding: 0.3rem; border-bottom: 1px solid var(--color-border);">bed vs. bad — <span class="ipa">/æ/</span> требует широкого раскрытия челюсти</td></tr>
+      <tr><td style="padding: 0.3rem; border-bottom: 1px solid var(--color-border);"><span class="ipa">/ɑː/</span> vs. <span class="ipa">/ɔː/</span></td><td style="padding: 0.3rem; border-bottom: 1px solid var(--color-border);">bot vs. bought — cot-caught merger у многих американцев</td></tr>
+      <tr><td style="padding: 0.3rem; border-bottom: 1px solid var(--color-border);"><span class="ipa">/uː/</span> vs. <span class="ipa">/ʊ/</span></td><td style="padding: 0.3rem; border-bottom: 1px solid var(--color-border);">boot vs. book — напряжённый vs. расслабленный</td></tr>
+      <tr><td style="padding: 0.3rem;"><span class="ipa">/ə/</span> (schwa)</td><td style="padding: 0.3rem;">Самый частый гласный в английском. Встречается в безударных слогах.</td></tr>
+    </table>
+  </div>
+
+  <h3>Дифтонги (Diphthongs)</h3>
+
+  <table class="ipa-table">
+    <thead><tr><th>Дифтонг</th><th>Пример</th><th>Траектория</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ipa">/aɪ/</span></td><td>price, my, sky</td><td>Open front → near-close front</td></tr>
+      <tr><td><span class="ipa">/aʊ/</span></td><td>mouth, now, cow</td><td>Open back → near-close back (губы округляются)</td></tr>
+      <tr><td><span class="ipa">/ɔɪ/</span></td><td>choice, boy, toy</td><td>Open-mid back → near-close front</td></tr>
+      <tr><td><span class="ipa">/oʊ/</span></td><td>goat, no, home</td><td>Close-mid back → near-close back</td></tr>
+      <tr><td><span class="ipa">/eɪ/</span></td><td>face, day, make</td><td>Close-mid front → near-close front</td></tr>
+    </tbody>
+  </table>
+
+  <h2>R-colored vowels (Американские R-гласные)</h2>
+
+  <p>Уникальная особенность американского английского — гласные с R-окраской:</p>
+
+  <table class="ipa-table">
+    <thead><tr><th>Символ</th><th>Пример</th><th>Описание</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ipa">/ɝ/</span></td><td>bird, nurse, purple</td><td>Долгий R-цветной гласный (stressed)</td></tr>
+      <tr><td><span class="ipa">/ɚ/</span></td><td>butter, water, sister</td><td>Короткий R-цветной гласный (unstressed, в конце слов)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="quick-ref">
+    <h3>Где найти IPA-транскрипцию любого слова</h3>
+    <ol style="margin: 0.5rem 0 0 1.5rem;">
+      <li><a href="https://www.merriam-webster.com" target="_blank">Merriam-Webster</a> — американский словарь с IPA и аудио</li>
+      <li><a href="https://tophonetics.com" target="_blank">ToPhonetics</a> — конвертер текста → IPA</li>
+      <li><a href="https://www.oxfordlearnersdictionaries.com" target="_blank">Oxford Learner's Dictionary</a> — британский + американский вариант</li>
+      <li><a href="https://forvo.com" target="_blank">Forvo</a> — аудио записей носителей</li>
+    </ol>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <nav class="lesson-pagination" aria-label="Переход по курсу">
+    <a href="../lessons/0001-speech-apparatus.html" class="pagination-btn prev">← Урок 1: Речевой аппарат</a>
+    <a href="../index.html" class="pagination-btn index">Оглавление курса</a>
+    <a href="../lessons/0002-ipa-alphabet.html" class="pagination-btn next">Урок 2: Алфавит IPA →</a>
+  </nav>
+
+  <div class="lesson-footer">
+    <p><strong>Быстрый переход к урокам:</strong> <a href="../lessons/0001-speech-apparatus.html">Урок 1</a> · <a href="../lessons/0002-ipa-alphabet.html">Урок 2</a> · <a href="../lessons/0003-sound-classification.html">Урок 3</a> · <a href="../index.html">Все 38 уроков</a></p>
+    <p><strong>Источник:</strong> <a href="https://americanipachart.com" target="_blank">Interactive American IPA Chart</a>, <a href="https://www.oxfordlearnersdictionaries.com/us/about/american_english/pronunciation_american_english.html" target="_blank">Oxford American Pronunciation Guide</a></p>
+  </div>
+
+</div>
+</body>
+</html>

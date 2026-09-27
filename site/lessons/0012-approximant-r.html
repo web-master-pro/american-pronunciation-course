@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 12. /ɹ/ — Американский R</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .r-variants {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .r-variant-card {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem;
+    }
+    .r-variant-card h4 {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--color-accent);
+    }
+    .r-variant-card p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+    .comparison-table td:first-child {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .comparison-table td:nth-child(2),
+    .comparison-table td:nth-child(3) {
+      font-size: 0.9rem;
+    }
+    .position-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    .position-card {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      text-align: center;
+    }
+    .position-card .pos-label {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+    .position-card .pos-words {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+    .position-card .pos-ipa {
+      font-family: 'Gentium Plus', 'Charis SIL', serif;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-top: 0.2rem;
+    }
+    @media (max-width: 600px) {
+      .r-variants { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="lesson-container">
+
+    <!-- Top Navigation -->
+  <nav class="site-nav" aria-label="Навигация по курсу">
+    <div class="nav-breadcrumbs">
+      <a href="../index.html">Главная</a>
+      <span class="sep">/</span>
+      <span class="current">Урок 12</span>
+    </div>
+    <div class="nav-links">
+      <a href="../plan.html">План</a>
+      <a href="../reference/ipa-chart.html">Таблица IPA</a>
+      <a href="../index.html">Все уроки</a>
+    </div>
+  </nav>
+
+<div class="lesson-header">
+    <div class="lesson-number">Урок 12 из 38</div>
+    <h1 class="lesson-title">/ɹ/ — Американский R</h1>
+    <p class="lesson-subtitle">Самый важный звук для русскоговорящих — и самый «американский»</p>
+    <p class="lesson-mission">Миссия: <a href="../mission.html">Чистое американское произношение без акцента</a> · Фаза 1: Согласные</p>
+  </div>
+
+  <!-- ===== Секция 1 ===== -->
+  <h2>Почему этот урок — самый важный в курсе</h2>
+
+  <p>Американский <span class="ipa">/ɹ/</span> — это <strong>самый узнаваемый звук</strong> американского английского. Именно он создаёт тот самый «американский акцент», который слышен даже на расстоянии. И именно он вызывает больше всего трудностей у русскоговорящих.</p>
+
+  <div class="insight">
+    Парадокс: русские и американцы <em>думают</em>, что произносят один и тот же звук «р». На самом деле это <strong>два совершенно разных звука</strong> с разной артикуляцией, разным местом образования и разным звучанием. Осознание этого факта — первый шаг к правильному произношению.
+  </div>
+
+  <p>Если вы освоите американский <span class="ipa">/ɹ/</span>, вы автоматически сделаете огромный шаг к естественному произношению. Все остальные звуки важны, но ни один не даёт такого «американского» эффекта.</p>
+
+  <!-- ===== Секция 2 ===== -->
+  <h2>Американский /ɹ/ vs. Русский р: два разных мира</h2>
+
+  <p>Давайте разберём, в чём <strong>принципиальная</strong> разница между этими звуками:</p>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Параметр</th>
+        <th>Русский р</th>
+        <th>Американский /ɹ/</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Тип звука</td>
+        <td>Дрожащий (trill) или одноударный (tap)</td>
+        <td>Аппроксимант (approximant)</td>
+      </tr>
+      <tr>
+        <td>Касание языка</td>
+        <td>Кончик языка <strong>касается</strong> альвеол многократно (дрожит) или один раз (удар)</td>
+        <td>Язык <strong>нигде не касается</strong> ничего</td>
+      </tr>
+      <tr>
+        <td>Место образования</td>
+        <td>Альвеолярный (кончик языка → альвеолы)</td>
+        <td>Постальвеолярный / палатальный (спинка языка поднимается)</td>
+      </tr>
+      <tr>
+        <td>Губы</td>
+        <td>Нейтральные или слегка растянуты</td>
+        <td>Часто <strong>округлены</strong></td>
+      </tr>
+      <tr>
+        <td>Воздух</td>
+        <td>Проходит через щель между языком и альвеолами, создавая вибрацию</td>
+        <td>Проходит свободно через рот, формируя резонанс</td>
+      </tr>
+      <tr>
+        <td>На слух</td>
+        <td>«Ррр» — звонкое, вибрирующее</td>
+        <td>Мягкое, «гудящее» — больше похоже на гласный</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tip">
+    <strong>Главная ошибка русскоговорящих:</strong> произносить американский <span class="ipa">/ɹ/</span> как русский «р» — с дрожанием кончика языка. Это сразу выдаёт акцент. В американском английском кончик языка <strong>не должен вибрировать</strong> и <strong>не должен касаться</strong> альвеол.
+  </div>
+
+  <!-- ===== Секция 3 ===== -->
+  <h2>Два варианта артикуляции: Bunched R и Retroflex R</h2>
+
+  <p>В американском английском существуют <strong>два основных способа</strong> произнести <span class="ipa">/ɹ/</span>. Оба абсолютно правильные и используются носителями. Большинство людей использует один из них постоянно — какой-то «свой».</p>
+
+  <div class="r-variants">
+    <div class="r-variant-card">
+      <h4>1. Bunched R («сжатый» R)</h4>
+      <p><strong>Что делает язык:</strong> Тело (спинка) языка поднимается и «сжимается» в задней части рта. Боковые края языка касаются верхних коренных зубов (моляров). Кончик языка <strong>нигде не касается</strong> — он может быть направлен вниз или назад.</p>
+      <p><strong>Чувство:</strong> Язык словно «сжимается» в комок в задней части рта. Щёки слегка втягиваются внутрь.</p>
+      <p><strong>Губы:</strong> Часто округлены — как для звука /uː/, но слабее.</p>
+      <p><strong>Используют:</strong> большинство носителей американского английского</p>
+    </div>
+    <div class="r-variant-card">
+      <h4>2. Retroflex R («отвёрнутый» R)</h4>
+      <p><strong>Что делает язык:</strong> Кончик языка загибается <strong>назад</strong> к твёрдому нёбу. Задняя часть языка остаётся относительно низкой. Кончик не касается нёба — лишь приближается к нему.</p>
+      <p><strong>Чувство:</strong> Кончик языка «загнут» назад, как будто пытается указать на нёбо.</p>
+      <p><strong>Губы:</strong> Тоже могут быть округлены.</p>
+      <p><strong>Используют:</strong> меньше людей, но тоже абсолютно нормальный вариант</p>
+    </div>
+  </div>
+
+  <div class="insight">
+    <strong>Что важно:</strong> вам <strong>не нужно</strong> выбирать между bunched и retroflex. Попробуйте оба — и используйте тот, который кажется более естественным. Оба варианта создают правильный американский звук. Главное — <strong>отсутствие контакта</strong> кончика языка с чем-либо.
+  </div>
+
+  <!-- ===== Секция 4 ===== -->
+  <h2>Пошаговая инструкция: ставим American /ɹ/</h2>
+
+  <div class="exercise">
+    <p><strong>Шаг 1: Найдите « Русский р».</strong> Произнесите русское «ррр» — кончик языка дрожит на альвеолах. Запомните это ощущение.</p>
+    <p><strong>Шаг 2: Расслабьте кончик.</strong> Теперь произнесите «ррр», но <em>позвольте кончику языка упасть</em>, не касаясь альвеол. Воздух всё ещё идёт через рот — но без вибрации. Вы услышите что-то среднее между «р» и «л». Это уже ближе к American R!</p>
+    <p><strong>Шаг 3: Поднимите спинку.</strong> Теперь, удерживая кончик внизу, поднимите <em>спинку</em> языка вверх и назад. Боковые края должны слегка касаться верхних коренных зубов.</p>
+    <p><strong>Шаг 4: Округлите губы.</strong> Слегка округлите губы — как будто собираетесь сказать «ууу», но рот остаётся полуоткрытым.</p>
+    <p><strong>Шаг 5: Продуйте воздух.</strong> Выдохните через рот. Вы должны услышать «длинный», «тёплый» звук — не шипящий, не свистящий, а гудящий. Это и есть American /ɹ/!</p>
+  </div>
+
+  <div class="exercise">
+    <p><strong>Практика: Удержание звука.</strong> Произнесите /ɹ/ и удерживайте его как можно дольше: «rrrrrrr». Цель — 5 секунд. Повторите 10 раз. Обратите внимание: язык <strong>не должен дрожать</strong> — он должен быть <em>статичным</em> в нужной позиции.</p>
+  </div>
+
+  <!-- ===== Секция 5 ===== -->
+  <h2>Роль губ: округление при /ɹ/</h2>
+
+  <p>Это часто упускают из виду, но <strong>округление губ</strong> — важная часть американского /ɹ/. Попробуйте:</p>
+
+  <div class="exercise">
+    <p><strong>Тест с зеркалом:</strong> Произнесите «rrrrr» (с American R-позицией языка). Посмотрите в зеркало — ваши губы должны быть <em>слегка округлены</em>, образуя небольшое отверстие. Это не полное «ууу» — это полуокругление.</p>
+    <p><strong>Сравнение:</strong> Произнесите «rrrrr» с растянутыми губами (улыбка) — звук будет более «плоским». Теперь с округлёнными губами — звук станет более «ёмким» и «американским».</p>
+  </div>
+
+  <div class="marginnote">
+    Округление губ при /ɹ/ — это одна из причин, почему американский R звучит мягче и «обволакивающее» по сравнению с русским «р». Губы создают дополнительный резонатор, который придаёт звуку характерный «американский» тембр.
+  </div>
+
+  <!-- ===== Секция 6 ===== -->
+  <h2>/ɹ/ в разных позициях слова</h2>
+
+  <p>Американский <span class="ipa">/ɹ/</span> ведёт себя по-разному в зависимости от позиции в слове. Это важно учитывать на практике:</p>
+
+  <div class="position-grid">
+    <div class="position-card">
+      <div class="pos-label">В начале слова</div>
+      <div class="pos-words">red, run, right, rain</div>
+      <div class="pos-ipa">/ɹɛd/, /ɹʌn/, /ɹaɪt/, /ɹeɪn/</div>
+    </div>
+    <div class="position-card">
+      <div class="pos-label">В середине слова</div>
+      <div class="pos-words">very, sorry, carry, mirror</div>
+      <div class="pos-ipa">/ˈvɛɹi/, /ˈsɑːɹi/, /ˈkæɹi/, /ˈmɪɹɚ/</div>
+    </div>
+    <div class="position-card">
+      <div class="pos-label">В конце слова</div>
+      <div class="pos-words">car, door, water, better</div>
+      <div class="pos-ipa">/kɑːɹ/, /dɔːɹ/, /ˈwɑːt̬əɹ/, /ˈbɛt̬ɚ/</div>
+    </div>
+    <div class="position-card">
+      <div class="pos-label">Перед согласным</div>
+      <div class="pos-words">world, girl, hard, card</div>
+      <div class="pos-ipa">/wɝːld/, /ɡɝːl/, /hɑːɹd/, /kɑːɹd/</div>
+    </div>
+  </div>
+
+  <h3>/ɹ/ в конце слова и перед согласными: R-colored vowels</h3>
+
+  <p>В позиции <strong>после гласного</strong> (в конце слога) <span class="ipa">/ɹ/</span> меняет характер гласного перед ним. Это явление называется <strong>R-coloring</strong> (r-coloring) — гласный становится «R-окрашенным».</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Слово</th>
+        <th>Транскрипция</th>
+        <th>Что происходит</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>bird</em></td>
+        <td><span class="ipa">/bɝːd/</span></td>
+        <td>Гласный «окрашен» R — звучит уникально</td>
+      </tr>
+      <tr>
+        <td><em>nurse</em></td>
+        <td><span class="ipa">/nɝːs/</span></td>
+        <td>R-окрашенный гласный — не имеет аналога в русском</td>
+      </tr>
+      <tr>
+        <td><em>butter</em></td>
+        <td><span class="ipa">/ˈbʌt̬ɚ/</span></td>
+        <td>Безударный R — звучит как /ɚ/ (schwa + R)</td>
+      </tr>
+      <tr>
+        <td><em>car</em></td>
+        <td><span class="ipa">/kɑːɹ/</span></td>
+        <td>/ɑː/ + R → слитное звучание</td>
+      </tr>
+      <tr>
+        <td><em>here</em></td>
+        <td><span class="ipa">/hɪɹ/</span></td>
+        <td>/ɪ/ + R — слитное</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="insight">
+    <strong>Ключевая мысль:</strong> <span class="ipa">/ɹ/</span> в конце слога <em>изменяет</em> гласный перед собой. Это почему <em>bird</em> не звучит как «б + и + рд» — он звучит как одно слитное слово с уникальным R-окрашенным гласным. Это одна из причин, почему «американский R» так важен: он влияет на звучание <em>всех</em> слов с R.
+  </div>
+
+  <h3>Безударный /ɹ/: звук /ɚ/</h3>
+
+  <p>В безударных позициях (особенно в конце слов) <span class="ipa">/ɹ/</span> превращается в <span class="ipa">/ɚ/</span> — R-окрашенный schwa. Это один из самых частых звуков в американском английском:</p>
+
+  <ul>
+    <li><em>water</em> = <code>/ˈwɑːt̬ɚ/</code></li>
+    <li><em>better</em> = <code>/ˈbɛt̬ɚ/</code></li>
+    <li><em>teacher</em> = <code>/ˈtiːtʃɚ/</code></li>
+    <li><em>mother</em> = <code>/ˈmʌðɚ/</code></li>
+  </ul>
+
+  <div class="marginnote">
+    Если вы слышите, как американцы произносят <em>water</em> как «ваддер» — на самом деле они говорят <code>/ˈwɑːt̬ɚ/</code>. Там есть и flap T, и R-окрашенный безударный гласный.
+  </div>
+
+  <!-- ===== Секция 7 ===== -->
+  <h2>Минимальные пары: /ɹ/ vs. /l/</h2>
+
+  <p>Одна из самых частых ошибок — смешение <span class="ipa">/ɹ/</span> и <span class="ipa">/l/</span>. Для русскоговорящих это особенно актуально, потому что русский «л» ближе к английскому /ɹ/, чем к английскому /l/.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Слово с /ɹ/</th>
+        <th>Слово с /l/</th>
+        <th>Разница</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>right</em> /ɹaɪt/</td>
+        <td><em>light</em> /laɪt/</td>
+        <td>/ɹ/ — без контакта; /l/ — кончик к альвеолам</td>
+      </tr>
+      <tr>
+        <td><em>red</em> /ɹɛd/</td>
+        <td><em>led</em> /lɛd/</td>
+        <td>/ɹ/ — губы округлены; /l/ — губы нейтральны</td>
+      </tr>
+      <tr>
+        <td><em>rake</em> /ɹeɪk/</td>
+        <td><em>lake</em> /leɪk/</td>
+        <td>/ɹ/ — спинка языка поднята; /l/ — кончик к альвеолам</td>
+      </tr>
+      <tr>
+        <td><em>free</em> /fɹiː/</td>
+        <td><em>flee</em> /fliː/</td>
+        <td>/ɹ/ — язык не касается; /l/ — кончик касается</td>
+      </tr>
+      <tr>
+        <td><em>try</em> /tɹaɪ/</td>
+        <td><em>tie</em> /taɪ/</td>
+        <td>/ɹ/ — спинка поднята; /l/ — не звучит после /t/</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="exercise">
+    <p><strong>Практика: /ɹ/ vs. /l/</strong>. Произнесите пары, обращая внимание на разницу:</p>
+    <p><code>right — light</code> | <code>red — led</code> | <code>rake — lake</code> | <code>free — flee</code> | <code>road — load</code></p>
+    <p>При произношении /ɹ/: губы округлены, язык <em>нигде не касается</em>, спинка поднята.<br>
+    При произношении /l/: кончик языка <em>касается</em> альвеол, губы нейтральны.</p>
+  </div>
+
+  <!-- ===== Секция 8 ===== -->
+  <h2>Минимальные пары: write / right и другие</h2>
+
+  <p><span class="ipa">/ɹ/</span> создаёт минимальные пары даже с «пустым» звуком (нулевой суффикс):</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Слово с /ɹ/</th>
+        <th>Слово без /ɹ/</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>right</em> /ɹaɪt/</td>
+        <td><em>write</em> /ɹaɪt/</td>
+      </tr>
+      <tr>
+        <td><em>right</em> /ɹaɪt/</td>
+        <td><em>light</em> /laɪt/</td>
+      </tr>
+      <tr>
+        <td><em>rock</em> /ɹɑːk/</td>
+        <td><em>lock</em> /lɑːk/</td>
+      </tr>
+      <tr>
+        <td><em>rain</em> /ɹeɪn/</td>
+        <td><em>lane</em> /leɪn/</td>
+      </tr>
+      <tr>
+        <td><em>race</em> /ɹeɪs/</td>
+        <td><em>lace</em> /leɪs/</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="marginnote">
+    Заметьте: <em>write</em> и <em>right</em> — это омофоны (одинаковое произношение). Но <em>right</em> и <em>light</em> — разные звуки, и это различие критично для понимания.
+  </div>
+
+  <!-- ===== Секция 9 ===== -->
+  <h2>Практика: слова для отработки</h2>
+
+  <div class="exercise">
+    <p><strong>Ступень 1: Длительное удержание.</strong> Удерживайте /ɹ/ по 5 секунд, 10 повторов. Контролируйте: язык не дрожит, спинка поднята, губы округлены.</p>
+    <p><strong>Ступень 2: Слова в начале.</strong> Произнесите медленно: <em>red, run, right, rain, road, room, real, rest</em>. Чувствуйте, как язык сразу принимает R-позицию.</p>
+    <p><strong>Ступень 3: Слова в конце.</strong> <em>car, door, here, there, water, better, teacher, mother</em>. Обратите внимание на R-окрашенные гласные.</p>
+    <p><strong>Ступень 4: Сложные комбинации.</strong> <em>world, girl, girl, learn, early, bird, nurse, work</em>. Здесь R влияет на гласный — звук становится «плотнее».</p>
+    <p><strong>Ступень 5: Предложения.</strong></p>
+    <ul>
+      <li><em>Robert red R-driven roads rarely.</em></li>
+      <li><em>Her red car is very pretty.</em></li>
+      <li><em>The bird flew over the river.</em></li>
+    </ul>
+  </div>
+
+  <div class="tip">
+    <strong>Совет от Rachel's English:</strong> Если вы чувствуете напряжение в языке — расслабьтесь. American /ɹ/ не требует сильного напряжения. Язык должен быть <em>мягким</em> и <em>подвижным</em>. Если у вас болит язык после практики — вы напрягаетесь слишком сильно.
+  </div>
+
+  <!-- ===== Секция 10 ===== -->
+  <h2>Проверь себя</h2>
+
+  <div class="quiz" id="quiz1">
+    <p class="quiz-question">1. В чём главное отличие американского /ɹ/ от русского «р»?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">Американский R громче</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', true)">Американский R — аппроксимант (язык не касается ничего), русский «р» — дрожащий (язык касается альвеол)</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">Американский R произносится передним языком</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz1-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz2">
+    <p class="quiz-question">2. Что такое Bunched R?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz2', true)">Спинка языка поднимается и «сжимается» в задней части рта, боковые края касаются моляров</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Кончик языка касается альвеол</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Губы смыкаются, как при произношении /b/</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz2-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz3">
+    <p class="quiz-question">3. Как R-окрашенный гласный влияет на слово <em>bird</em>?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">R добавляется как отдельный слог</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', true)">R «окрашивает» гласный — создаёт уникальный R-окрашенный гласный /ɝː/</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">R не влияет на гласный</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz3-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz4">
+    <p class="quiz-question">4. Какой звук мы слышим в безударном конце слов <em>water</em>, <em>better</em>?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">Обычный /ɹ/</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', true)">/ɚ/ — R-окрашенный schwa</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">/ə/ — обычный schwa</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz4-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz5">
+    <p class="quiz-question">5. Какое округление губ характерно для произношения /ɹ/?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Губы обязательно широко растянуты</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', true)">Губы часто слегка округлены</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Губы должны быть абсолютно неподвижны</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz5-feedback"></div>
+  </div>
+
+  <!-- ===== Практика на дом ===== -->
+  <h2>Практика на дом</h2>
+
+  <div class="exercise">
+    <p><strong>Задание 1: Определите свой вариант.</strong> Попробуйте bunched и retroflex R. Какой кажется более естественным? Запомните его — это ваш «рабочий» вариант.</p>
+    <p><strong>Задание 2: Зеркальная практика.</strong> Каждый день по 5 минут: произносите /ɹ/ перед зеркалом. Контролируйте: (1) нет контакта языка, (2) спинка поднята, (3) губы округлены.</p>
+    <p><strong>Задание 3: Минимальные пары.</strong> Произнесите 10 пар: right/light, red/led, rake/lake, free/flee, road/load, race/lace, rock/lock, rain/lane, fry/fly, pray/play.</p>
+    <p><strong>Задание 4: Видео.</strong> Смотрите на <a href="https://rachelsenglish.com" target="_blank">Rachel's English</a> серию видео о American R — она показывает замедленные съёмки артикуляции с разных ракурсов.</p>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <!-- Bottom Navigation -->
+  <nav class="lesson-pagination" aria-label="Переход по урокам">
+    <a href="0011-nasals-m-n-ng.html" class="pagination-btn prev">← Урок 11</a>
+    <a href="../index.html" class="pagination-btn index">Оглавление курса</a>
+    <a href="0013-lateral-l-w.html" class="pagination-btn next">Урок 13 →</a>
+  </nav>
+
+  <div class="lesson-footer">
+    <p><strong>Предыдущий урок:</strong> <a href="0011-nasals-m-n-ng.html">← Урок 11: Носовые /m/, /n/, /ŋ/</a></p>
+    <p><strong>Следующий урок:</strong> <a href="0013-lateral-l-w.html">Урок 13: /l/ и /w/ — Латеральный и лабиовелярный →</a></p>
+    <p><strong>Рекомендуемый источник:</strong> <a href="https://rachelsenglish.com" target="_blank">Rachel's English</a> — серия видео о American R (RQ: R Sound). Это лучший визуальный ресурс по этой теме.</p>
+    <p><strong>Есть вопросы?</strong> Спросите у меня — я ваш учитель и могу помочь с любыми непонятными моментами!</p>
+  </div>
+
+</div>
+
+<script>
+function checkAnswer(button, quizId, isCorrect) {
+  const quiz = document.getElementById(quizId);
+  const feedback = document.getElementById(quizId + '-feedback');
+  const buttons = quiz.querySelectorAll('.quiz-options button');
+
+  buttons.forEach(b => {
+    b.disabled = true;
+    b.style.cursor = 'default';
+  });
+
+  if (isCorrect) {
+    button.classList.add('correct');
+    feedback.textContent = '✓ Верно!';
+    feedback.className = 'quiz-feedback show correct';
+  } else {
+    button.classList.add('wrong');
+    buttons.forEach(b => {
+      if (b.getAttribute('onclick').includes('true')) {
+        b.classList.add('correct');
+      }
+    });
+    feedback.textContent = '✗ Неверно. Правильный ответ выделен зелёным.';
+    feedback.className = 'quiz-feedback show wrong';
+  }
+}
+</script>
+
+</body>
+</html>

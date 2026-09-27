@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 33. Shadowing — техника</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .shadowing-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+    .shadowing-step .step-num {
+      font-family: var(--font-sans);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      background: var(--color-accent-light);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .shadowing-step .step-content h4 {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .timeline-bar {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: var(--color-bg-alt);
+      border-radius: 6px;
+    }
+    .timeline-bar .source {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      min-width: 60px;
+    }
+    .timeline-bar .bar {
+      flex: 1;
+      height: 8px;
+      background: var(--color-border);
+      border-radius: 4px;
+      position: relative;
+    }
+    .timeline-bar .bar .audio-seg {
+      position: absolute;
+      height: 100%;
+      background: var(--color-accent);
+      border-radius: 4px;
+    }
+    .timeline-bar .bar .repeat-seg {
+      position: absolute;
+      height: 100%;
+      background: #f59e0b;
+      border-radius: 4px;
+    }
+    .resource-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .resource-card {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1rem;
+    }
+    .resource-card h4 {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 0.4rem;
+    }
+    .resource-card p {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+    }
+    .progression-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .prog-card {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .prog-card .level {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-accent);
+      margin-bottom: 0.3rem;
+    }
+    .prog-card .desc {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+    }
+    @media (max-width: 600px) {
+      .resource-list { grid-template-columns: 1fr; }
+      .progression-grid { grid-template-columns: 1fr; }
+      .timeline-bar { flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="lesson-container">
+
+    <!-- Top Navigation -->
+  <nav class="site-nav" aria-label="Навигация по курсу">
+    <div class="nav-breadcrumbs">
+      <a href="../index.html">Главная</a>
+      <span class="sep">/</span>
+      <span class="current">Урок 33</span>
+    </div>
+    <div class="nav-links">
+      <a href="../plan.html">План</a>
+      <a href="../reference/ipa-chart.html">Таблица IPA</a>
+      <a href="../index.html">Все уроки</a>
+    </div>
+  </nav>
+
+<div class="lesson-header">
+    <div class="lesson-number">Урок 33 из 38</div>
+    <h1 class="lesson-title">Shadowing — техника</h1>
+    <p class="lesson-subtitle">Как научиться имитировать речь носителя в реальном времени и довести произношение до автоматизма</p>
+    <p class="lesson-mission">Миссия: <a href="../mission.html">Чистое американское произношение без акцента</a> · Фаза 5: Интеграция</p>
+  </div>
+
+  <!-- ===== Секция 1 ===== -->
+  <h2>Что такое Shadowing?</h2>
+
+  <p><strong>Shadowing</strong> — это техника, при которой вы слушаете речь носителя и <strong>повторяете её одновременно</strong>, с минимальной задержкой (0.5–1 секунда). Вы буквально «следуете» за голосом, как тень (отсюда название).</p>
+
+  <p>Это одна из самых эффективных техник для постановки произношения. Она объединяет все навыки, которые вы отрабатывали в предыдущих уроках:</p>
+  <ul>
+    <li>Произношение отдельных звуков</li>
+    <li>Word stress и sentence stress</li>
+    <li>Связывание слов (linking)</li>
+    <li>Интонация и ритм</li>
+  </ul>
+
+  <div class="insight">
+    <strong>Почему shadowing работает:</strong> Исследования показывают, что shadowing активирует те же области мозга, что и речь носителя. Это помогает вашему мозгу «перенастроиться» на английскую фонетическую систему, минуя русскую интерференцию.
+  </div>
+
+  <!-- ===== Секция 2 ===== -->
+  <h2>Как делать shadowing: пошаговый алгоритм</h2>
+
+  <div class="shadowing-step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <h4>Выберите аудио</h4>
+      <p>Найдите короткий отрывок (10–30 секунд) с чёткой речью носителя. Подойдут подкасты, аудиостатьи, TED Talks. Важно: <strong>не música</strong> — только речь.</p>
+    </div>
+  </div>
+
+  <div class="shadowing-step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <h4>Прослушайте 2–3 раза</h4>
+      <p>Сначала просто послушайте, не повторяя. Обратите внимание на интонацию, ритм, «горячие» места. Попробуйте мысленно предугадать следующее слово.</p>
+    </div>
+  </div>
+
+  <div class="shadowing-step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <h4>Начните shadowing</h4>
+      <p>Включите аудио и начните повторять <strong>сразу</strong>, как только услышали первое слово. Задержка — не более 0.5–1 секунды. Не пытайтесь «догнать» — просто идите следом.</p>
+    </div>
+  </div>
+
+  <div class="shadowing-step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <h4>Фокус на ритме, не на словах</h4>
+      <p>Если вы пропускаете слово — не останавливайтесь. Продолжайте. Ваша цель — <strong>интонация и ритм</strong>, а не идеальное произношение каждого звука.</p>
+    </div>
+  </div>
+
+  <div class="shadowing-step">
+    <div class="step-num">5</div>
+    <div class="step-content">
+      <h4>Запишите себя</h4>
+      <p>После shadowing запишите себя и сравните с оригиналом. Обратите внимание на интонацию, длину гласных, паузы.</p>
+    </div>
+  </div>
+
+  <div class="marginnote">
+    <strong>Важно:</strong> Не пытайтесь shadowing с первого раза на полной скорости. Начните с 0.75x скорости (в настройках YouTube), постепенно увеличивая до нормальной.
+  </div>
+
+  <!-- ===== Секция 3 ===== -->
+  <h2>Визуальная схема: как работает shadowing</h2>
+
+  <p>Представьте timeline аудио. Носитель говорит — вы повторяете с задержкой:</p>
+
+  <div class="timeline-bar">
+    <div class="source">Носитель</div>
+    <div class="bar">
+      <div class="audio-seg" style="left: 0%; width: 30%;"></div>
+      <div class="audio-seg" style="left: 35%; width: 25%;"></div>
+      <div class="audio-seg" style="left: 65%; width: 30%;"></div>
+    </div>
+  </div>
+  <div class="timeline-bar">
+    <div class="source">Вы</div>
+    <div class="bar">
+      <div class="repeat-seg" style="left: 8%; width: 30%;"></div>
+      <div class="repeat-seg" style="left: 43%; width: 25%;"></div>
+      <div class="repeat-seg" style="left: 73%; width: 25%;"></div>
+    </div>
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--color-text-secondary); text-align: center;">Ваша речь (оранжевый) следует за речью носителя (синий) с задержкой ~0.5–1 сек.</p>
+
+  <!-- ===== Секция 4 ===== -->
+  <h2>Прогрессия: от простого к сложному</h2>
+
+  <div class="progression-grid">
+    <div class="prog-card">
+      <div class="level">Уровень 1</div>
+      <h4>Короткие фразы</h4>
+      <p class="desc">3–5 слов. «How are you doing?» «Nice to meet you.» Повторяйте 10–15 раз, пока не станет автоматическим.</p>
+    </div>
+    <div class="prog-card">
+      <div class="level">Уровень 2</div>
+      <h4>Предложения</h4>
+      <p class="desc">Одно-два предложения. Подкасты, аудиостатьи. Фокус на интонации и linking.</p>
+    </div>
+    <div class="prog-card">
+      <div class="level">Уровень 3</div>
+      <h4>Параграфы</h4>
+      <p class="desc">30–60 секунд непрерывной речи. TED Talks, новости. Полный shadowing в реальном времени.</p>
+    </div>
+  </div>
+
+  <!-- ===== Секция 5 ===== -->
+  <h2>Ресурсы для shadowing</h2>
+
+  <div class="resource-list">
+    <div class="resource-card">
+      <h4>TED Talks</h4>
+      <p>ted.com — короткие доклады с субтитрами. Используйте настройку скорости 0.75x. Идеально для уровней 2–3.</p>
+    </div>
+    <div class="resource-card">
+      <h4>Podcasts</h4>
+      <p>NPR, BBC Learning English, 6 Minute English. Короткие эпизоды, чёткая речь. Подходит для уровней 1–2.</p>
+    </div>
+    <div class="resource-card">
+      <h4>Rachel's English</h4>
+      <p>rachelsenglish.com — видео с разбором произношения носителя. Можно shadowing короткие фразы из видео.</p>
+    </div>
+    <div class="resource-card">
+      <h4>YouGlish</h4>
+      <p>youglish.com — ищет слово и показывает клипы из YouTube, где его произносят. Идеально для отработки конкретных слов.</p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>Совет:</strong> Используйте приложение с функцией замедления аудио (например, YouTube 0.75x). Замедленная речь — не «детская» речь, а возможность точно услышать артикуляцию.
+  </div>
+
+  <!-- ===== Секция 6 ===== -->
+  <h2>Частые ошибки при shadowing</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Ошибка</th>
+        <th>Почему это проблема</th>
+        <th>Как исправить</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Пытаться «догнать» диктора</td>
+        <td>Вы теряете ритм и начинаете торопиться</td>
+        <td>Пропустите слово и продолжайте. Ритм важнее слов.</td>
+      </tr>
+      <tr>
+        <td>Слушать до конца, потом повторять</td>
+        <td>Это не shadowing, а обычное повторение</td>
+        <td>Повторяйте <strong>сразу</strong>, с задержкой 0.5–1 сек.</td>
+      </tr>
+      <tr>
+        <td>Слишком длинный отрывок</td>
+        <td>Устаёте, теряете фокус</td>
+        <td>Начните с 10 секунд, постепенно увеличивайте.</td>
+      </tr>
+      <tr>
+        <td>Не записывать себя</td>
+        <td>Не можете оценить прогресс</td>
+        <td>Всегда записывайте и сравнивайте с оригиналом.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ===== Секция 7 ===== -->
+  <h2>Практика: shadowing 30 секунд</h2>
+
+  <div class="exercise">
+    <p><strong>Задание:</strong> Найдите 30-секундный отрывок из любого подкаста или TED Talk. Выполните shadowing по алгоритму выше:</p>
+    <ol>
+      <li>Прослушайте 2–3 раза без повторения</li>
+      <li>Начните shadowing с задержкой 0.5–1 сек</li>
+      <li>Запишите себя</li>
+      <li>Сравните с оригиналом: что совпадает? что отличается?</li>
+      <li>Повторите 5 раз, фокусируясь на одной проблеме (интонация, ритм, конкретные звуки)</li>
+    </ol>
+    <p><strong>Критерии успеха:</strong> Вы able to maintain the rhythm without falling behind, and your intonation pattern matches the original at least 70%.</p>
+  </div>
+
+  <!-- ===== Quiz ===== -->
+  <h2>Проверь себя</h2>
+
+  <div class="quiz" id="quiz1">
+    <p class="quiz-question">1. Какова оптимальная задержка при shadowing?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">3–5 секунд</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', true)">0.5–1 секунда</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">Нет задержки, одновременно</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz1-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz2">
+    <p class="quiz-question">2. Что делать, если вы пропустили слово во время shadowing?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Остановиться и начать заново</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', true)">Продолжить, не останавливаясь</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Вернуть аудио назад и повторить слово</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz2-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz3">
+    <p class="quiz-question">3. С чего лучше начать shadowing?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">С 5-минутного отрывка TED Talk</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', true)">С коротких фраз из 3–5 слов</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">С песни</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz3-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz4">
+    <p class="quiz-question">4. Что является главной целью shadowing?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">Запомнить новые слова</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">Научиться печатать вслед за речью</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', true)">Синхронизировать ритм и интонацию с носителем</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz4-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz5">
+    <p class="quiz-question">5. Как замедлить аудио для shadowing на YouTube?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Использовать отдельное приложение</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', true)">Настройки → Скорость → 0.75x</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Это невозможно</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz5-feedback"></div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <!-- Bottom Navigation -->
+  <nav class="lesson-pagination" aria-label="Переход по урокам">
+    <a href="0032-connected-speech.html" class="pagination-btn prev">← Урок 32</a>
+    <a href="../index.html" class="pagination-btn index">Оглавление курса</a>
+    <a href="0034-minimal-pairs.html" class="pagination-btn next">Урок 34 →</a>
+  </nav>
+
+  <div class="lesson-footer">
+    <p><strong>Предыдущий урок:</strong> <a href="0032-connected-speech.html">← Урок 32: Connected Speech</a></p>
+    <p><strong>Следующий урок:</strong> <a href="0034-minimal-pairs.html">Урок 34: Minimal Pairs: финальная проработка →</a></p>
+    <p><strong>Есть вопросы?</strong> Спросите у меня — я ваш учитель и могу помочь с любыми непонятными моментами!</p>
+  </div>
+
+</div>
+
+<script>
+function checkAnswer(button, quizId, isCorrect) {
+  const quiz = document.getElementById(quizId);
+  const feedback = document.getElementById(quizId + '-feedback');
+  const buttons = quiz.querySelectorAll('.quiz-options button');
+
+  buttons.forEach(b => {
+    b.disabled = true;
+    b.style.cursor = 'default';
+  });
+
+  if (isCorrect) {
+    button.classList.add('correct');
+    feedback.textContent = '✓ Верно!';
+    feedback.className = 'quiz-feedback show correct';
+  } else {
+    button.classList.add('wrong');
+    buttons.forEach(b => {
+      if (b.getAttribute('onclick').includes('true')) {
+        b.classList.add('correct');
+      }
+    });
+    feedback.textContent = '✗ Неверно. Правильный ответ выделен зелёным.';
+    feedback.className = 'quiz-feedback show wrong';
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 37. Reading Aloud</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .skill-stack {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+    .skill-item {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 0.75rem;
+      text-align: center;
+    }
+    .skill-item .icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+    }
+    .skill-item .name {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+    .reading-passage {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .reading-passage .stress-mark {
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+    .reading-passage .link-mark {
+      text-decoration: underline;
+      text-decoration-color: var(--color-accent);
+      text-underline-offset: 2px;
+    }
+    .resource-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .resource-card {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .resource-card h4 {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 0.4rem;
+    }
+    .resource-card p {
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+    }
+    .checklist-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    .flow-step {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .flow-step .num {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--color-accent);
+      min-width: 20px;
+    }
+    @media (max-width: 600px) {
+      .skill-stack { grid-template-columns: repeat(3, 1fr); }
+      .resource-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="lesson-container">
+
+    <!-- Top Navigation -->
+  <nav class="site-nav" aria-label="Навигация по курсу">
+    <div class="nav-breadcrumbs">
+      <a href="../index.html">Главная</a>
+      <span class="sep">/</span>
+      <span class="current">Урок 37</span>
+    </div>
+    <div class="nav-links">
+      <a href="../plan.html">План</a>
+      <a href="../reference/ipa-chart.html">Таблица IPA</a>
+      <a href="../index.html">Все уроки</a>
+    </div>
+  </nav>
+
+<div class="lesson-header">
+    <div class="lesson-number">Урок 37 из 38</div>
+    <h1 class="lesson-title">Reading Aloud</h1>
+    <p class="lesson-subtitle">Применение всех навыков к связному тексту: от новостных заголовков до стихов и речей</p>
+    <p class="lesson-mission">Миссия: <a href="../mission.html">Чистое американское произношение без акцента</a> · Фаза 5: Интеграция</p>
+  </div>
+
+  <!-- ===== Секция 1 ===== -->
+  <h2>Все навыки вместе</h2>
+
+  <p>На протяжении курса вы отрабатывали отдельные навыки. Теперь пора <strong>объединить их</strong> в одну практику — чтение вслух.</p>
+
+  <div class="skill-stack">
+    <div class="skill-item">
+      <div class="icon">&#127904;</div>
+      <div class="name">Sounds</div>
+    </div>
+    <div class="skill-item">
+      <div class="icon">&#128200;</div>
+      <div class="name">Word Stress</div>
+    </div>
+    <div class="skill-item">
+      <div class="icon">&#128279;</div>
+      <div class="name">Linking</div>
+    </div>
+    <div class="skill-item">
+      <div class="icon">&#127925;</div>
+      <div class="name">Intonation</div>
+    </div>
+    <div class="skill-item">
+      <div class="icon">&#9201;</div>
+      <div class="name">Rhythm</div>
+    </div>
+  </div>
+
+  <p>Когда вы читаете вслух, вам нужно <strong>одновременно</strong> следить за всеми этими аспектами. Это требует автоматизма — именно поэтому мы тренировали каждый навык отдельно.</p>
+
+  <div class="insight">
+    <strong>Почему Reading Aloud:</strong> Это ближайшая практика к реальной речи. В отличие от shadowing, вы сами генерируете речь. В отличие от спонтанной речи, текст уже написан — вы можете сосредоточиться на произношении, не думая о грамматике.
+  </div>
+
+  <!-- ===== Секция 2 ===== -->
+  <h2>Алгоритм: как читать вслух</h2>
+
+  <div class="checklist-flow">
+    <div class="flow-step">
+      <span class="num">1</span>
+      <span>Прочитайте текст молча, отметьте незнакомые слова</span>
+    </div>
+    <div class="flow-step">
+      <span class="num">2</span>
+      <span>Найдите транскрипцию незнакомых слов (Forvo, ToPhonetics)</span>
+    </div>
+    <div class="flow-step">
+      <span class="num">3</span>
+      <span>Отметьте ударения в словах и фразовые акценты</span>
+    </div>
+    <div class="flow-step">
+      <span class="num">4</span>
+      <span>Прочитайте вслух медленно, фокусируясь на интонации</span>
+    </div>
+    <div class="flow-step">
+      <span class="num">5</span>
+      <span>Запишите себя и сравните с оригинальным текстом</span>
+    </div>
+    <div class="flow-step">
+      <span class="num">6</span>
+      <span>Повторите, фокусируясь на одной проблеме</span>
+    </div>
+  </div>
+
+  <!-- ===== Секция 3 ===== -->
+  <h2>Практика: новостные заголовки</h2>
+
+  <p>Заголовки — короткие, ударные, ритмичные. Идеальны для разминки:</p>
+
+  <div class="reading-passage">
+    <p><span class="stress-mark">BREAK</span>ing: Scientists <span class="stress-mark">DIS</span>cover New <span class="link-mark">spe</span><span class="stress-mark">CI</span>es in the <span class="link-mark">A</span>mazon <span class="stress-mark">RA</span>in<span class="link-mark">for</span>est</p>
+  </div>
+
+  <div class="reading-passage">
+    <p><span class="stress-mark">WEA</span>ther: <span class="stress-mark">HEA</span>vy <span class="stress-mark">SNO</span>w <span class="stress-mark">EXPEC</span>ted Across the <span class="stress-mark">NOR</span>east This <span class="stress-mark">WEEK</span>end</p>
+  </div>
+
+  <div class="marginnote">
+    <strong>Фокус:</strong> Заголовки всегда ставят ударные слова первыми. Обратите внимание на ритм: ДОЛ-корот-ДОЛ-корот.
+  </div>
+
+  <!-- ===== Секция 4 ===== -->
+  <h2>Практика: стихотворение</h2>
+
+  <div class="reading-passage">
+    <p><span class="stress-mark">WA</span>ld <span class="stress-mark">GEE</span>se</p>
+    <p>You do not have to be <span class="stress-mark">GOOD</span>.</p>
+    <p>You do not have to walk on your <span class="stress-mark">KNEES</span></p>
+    <p>for a <span class="stress-mark">HUN</span>dred <span class="stress-mark">MILES</span> through the <span class="stress-mark">DES</span>ert, <span class="stress-mark">RE</span>penting.</p>
+    <p>You only have to let the <span class="stress-mark">SOFT</span> <span class="stress-mark">AN</span>imal of your <span class="stress-mark">BO</span>dy</p>
+    <p><span class="stress-mark">LO</span>ve what it <span class="stress-mark">LO</span>ves.</p>
+    <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem;">-- Mary Oliver</p>
+  </div>
+
+  <div class="tip">
+    <strong>Совет:</strong> При чтении стихов делайте паузы в конце строк. Интонация «висит» в середине строки (не заканчивается) и завершается в конце stanza.
+  </div>
+
+  <!-- ===== Секция 5 ===== -->
+  <h2>Практика:excerpt из речи</h2>
+
+  <div class="reading-passage">
+    <p><span class="stress-mark">I</span> have a <span class="stress-mark">DREAM</span> that one <span class="stress-mark">DAY</span>, this <span class="stress-mark">NA</span>tion will <span class="stress-mark">RISE</span> <span class="stress-mark">UP</span> and <span class="stress-mark">LIVE</span> out the <span class="stress-mark">TRU</span>emeaning of its <span class="stress-mark">CRE</span>ed: "<span class="stress-mark">WE</span>hold these <span class="stress-mark">TRU</span>ths to be <span class="stress-mark">SE</span>lf-<span class="stress-mark">E</span>vident, that all men are created <span class="stress-mark">E</span>qual."</p>
+    <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem;">-- Martin Luther King Jr.</p>
+  </div>
+
+  <div class="marginnote">
+    <strong>Фокус:</strong> Обратите внимание на wide pitch range — это речь, обращённая к тысячам людей. Интонация значительно более dramatic, чем в обычном разговоре.
+  </div>
+
+  <!-- ===== Секция 6 ===== -->
+  <h2>Где брать материалы</h2>
+
+  <div class="resource-grid">
+    <div class="resource-card">
+      <h4>Новости</h4>
+      <p>nytimes.com, bbc.com — короткие заголовки и lead paragraphs. Читайте вслух 5 минут в день.</p>
+    </div>
+    <div class="resource-card">
+      <h4>Поэзия</h4>
+      <p>Poetry Foundation (poetryfoundation.org) — бесплатные стихи с аудио от носителей. Сравнивайте.</p>
+    </div>
+    <div class="resource-card">
+      <h4>Речи</h4>
+      <p>americanspeeches.org — famous American speeches. Shadowing и reading aloud.</p>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <p><strong>Главное задание:</strong></p>
+    <ol>
+      <li>Выберите абзац из любой статьи (50–100 слов)</li>
+      <li>Прочитайте его вслух, записывая себя</li>
+      <li>Прослушайте запись: что звучит хорошо? что нужно улучшить?</li>
+      <li>Повторите 3 раза, фокусируясь на одной проблеме</li>
+      <li>Сравните первую и последнюю записи</li>
+    </ol>
+  </div>
+
+  <!-- ===== Quiz ===== -->
+  <h2>Проверь себя</h2>
+
+  <div class="quiz" id="quiz1">
+    <p class="quiz-question">1. В чём главное отличие Reading Aloud от Shadowing?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">Reading Aloud — быстрее</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', true)">При Reading Aloud вы генерируете речь сами, а не повторяете</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">Нет отличий</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz1-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz2">
+    <p class="quiz-question">2. Что нужно сделать ПЕРВЫМ при чтении вслух?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Сразу начать читать вслух</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', true)">Прочитать текст молча и найти транскрипцию незнакомых слов</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Записать себя</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz2-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz3">
+    <p class="quiz-question">3. Какие материалы лучше всего для разминки?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">Длинные романы</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', true)">Новостные заголовки</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">Научные статьи</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz3-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz4">
+    <p class="quiz-question">4. Какой навык НЕ требуется при Reading Aloud?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">Intonation</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">Linking</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', true)">Составление предложений</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz4-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz5">
+    <p class="quiz-question">5. Как часто нужно повторять чтение одного абзаца?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Один раз</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', true)">3+ раза, фокусируясь на разных проблемах</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">10 раз без анализа</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz5-feedback"></div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <!-- Bottom Navigation -->
+  <nav class="lesson-pagination" aria-label="Переход по урокам">
+    <a href="0036-prosody-conversation.html" class="pagination-btn prev">← Урок 36</a>
+    <a href="../index.html" class="pagination-btn index">Оглавление курса</a>
+    <a href="0038-final-assessment.html" class="pagination-btn next">Урок 38 →</a>
+  </nav>
+
+  <div class="lesson-footer">
+    <p><strong>Предыдущий урок:</strong> <a href="0036-prosody-conversation.html">&larr; Урок 36: Prosody in Conversation</a></p>
+    <p><strong>Следующий урок:</strong> <a href="0038-final-assessment.html">Урок 38: Финальная оценка &rarr;</a></p>
+    <p><strong>Есть вопросы?</strong> Спросите у меня - я ваш учитель и могу помочь с любыми непонятными моментами!</p>
+  </div>
+
+</div>
+
+<script>
+function checkAnswer(button, quizId, isCorrect) {
+  const quiz = document.getElementById(quizId);
+  const feedback = document.getElementById(quizId + '-feedback');
+  const buttons = quiz.querySelectorAll('.quiz-options button');
+
+  buttons.forEach(b => {
+    b.disabled = true;
+    b.style.cursor = 'default';
+  });
+
+  if (isCorrect) {
+    button.classList.add('correct');
+    feedback.textContent = '\u2713 Верно!';
+    feedback.className = 'quiz-feedback show correct';
+  } else {
+    button.classList.add('wrong');
+    buttons.forEach(b => {
+      if (b.getAttribute('onclick').includes('true')) {
+        b.classList.add('correct');
+      }
+    });
+    feedback.textContent = '\u2717 Неверно. Правильный ответ выделен зелёным.';
+    feedback.className = 'quiz-feedback show wrong';
+  }
+}
+</script>
+
+</body>
+</html>

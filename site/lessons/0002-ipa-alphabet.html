@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 2. Международный фонетический алфавит (IPA)</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .ipa-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    .ipa-card {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 0.75rem;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .ipa-card:hover {
+      border-color: var(--color-accent);
+    }
+    .ipa-symbol {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      display: block;
+      margin-bottom: 0.25rem;
+      font-family: 'Gentium Plus', 'Charis SIL', serif;
+    }
+    .ipa-example {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+    }
+    .transcription-practice {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1rem;
+      margin: 0.75rem 0;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .transcription-practice:hover {
+      border-color: var(--color-accent);
+      background: var(--color-accent-light);
+    }
+    .transcription-practice .word {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      min-width: 120px;
+    }
+    .transcription-practice .ipa {
+      font-family: 'Gentium Plus', 'Charis SIL', serif;
+      font-size: 1.1rem;
+      color: var(--color-accent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .transcription-practice.revealed .ipa {
+      opacity: 1;
+    }
+    .transcription-practice .toggle-hint {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      margin-left: auto;
+    }
+    .section-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .section-nav a {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+    }
+    .notation-table td:first-child {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .notation-table td:nth-child(2) {
+      font-family: var(--font-mono);
+      color: var(--color-accent);
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+<div class="lesson-container">
+
+    <!-- Top Navigation -->
+  <nav class="site-nav" aria-label="Навигация по курсу">
+    <div class="nav-breadcrumbs">
+      <a href="../index.html">Главная</a>
+      <span class="sep">/</span>
+      <span class="current">Урок 2</span>
+    </div>
+    <div class="nav-links">
+      <a href="../plan.html">План</a>
+      <a href="../reference/ipa-chart.html">Таблица IPA</a>
+      <a href="../index.html">Все уроки</a>
+    </div>
+  </nav>
+
+<div class="lesson-header">
+    <div class="lesson-number">Урок 2 из 38</div>
+    <h1 class="lesson-title">Международный фонетический алфавит (IPA)</h1>
+    <p class="lesson-subtitle">«Рентген» произношения — читаем, что на самом деле говорят носители</p>
+    <p class="lesson-mission">Миссия: <a href="../mission.html">Чистое американское произношение без акцента</a> · Фаза 0: Фундамент</p>
+  </div>
+
+  <!-- ===== Зачем ===== -->
+  <h2>Зачем нужен IPA?</h2>
+
+  <p>Английское написание — одно из самых нелогичных в мире. Буква <em>a</em> произносится по-разному в словах <em>cat</em>, <em>car</em>, <em>cake</em>, <em>about</em>. Буква <em>ough</em> имеет <strong>овее 10 вариантов произношения</strong> (through, though, thought, tough, cough, hiccough…).</p>
+
+  <p>IPA решает эту проблему: <strong>один символ = один звук</strong>. Когда вы видите транскрипцию <code>/kæt/</code>, вы точно знаете, как произносить слово <em>cat</em> — независимо от написания.</p>
+
+  <div class="insight">
+    IPA — это не «наука для учёных». Это <strong>практический инструмент</strong>, который используется в каждом словаре. Учась читать IPA, вы получаете доступ к точному произношению <em>любого</em> слова в мире.
+  </div>
+
+  <!-- ===== Структура IPA ===== -->
+  <h2>Структура таблицы IPA</h2>
+
+  <p>Таблица IPA — это не произвольный набор символов. Это <strong>карта речевого аппарата</strong>, которую мы изучили в <a href="0001-speech-apparatus.html">уроке 1</a>.</p>
+
+  <h3>Согласные: organized by place and manner</h3>
+
+  <p>Строки — <strong>способ образования</strong> (что делает воздух):</p>
+  <ul>
+    <li><strong>Plosives (взрывные)</strong> — воздух полностью останавливается, затем «взрывается»: /p/, /b/, /t/, /d/, /k/, /g/</li>
+    <li><strong>Fricatives (фрикативы)</strong> — воздух проходит через узкую щель, создавая шум: /f/, /v/, /θ/, /ð/, /s/, /z/, /ʃ/, /ʒ/, /h/</li>
+    <li><strong>Affricates (аффрикаты)</strong> — взрывной + фрикатив: /tʃ/, /dʒ/</li>
+    <li><strong>Nasals (носовые)</strong> — воздух идёт через нос: /m/, /n/, /ŋ/</li>
+    <li><strong>Approximants (аппроксиманты)</strong> — воздух проходит свободно, но с небольшим сужением: /ɹ/, /l/, /w/, /j/</li>
+  </ul>
+
+  <p>Столбцы — <strong>место образования</strong> (где в рте возникает сужение):</p>
+  <ul>
+    <li>Билабиальные (губа + губа): /p/, /b/, /m/, /w/</li>
+    <li>Лабиодентальные (губа + зуб): /f/, /v/</li>
+    <li>Дентальные (язык + зуб): /θ/, /ð/</li>
+    <li>Альвеолярные (язык + альвеолы): /t/, /d/, /n/, /s/, /z/, /l/, /ɹ/</li>
+    <li>Постальвеолярные (язык за альвеолами): /ʃ/, /ʒ/, /tʃ/, /dʒ/</li>
+    <li>Велярные (спинка языка + мягкое нёбо): /k/, /g/, /ŋ/</li>
+    <li>Глоттальные (гортань): /h/</li>
+  </ul>
+
+  <div class="tip">
+    Не запоминайте таблицу наизусть. Просто знайте, что <strong>структура существует</strong> — она поможет вам понять, почему одни звуки «похожи» (например, /t/ и /d/ — одно место, разная звонкость), а другие — нет.
+  </div>
+
+  <!-- ===== Гласные IPA ===== -->
+  <h2>Гласные IPA для American English</h2>
+
+  <p>Гласные organized по двум осям — <strong>высота языка</strong> (high/low) и <strong>положение</strong> (front/back):</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Front (передний)</th>
+        <th>Central (центральный)</th>
+        <th>Back (задний)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>High (высокий)</strong></td>
+        <td><span class="ipa">/iː/</span> <small>bead</small></td>
+        <td></td>
+        <td><span class="ipa">/uː/</span> <small>boot</small></td>
+      </tr>
+      <tr>
+        <td><strong>High-mid</strong></td>
+        <td><span class="ipa">/ɪ/</span> <small>bid</small></td>
+        <td></td>
+        <td><span class="ipa">/ʊ/</span> <small>book</small></td>
+      </tr>
+      <tr>
+        <td><strong>Mid</strong></td>
+        <td><span class="ipa">/ɛ/</span> <small>bed</small></td>
+        <td><span class="ipa">/ə/</span> <small>about</small></td>
+        <td><span class="ipa">/ɔː/</span> <small>bought</small></td>
+      </tr>
+      <tr>
+        <td><strong>Low-mid</strong></td>
+        <td><span class="ipa">/æ/</span> <small>bad</small></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><strong>Low (низкий)</strong></td>
+        <td></td>
+        <td></td>
+        <td><span class="ipa">/ɑː/</span> <small>bot</small></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="marginnote">
+    Заметьте: чем ниже язык — тем шире открывается челюсть. /æ/ (как в <em>cat</em>) требует самого широкого раскрытия для передних гласных. Это ключевая позиция, которую нужно тренировать.
+  </div>
+
+  <h3>Дифтонги (Diphthongs)</h3>
+  <p>Дифтонги — это «двойные» гласные, где язык движется из одной позиции в другую:</p>
+  <table>
+    <thead>
+      <tr><th>Дифтонг</th><th>Пример</th><th>Траектория</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="ipa">/aɪ/</span></td><td><em>price</em>, <em>my</em></td><td>Низкий → высокий передний</td></tr>
+      <tr><td><span class="ipa">/aʊ/</span></td><td><em>mouth</em>, <em>now</span></td><td>Низкий → высокий задний (губы округляются)</td></tr>
+      <tr><td><span class="ipa">/ɔɪ/</span></td><td><em>choice</em>, <em>boy</em></td><td>Средне-задний → высокий передний</td></tr>
+      <tr><td><span class="ipa">/oʊ/</span></td><td><em>goat</em>, <em>no</em></td><td>Средне-задний → высокий задний</td></tr>
+      <tr><td><span class="ipa">/eɪ/</span></td><td><em>face</em>, <em>day</em></td><td>Средне-передний → высокий передний</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ===== Согласные IPA ===== -->
+  <h2>Согласные IPA для American English</h2>
+
+  <div class="ipa-grid">
+    <div class="ipa-card"><span class="ipa-symbol">p</span><span class="ipa-example">pin, stop</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">b</span><span class="ipa-example">bin, rob</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">t</span><span class="ipa-example">tin, stop</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">d</span><span class="ipa-example">din, rod</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">k</span><span class="ipa-example">kit, sky</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">ɡ</span><span class="ipa-example">give, bag</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">f</span><span class="ipa-example">fin, leaf</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">v</span><span class="ipa-example">vine, leave</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">θ</span><span class="ipa-example">think, math</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">ð</span><span class="ipa-example">this, bathe</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">s</span><span class="ipa-example">sin, miss</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">z</span><span class="ipa-example">zip, buzz</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">ʃ</span><span class="ipa-example">ship, push</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">ʒ</span><span class="ipa-example">vision, beige</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">h</span><span class="ipa-example">hat, inhale</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">tʃ</span><span class="ipa-example">church, catch</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">dʒ</span><span class="ipa-example">judge, stage</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">m</span><span class="ipa-example">man, ham</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">n</span><span class="ipa-example">nine, sun</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">ŋ</span><span class="ipa-example">sing, bank</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">ɹ</span><span class="ipa-example">red, car</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">l</span><span class="ipa-example">let, all</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">w</span><span class="ipa-example">wet, away</span></div>
+    <div class="ipa-card"><span class="ipa-symbol">j</span><span class="ipa-example">yes, beyond</span></div>
+  </div>
+
+  <!-- ===== Обозначения в словарях ===== -->
+  <h2>Как читать словарную транскрипцию</h2>
+
+  <p>Каждый словарь использует IPA для обозначения произношения. Вот ключевые обозначения:</p>
+
+  <table class="notation-table">
+    <thead>
+      <tr><th>Обозначение</th><th>Символ</th><th>Значение</th><th>Пример</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Ударение (сильное)</td><td>ˈ</td><td>Ставится <em>перед</em> ударным слогом</td><td><code>ˈkæt</code> (cat)</td></tr>
+      <tr><td>Ударение (слабое)</td><td>ˌ</td><td>Вторичное ударение</td><td><code>ˌkæməˈrɑː</code> (camera)</td></tr>
+      <tr><td>Долгий гласный</td><td>ː</td><td>Удлинение (не всегда обозначается в американских словарях)</td><td><code>/iː/</code> vs. <code>/ɪ/</code></td></tr>
+      <tr><td>Дифтонг</td><td>составной символ</td><td>Два гласных в одном слоге</td><td><code>/aɪ/</code> (my)</td></tr>
+      <tr><td>Schwa</td><td>ə</td><td>Нейтральный безударный гласный</td><td><code>/əˈbаut/</code> (about)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="tip">
+    <strong>Американская vs. британская транскрипция:</strong> В американских словарях (Merriam-Webster) долгота гласных часто не обозначается. В британских (Cambridge, Oxford) — обозначается двоеточием <code>ː</code>. Также американский <code>/ɹ/</code> часто записывается просто как <code>/r/</code>.
+  </div>
+
+  <!-- ===== Практика чтения ===== -->
+  <h2>Практика: читаем транскрипцию</h2>
+
+  <p>Нажмите на слово, чтобы увидеть его транскрипцию. Попробуйте сначала <em>сами</em> прочитать транскрипцию, затем проверьте:</p>
+
+  <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
+    <span class="word">hello</span>
+    <span class="ipa">/həˈloʊ/</span>
+    <span class="toggle-hint">нажмите</span>
+  </div>
+  <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
+    <span class="word">water</span>
+    <span class="ipa">/ˈwɑːt̬əɹ/</span>
+    <span class="toggle-hint">нажмите</span>
+  </div>
+  <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
+    <span class="word">think</span>
+    <span class="ipa">/θɪŋk/</span>
+    <span class="toggle-hint">нажмите</span>
+  </div>
+  <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
+    <span class="word">church</span>
+    <span class="ipa">/tʃɝtʃ/</span>
+    <span class="toggle-hint">нажмите</span>
+  </div>
+  <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
+    <span class="word">beautiful</span>
+    <span class="ipa">/ˈbjuːt̬ɪfəl/</span>
+    <span class="toggle-hint">нажмите</span>
+  </div>
+  <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
+    <span class="word">comfortable</span>
+    <span class="ipa">/ˈkʌmftərbəl/</span>
+    <span class="toggle-hint">нажмите</span>
+  </div>
+  <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
+    <span class="word">rhythm</span>
+    <span class="ipa">/ˈɹɪðəm/</span>
+    <span class="toggle-hint">нажмите</span>
+  </div>
+  <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
+    <span class="word">psychology</span>
+    <span class="ipa">/saɪˈkɑːlədʒi/</span>
+    <span class="toggle-hint">нажмите</span>
+  </div>
+
+  <div class="insight">
+    Обратите внимание: <code>p</code> в <em>psychology</em> не читается — в IPA этого <code>p</code> просто нет. IPA показывает <strong>реальное</strong> произношение, а не написание.
+  </div>
+
+  <!-- ===== Упражнение: транскрибирование ===== -->
+  <h2>Упражнение: транскрибируем сами</h2>
+
+  <div class="exercise">
+    <p><strong>Попробуйте записать IPA-транскрипцию этих слов.</strong> Используйте <a href="https://tophonetics.com" target="_blank">ToPhonetics.com</a> для проверки:</p>
+    <ol>
+      <li>mother → <span class="ipa">/ˈmʌðəɹ/</span></li>
+      <li>three → <span class="ipa">/θɹiː/</span></li>
+      <li>judge → <span class="ipa">/dʒʌdʒ/</span></li>
+      <li>sing → <span class="ipa">/sɪŋ/</span></li>
+      <li>would → <span class="ipa">/wʊd/</span></li>
+      <li>knowledge → <span class="ipa">/ˈnɑːlɪdʒ/</span></li>
+    </ol>
+    <p><em>Сначала попробуйте сами, затем проверьте. Не подглядывайте!</em></p>
+  </div>
+
+  <!-- ===== Quiz ===== -->
+  <h2>Проверь себя</h2>
+
+  <div class="quiz" id="quiz1">
+    <p class="quiz-question">1. Что означает символ /ə/ в IPA?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">Долгий гласный</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', true)">Нейтральный безударный гласный (schwa)</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz1', false)">Ударение на следующем слоге</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz1-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz2">
+    <p class="quiz-question">2. Где в таблице IPA расположены фрикативы?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Первая строка</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', true)">Вторая строка</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz2', false)">Последний столбец</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz2-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz3">
+    <p class="quiz-question">3. Какой IPA-символ соответствует звуку «ж» в слове <em>vision</em>?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">/ʃ/</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', true)">/ʒ/</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz3', false)">/z/</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz3-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz4">
+    <p class="quiz-question">4. Сколько ударений (stress marks) показывает транскрипция /ˌkæməˈɹɑː/?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">Одно</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', false)">Ни одного</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz4', true)">Два (слабое и сильное)</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz4-feedback"></div>
+  </div>
+
+  <div class="quiz" id="quiz5">
+    <p class="quiz-question">5. Почему в транскрипции <em>psychology</em> нет буквы /p/?</p>
+    <ul class="quiz-options">
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Это ошибка словаря</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', true)">IPA показывает реальное произношение, а /p/ в этом слове не произносится</button></li>
+      <li><button onclick="checkAnswer(this, 'quiz5', false)">Буква /p/ не существует в IPA</button></li>
+    </ul>
+    <div class="quiz-feedback" id="quiz5-feedback"></div>
+  </div>
+
+  <!-- ===== Домашнее задание ===== -->
+  <h2>Практика на дом</h2>
+
+  <div class="exercise">
+    <p><strong>Задание 1: Словарный тренажёр.</strong> Откройте <a href="https://www.merriam-webster.com" target="_blank">Merriam-Webster</a>. Найдите 10 слов, которые вы часто говорите, и запишите их IPA-транскрипцию. Обратите внимание на ударение.</p>
+    <p><strong>Задание 2: Инструмент.</strong> Сохраните <a href="https://tophonetics.com" target="_blank">ToPhonetics.com</a> в закладки — он будет полезен на протяжении всего курса.</p>
+    <p><strong>Задание 3: Видео.</strong> Посмотрите на <a href="https://rachelsenglish.com" target="_blank">Rachel's English</a> видео об IPA — она показывает, как каждый символ соответствует позиции языка.</p>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <!-- Bottom Navigation -->
+  <nav class="lesson-pagination" aria-label="Переход по урокам">
+    <a href="0001-speech-apparatus.html" class="pagination-btn prev">← Урок 1</a>
+    <a href="../index.html" class="pagination-btn index">Оглавление курса</a>
+    <a href="0003-sound-classification.html" class="pagination-btn next">Урок 3 →</a>
+  </nav>
+
+  <div class="lesson-footer">
+    <p><strong>Связанные уроки:</strong>
+      <a href="0001-speech-apparatus.html">← Урок 1: Речевой аппарат</a> ·
+      <a href="0003-sound-classification.html">Урок 3: Классификация звуков →</a>
+    </p>
+    <p><strong>Справочник:</strong> <a href="../reference/ipa-chart.html">Таблица IPA для американского английского</a></p>
+    <p><strong>Источник:</strong> <a href="https://americanipachart.com" target="_blank">Interactive American IPA Chart</a> — интерактивная таблица IPA с аудио и иллюстрациями.</p>
+    <p><strong>Есть вопросы?</strong> Спросите у меня — я ваш учитель и могу помочь с любыми непонятными моментами!</p>
+  </div>
+
+</div>
+
+<script>
+function checkAnswer(button, quizId, isCorrect) {
+  const quiz = document.getElementById(quizId);
+  const feedback = document.getElementById(quizId + '-feedback');
+  const buttons = quiz.querySelectorAll('.quiz-options button');
+
+  buttons.forEach(b => {
+    b.disabled = true;
+    b.style.cursor = 'default';
+  });
+
+  if (isCorrect) {
+    button.classList.add('correct');
+    feedback.textContent = '✓ Верно!';
+    feedback.className = 'quiz-feedback show correct';
+  } else {
+    button.classList.add('wrong');
+    buttons.forEach(b => {
+      if (b.getAttribute('onclick').includes('true')) {
+        b.classList.add('correct');
+      }
+    });
+    feedback.textContent = '✗ Неверно. Правильный ответ выделен зелёным.';
+    feedback.className = 'quiz-feedback show wrong';
+  }
+}
+</script>
+
+</body>
+</html>
