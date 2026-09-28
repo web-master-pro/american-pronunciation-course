@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <script src="../assets/theme.js"></script>
+  <script src="../assets/audio-manifest.js" defer></script>
+  <script src="../assets/audio.js" defer></script>
   <style>
     .tense-lax {
       display: grid;
@@ -220,32 +222,32 @@
 
   <p>Минимальные пары — это слова, которые различаются <strong>только одним звуком</strong>. Это лучший способ почувствовать разницу на слух:</p>
 
-  <div class="minimal-pair-row">
+  <div class="minimal-pair-row"><button class="audio-btn" data-audio-key="beat-bit" aria-label="Озвучить: beat. bit." title="Прослушать"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
     <div class="pair"><strong>beat</strong> <span class="ipa">/biːt/</span></div>
     <div class="vs">vs.</div>
     <div class="pair"><strong>bit</strong> <span class="ipa">/bɪt/</span></div>
   </div>
-  <div class="minimal-pair-row">
+  <div class="minimal-pair-row"><button class="audio-btn" data-audio-key="seat-sit" aria-label="Озвучить: seat. sit." title="Прослушать"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
     <div class="pair"><strong>seat</strong> <span class="ipa">/siːt/</span></div>
     <div class="vs">vs.</div>
     <div class="pair"><strong>sit</strong> <span class="ipa">/sɪt/</span></div>
   </div>
-  <div class="minimal-pair-row">
+  <div class="minimal-pair-row"><button class="audio-btn" data-audio-key="leave-live" aria-label="Озвучить: leave. live." title="Прослушать"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
     <div class="pair"><strong>leave</strong> <span class="ipa">/liːv/</span></div>
     <div class="vs">vs.</div>
     <div class="pair"><strong>live</strong> <span class="ipa">/lɪv/</span></div>
   </div>
-  <div class="minimal-pair-row">
+  <div class="minimal-pair-row"><button class="audio-btn" data-audio-key="ship-sheep" aria-label="Озвучить: ship. sheep." title="Прослушать"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
     <div class="pair"><strong>sheep</strong> <span class="ipa">/ʃiːp/</span></div>
     <div class="vs">vs.</div>
     <div class="pair"><strong>ship</strong> <span class="ipa">/ʃɪp/</span></div>
   </div>
-  <div class="minimal-pair-row">
+  <div class="minimal-pair-row"><button class="audio-btn" data-audio-key="peek-pick" aria-label="Озвучить: peek. pick." title="Прослушать"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
     <div class="pair"><strong>peek</strong> <span class="ipa">/piːk/</span></div>
     <div class="vs">vs.</div>
     <div class="pair"><strong>pick</strong> <span class="ipa">/pɪk/</span></div>
   </div>
-  <div class="minimal-pair-row">
+  <div class="minimal-pair-row"><button class="audio-btn" data-audio-key="feel-fill" aria-label="Озвучить: feel. fill." title="Прослушать"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
     <div class="pair"><strong>feel</strong> <span class="ipa">/fiːl/</span></div>
     <div class="vs">vs.</div>
     <div class="pair"><strong>fill</strong> <span class="ipa">/fɪl/</span></div>
@@ -329,7 +331,7 @@
 
   <div class="exercise">
     <p><strong>Задание 1: Минимальные пары на слух.</strong> Используйте <a href="https://forvo.com" target="_blank">Forvo</a> или <a href="https://tophonetics.com" target="_blank">ToPhonetics.com</a>. Прослушайте все пары из этого урока. Запишите, какие из них вы различаете без труда, а какие — нет.</p>
-    <p><strong>Задание 2: Запись себя.</strong> Запишите на телефон: <em>bead — bit — seat — sit — sheep — ship — feel — fill</em>. Прослушайте. Можете ли вы услышать разницу?</p>
+    <p><strong>Задание 2: Запись себя.</strong> Запишите на телефон: <em>bead — bit — seat — sit — sheep — ship — feel — fill</em><button class="audio-btn" data-audio-key="lesson-0015-chain" aria-label="Озвучить: bead. bit. seat. sit. sheep. ship. feel. fill." title="Слушать образец"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button><button class="audio-btn" data-audio-key="lesson-0015-chain" data-rate="0.75" aria-label="Озвучить: bead. bit. seat. sit. sheep. ship. feel. fill." title="Слушать медленнее"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>. Прослушайте. Можете ли вы услышать разницу?</p>
     <p><strong>Задание 3: Видео.</strong> Посмотрите на <a href="https://rachelsenglish.com" target="_blank">Rachel's English</a> видео о гласных /iː/ и /ɪ/ — она показывает позицию языка и губ на видео.</p>
   </div>
 
