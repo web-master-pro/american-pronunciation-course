@@ -178,7 +178,7 @@
 **Files:**
 - Create: `site/assets/recorder.js`
 
-- [ ] **Step 1: Реализация MediaRecorder-обёртки**
+- [x] **Step 1: Реализация MediaRecorder-обёртки**
   - Feature-detect: `navigator.mediaDevices?.getUserMedia && window.MediaRecorder`; при отсутствии — панель заменяется заглушкой «Запись недоступна в этом браузере (нужен HTTPS и современный браузер)».
   - Flow: «Начать запись» → `getUserMedia({audio:true})` → `MediaRecorder` (mimeType autodetect: `audio/webm;codecs=opus` → `audio/webm` → default) → «Стоп» → Blob → пункт списка с `URL.createObjectURL`.
   - Максимум 1 активный поток; на `stop` — `stream.getTracks().forEach(t => t.stop())`.
@@ -187,10 +187,10 @@
   - A-B: кнопка «Эталон» рядом с каждым дублем — озвучивает `data-audio-key` панели через `CourseAudio.speak` (тот же TTS, гарантия одного источника звука).
   - Ошибки разрешения микрофона — дружелюбное сообщение (NotAllowedError → подсказка про иконку замка в адресной строке).
 
-- [ ] **Step 2: Подключить к панели на `recorder.html`; проверить в браузере вручную (localhost/HTTPS)**
+- [x] **Step 2: Подключить к панели на `recorder.html`; проверить в браузере вручную (localhost/HTTPS)**
   - Критерии приёмки: запись создаёт дубль; повторная запись не плодит потоки; экспорт скачивает файл; A-B играет эталон.
 
-- [ ] **Step 3: Зафиксировать**
+- [x] **Step 3: Зафиксировать**
   - `git add site/assets/recorder.js`
   - `git commit -m "feat: in-browser MediaRecorder with A/B vs TTS model (AUDIT 8.2)"`
 
