@@ -1577,6 +1577,328 @@ tr:hover td {
 }
 
 /* ========================================================= */
+/* SELF-RECORDING PROTOCOL (recorder.html, AUDIT 8.2)        */
+/* ========================================================= */
+
+.protocol-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.protocol-step {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-accent);
+  border-radius: 6px;
+  padding: 1.15rem 1.15rem 1rem;
+}
+
+.protocol-step .step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 999px;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.protocol-step h3 {
+  font-family: var(--font-sans);
+  font-size: 1.02rem;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+}
+
+.protocol-step p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.protocol-step .audio-btn {
+  margin: 0 0.15rem;
+}
+
+.recorder-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.4rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.rec-model-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.rec-model-row label {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.rec-model-select {
+  flex: 1 1 260px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.5rem 0.6rem;
+}
+
+.rec-model-select:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.rec-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.rec-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.15rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.rec-btn:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  background: var(--color-accent-light);
+  color: var(--color-accent-hover);
+}
+
+.rec-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.rec-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.rec-btn-record {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.recorder-panel.recording .rec-btn-record {
+  background: var(--color-error);
+  color: var(--color-surface);
+  animation: audio-pulse 1.1s ease-in-out infinite;
+}
+
+.rec-timer {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.rec-notice {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  background: var(--color-bg);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.8rem;
+  margin: 0.5rem 0 0;
+}
+
+.rec-error {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-error);
+  border-left: 3px solid var(--color-error);
+  padding: 0.4rem 0.7rem;
+  margin: 0.75rem 0 0;
+}
+
+.rec-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.rec-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.85rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+}
+
+.rec-item-name {
+  flex: 1 1 160px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  word-break: break-all;
+}
+
+.rec-item audio {
+  width: min(320px, 100%);
+  height: 2rem;
+}
+
+.rec-item-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.rec-item-actions a,
+.rec-item-actions button {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: none;
+  border: none;
+  padding: 0.15rem 0.2rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.rec-item-actions a:hover,
+.rec-item-actions button:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+.rec-item-actions .rec-delete {
+  color: var(--color-error);
+}
+
+.ab-compare {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.ab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ab-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.ab-btn.ab-btn-model {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.rec-criteria {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1.25rem 0;
+}
+
+.rec-criterion {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.rec-criterion:hover {
+  border-color: var(--color-accent);
+}
+
+.rec-criterion input[type="checkbox"] {
+  accent-color: var(--color-accent);
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.2rem;
+  flex: 0 0 auto;
+}
+
+.rec-criterion input[type="checkbox"]:checked ~ span {
+  color: var(--color-text-muted);
+}
+
+.control-phrases {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.phrase-audio {
+  display: flex;
+  gap: 0.4rem;
+}
+
+@media (max-width: 600px) {
+  .protocol-steps {
+    grid-template-columns: 1fr;
+  }
+  .rec-controls .rec-btn {
+    flex: 1 1 auto;
+  }
+  .rec-item-actions {
+    margin-left: 0;
+  }
+}
+
+/* ========================================================= */
 /* PRINT STYLES                                              */
 /* ========================================================= */
 
