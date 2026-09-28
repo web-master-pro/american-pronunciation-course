@@ -18,6 +18,7 @@
   var chunks = [];
   var timerId = null;
   var seconds = 0;
+  var startedAt = 0;
   var isRecording = false;
   var takeCounter = 0;
 
@@ -48,6 +49,34 @@
   function extFor(mime) {
     if (mime && mime.indexOf('ogg') !== -1) return 'ogg';
     return 'webm';
+  }
+
+  /* MediaRecorder пишет webm без элемента Duration — плеер показывает 0:00/∞.
+     Патчим EBML: ищем элемент Duration (0x4489) в начале файла (секция Info)
+     и перезаписываем его значение как bigfloat (8 байт, миллисекунды). */
+  function fixWebmDuration(blob, durationMs) {
+    if (!blob || !blob.arrayBuffer || blob.type.indexOf('webm') === -1) {
+      return Promise.resolve(blob);
+    }
+    return blob.arrayBuffer().then(function (buf) {
+      var bytes = new Uint8Array(buf);
+      var pos = -1;
+      var limit = Math.min(bytes.length - 2, 65536);
+      for (var i = 0; i < limit; i++) {
+        if (bytes[i] === 0x44 && bytes[i + 1] === 0x89) { pos = i; break; }
+      }
+      if (pos === -1 || pos + 3 >= bytes.length) return blob;
+      var sizeByte = bytes[pos + 2];
+      var oldLen = sizeByte & 0x7f;
+      if (!(sizeByte & 0x80) || (oldLen !== 2 && oldLen !== 4 && oldLen !== 8)) return blob;
+      if (pos + 3 + oldLen > bytes.length) return blob;
+      var out = new Uint8Array(bytes.length + (8 - oldLen));
+      out.set(bytes.subarray(0, pos + 3));
+      out[pos + 2] = 0x88;
+      new DataView(out.buffer).setFloat64(pos + 3, durationMs, false);
+      out.set(bytes.subarray(pos + 3 + oldLen), pos + 11);
+      return new Blob([out], { type: blob.type });
+    }).catch(function () { return blob; });
   }
 
   function showError(msg) {
@@ -110,7 +139,7 @@
 
     var audio = document.createElement('audio');
     audio.controls = true;
-    audio.preload = 'metadata';
+    audio.preload = 'auto';
     audio.src = url;
     audio.addEventListener('play', function () {
       pauseAllAudios(audio);
@@ -182,7 +211,10 @@
 
   function stopRecording(stopReason) {
     if (!isRecording) return;
-    var duration = seconds;
+    var duration = startedAt
+      ? Math.min(Math.round((Date.now() - startedAt) / 1000), MAX_SECONDS)
+      : seconds;
+    startedAt = 0;
     stopTimer();
     setControls(false);
     if (mediaRecorder && mediaRecorder.state !== 'inactive') {
@@ -192,15 +224,21 @@
       mediaRecorder.onstop = function () {
         var blob = new Blob(chunks, { type: mime || 'audio/webm' });
         chunks = [];
-        if (blob.size > 0) {
+        releaseMic();
+        if (blob.size > 1024) {
           takeCounter += 1;
           var name = fileName(ext);
-          buildItem(window.URL.createObjectURL(blob), name, duration, key, ext);
+          fixWebmDuration(blob, duration * 1000).then(function (fixed) {
+            buildItem(window.URL.createObjectURL(fixed), name, duration, key, ext);
+          });
+        } else {
+          showError('Запись получилась пустой: микрофон не передал звуковых данных. Попробуйте ещё раз и проверьте выбор микрофона в системе.');
         }
       };
       mediaRecorder.stop();
+    } else {
+      releaseMic();
     }
-    releaseMic();
     if (stopReason) showError(stopReason);
   }
 
@@ -246,7 +284,8 @@
       };
       setControls(true);
       startTimer();
-      mediaRecorder.start();
+      startedAt = Date.now();
+      mediaRecorder.start(250);
     }).catch(function (err) {
       btnRecord.disabled = false;
       if (!isRecording) releaseMic();
