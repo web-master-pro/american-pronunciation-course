@@ -1295,6 +1295,17 @@ tr:hover td {
   margin-bottom: 0.2rem;
 }
 
+.ipa-table .audio-btn {
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-left: 0.35rem;
+}
+
+.ipa-table .audio-btn svg {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
 /* ========================================================= */
 /* INDEX & OVERVIEW PAGE COMPONENTS                          */
 /* ========================================================= */

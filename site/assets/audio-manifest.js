@@ -492,6 +492,7 @@ window.AUDIO_MANIFEST = {
   'ipa-wet': {text: 'wet.'},
   'ipa-red': {text: 'red.'},
   'ipa-yes': {text: 'yes.'},
+    'ipa-hat': {text: 'hat.'},
   'ipa-bead': {text: 'bead.'},
   'ipa-bid': {text: 'bid.'},
   'ipa-bet': {text: 'bet.'},
