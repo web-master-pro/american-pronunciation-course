@@ -211,9 +211,10 @@
 
   function stopRecording(stopReason) {
     if (!isRecording) return;
-    var duration = startedAt
-      ? Math.min(Math.round((Date.now() - startedAt) / 1000), MAX_SECONDS)
-      : seconds;
+    var elapsedMs = startedAt
+      ? Math.min(Date.now() - startedAt, MAX_SECONDS * 1000)
+      : seconds * 1000;
+    var duration = Math.max(1, Math.round(elapsedMs / 1000));
     startedAt = 0;
     stopTimer();
     setControls(false);
@@ -228,7 +229,7 @@
         if (blob.size > 1024) {
           takeCounter += 1;
           var name = fileName(ext);
-          fixWebmDuration(blob, duration * 1000).then(function (fixed) {
+          fixWebmDuration(blob, elapsedMs).then(function (fixed) {
             buildItem(window.URL.createObjectURL(fixed), name, duration, key, ext);
           });
         } else {
