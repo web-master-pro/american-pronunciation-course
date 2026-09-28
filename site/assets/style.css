@@ -1582,9 +1582,34 @@ tr:hover td {
 
 .protocol-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
   margin: 1.5rem 0 2rem;
+}
+
+.protocol-steps .protocol-step {
+  grid-column: span 2;
+}
+
+/* 5 карточек: 3 в первой строке, 2 во второй по центру */
+.protocol-steps .protocol-step:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.protocol-steps .protocol-step:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+@media (max-width: 900px) {
+  .protocol-steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .protocol-steps .protocol-step:nth-child(4) {
+    grid-column: span 2;
+  }
+  .protocol-steps .protocol-step:nth-child(5) {
+    grid-column: 2 / span 2;
+  }
 }
 
 .protocol-step {
@@ -1904,6 +1929,11 @@ tr:hover td {
 @media (max-width: 600px) {
   .protocol-steps {
     grid-template-columns: 1fr;
+  }
+  .protocol-steps .protocol-step,
+  .protocol-steps .protocol-step:nth-child(4),
+  .protocol-steps .protocol-step:nth-child(5) {
+    grid-column: auto;
   }
   .rec-controls .rec-btn {
     flex: 1 1 auto;
