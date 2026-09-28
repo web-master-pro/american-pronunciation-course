@@ -21,6 +21,12 @@
   var startedAt = 0;
   var isRecording = false;
   var takeCounter = 0;
+  var audioCtx = null;
+  var micSource = null;
+  var analyser = null;
+  var levelRaf = null;
+  var levelEl = null;
+  var maxLevel = 0;
 
   function pad(n) {
     return n < 10 ? '0' + n : String(n);
@@ -128,6 +134,70 @@
     return panel ? (panel.getAttribute('data-audio-key') || '') : '';
   }
 
+  function createLevelMeter() {
+    var controls = panel.querySelector('.rec-controls');
+    if (!controls) return;
+    levelEl = document.createElement('span');
+    levelEl.className = 'rec-level';
+    levelEl.setAttribute('aria-hidden', 'true');
+    if (timerEl && timerEl.parentNode === controls) {
+      controls.insertBefore(levelEl, timerEl.nextSibling);
+    } else {
+      controls.appendChild(levelEl);
+    }
+  }
+
+  function levelTick() {
+    if (!analyser) return;
+    var data = new Uint8Array(analyser.fftSize);
+    analyser.getByteTimeDomainData(data);
+    var sum = 0;
+    for (var i = 0; i < data.length; i++) {
+      var d = data[i] - 128;
+      sum += d * d;
+    }
+    var rms = Math.sqrt(sum / data.length);
+    if (rms > maxLevel) maxLevel = rms;
+    if (levelEl) {
+      levelEl.style.backgroundSize = Math.min(100, Math.round((rms / 24) * 100)) + '% 100%';
+    }
+    levelRaf = window.requestAnimationFrame(levelTick);
+  }
+
+  function startLevelAnalysis(s) {
+    try {
+      var Ctx = window.AudioContext || window.webkitAudioContext;
+      if (!Ctx) return;
+      if (!audioCtx) audioCtx = new Ctx();
+      if (audioCtx.state === 'suspended' && audioCtx.resume) audioCtx.resume();
+      micSource = audioCtx.createMediaStreamSource(s);
+      analyser = audioCtx.createAnalyser();
+      analyser.fftSize = 512;
+      micSource.connect(analyser);
+      maxLevel = 0;
+      if (levelEl) levelEl.classList.add('rec-level-on');
+      levelRaf = window.requestAnimationFrame(levelTick);
+    } catch (e) {
+      analyser = null;
+    }
+  }
+
+  function stopLevelAnalysis() {
+    if (levelRaf !== null) {
+      window.cancelAnimationFrame(levelRaf);
+      levelRaf = null;
+    }
+    if (micSource) {
+      try { micSource.disconnect(); } catch (e) {}
+      micSource = null;
+    }
+    analyser = null;
+    if (levelEl) {
+      levelEl.classList.remove('rec-level-on');
+      levelEl.style.backgroundSize = '0% 100%';
+    }
+  }
+
   function buildItem(url, name, durationSec, key, ext) {
     var li = document.createElement('li');
     li.className = 'rec-item';
@@ -217,6 +287,7 @@
     var duration = Math.max(1, Math.round(elapsedMs / 1000));
     startedAt = 0;
     stopTimer();
+    stopLevelAnalysis();
     setControls(false);
     if (mediaRecorder && mediaRecorder.state !== 'inactive') {
       var key = currentModelKey();
@@ -233,7 +304,9 @@
             buildItem(window.URL.createObjectURL(fixed), name, duration, key, ext);
           });
         } else {
-          showError('Запись получилась пустой: микрофон не передал звуковых данных. Попробуйте ещё раз и проверьте выбор микрофона в системе.');
+          showError(maxLevel < 1.5
+            ? 'Микрофон молчал: за всё время записи уровень сигнала был нулевой. Проверьте: 1) разрешение на микрофон для браузера (иконка замка в адресной строке), 2) Windows: «Параметры → Конфиденциальность → Микрофон» (доступ настольным приложениям), 3) входное устройство и громкость записи в «Параметры звука».'
+            : 'Запись получилась пустой: микрофон не передал звуковых данных. Попробуйте ещё раз и проверьте выбор микрофона в системе.');
         }
       };
       mediaRecorder.stop();
@@ -285,6 +358,7 @@
       };
       setControls(true);
       startTimer();
+      startLevelAnalysis(s);
       startedAt = Date.now();
       mediaRecorder.start(250);
     }).catch(function (err) {
@@ -332,6 +406,7 @@
       return;
     }
 
+    createLevelMeter();
     syncModelKey();
     if (selectEl) {
       selectEl.addEventListener('change', function () {

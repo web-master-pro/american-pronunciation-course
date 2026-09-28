@@ -1725,6 +1725,21 @@ tr:hover td {
   font-variant-numeric: tabular-nums;
 }
 
+.rec-level {
+  display: none;
+  width: 96px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: var(--color-border);
+  background-image: linear-gradient(var(--color-accent), var(--color-accent));
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+}
+
+.rec-level.rec-level-on {
+  display: inline-block;
+}
+
 .rec-notice {
   font-family: var(--font-sans);
   font-size: 0.85rem;
