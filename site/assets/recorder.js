@@ -23,6 +23,7 @@
   var takeCounter = 0;
   var audioCtx = null;
   var micSource = null;
+  var destNode = null;
   var analyser = null;
   var levelRaf = null;
   var levelEl = null;
@@ -57,31 +58,133 @@
     return 'webm';
   }
 
-  /* MediaRecorder пишет webm без элемента Duration — плеер показывает 0:00/∞.
-     Патчим EBML: ищем элемент Duration (0x4489) в начале файла (секция Info)
-     и перезаписываем его значение как bigfloat (8 байт, миллисекунды). */
+  function readVint(bytes, p) {
+    if (p >= bytes.length) return null;
+    var first = bytes[p];
+    if (!first) return null;
+    var len = 1;
+    while (len <= 8 && !(first & (0x80 >> (len - 1)))) len++;
+    if (len > 8 || p + len > bytes.length) return null;
+    var unknown = true;
+    for (var i = 0; i < len; i++) {
+      var maxByte = i === 0 ? (0xff >> (len - 1)) : 0xff;
+      if (bytes[p + i] !== maxByte) { unknown = false; break; }
+    }
+    if (unknown) return { len: len, value: null };
+    var value = first & (0x7f >> (len - 1));
+    for (i = 1; i < len; i++) value = value * 256 + bytes[p + i];
+    return { len: len, value: value };
+  }
+
+  function writeVint(value) {
+    var len = 1;
+    while (len < 8 && value >= Math.pow(2, 7 * len)) len++;
+    var outArr = new Uint8Array(len);
+    var v = value;
+    for (var i = len - 1; i >= 1; i--) {
+      outArr[i] = v % 256;
+      v = Math.floor(v / 256);
+    }
+    outArr[0] = (1 << (8 - len)) + v;
+    return outArr;
+  }
+
+  function concatBytes(parts) {
+    var total = 0;
+    var i;
+    for (i = 0; i < parts.length; i++) total += parts[i].length;
+    var out = new Uint8Array(total);
+    var pos = 0;
+    for (i = 0; i < parts.length; i++) {
+      out.set(parts[i], pos);
+      pos += parts[i].length;
+    }
+    return out;
+  }
+
+  function durationElement(ms) {
+    var el = new Uint8Array(11);
+    el[0] = 0x44;
+    el[1] = 0x89;
+    el[2] = 0x88;
+    new DataView(el.buffer).setFloat64(3, ms, false);
+    return el;
+  }
+
+  function indexOfSeq(bytes, seq, from, to) {
+    outer: for (var i = from; i + seq.length <= to; i++) {
+      for (var j = 0; j < seq.length; j++) {
+        if (bytes[i + j] !== seq[j]) continue outer;
+      }
+      return i;
+    }
+    return -1;
+  }
+
+  /* MediaRecorder часто пишет webm без элемента Duration — встроенный
+     плеер страницы тогда показывает 0:00 и не воспроизводит файл (скачанный
+     файл другими плеерами играется). Чиним EBML структурно:
+     Header -> Segment -> Info -> Duration. Если Duration есть — перезаписываем
+     значение bigfloat'ом (мс); если нет — ВСТАВЛЯЕМ элемент Duration в конец
+     Info (или создаём Info с Timecode+Duration, если его нет вовсе),
+     корректируя размеры Info и Segment. Поиск Duration вне Info запрещён:
+     ложное совпадение внутри Opus-данных испорит аудио. */
   function fixWebmDuration(blob, durationMs) {
     if (!blob || !blob.arrayBuffer || blob.type.indexOf('webm') === -1) {
       return Promise.resolve(blob);
     }
     return blob.arrayBuffer().then(function (buf) {
       var bytes = new Uint8Array(buf);
-      var pos = -1;
-      var limit = Math.min(bytes.length - 2, 65536);
-      for (var i = 0; i < limit; i++) {
-        if (bytes[i] === 0x44 && bytes[i + 1] === 0x89) { pos = i; break; }
+      if (indexOfSeq(bytes, [0x1a, 0x45, 0xdf, 0xa3], 0, 4) !== 0) return blob;
+      var headerSize = readVint(bytes, 4);
+      if (!headerSize || headerSize.value === null) return blob;
+      var segStart = 4 + headerSize.len + headerSize.value;
+      if (indexOfSeq(bytes, [0x18, 0x53, 0x80, 0x67], segStart, segStart + 4) !== segStart) return blob;
+      var segVStart = segStart + 4;
+      var segV = readVint(bytes, segVStart);
+      if (!segV) return blob;
+      var segContent = segVStart + segV.len;
+      var segSizeBytes = segV.value === null
+        ? bytes.subarray(segVStart, segContent)
+        : writeVint(segV.value);
+      var durEl = durationElement(durationMs);
+      var infoPos = indexOfSeq(bytes, [0x15, 0x49, 0xa9, 0x66], segContent,
+        Math.min(bytes.length, segContent + 8192));
+      var parts, delta, newInfoSize;
+
+      if (infoPos === -1) {
+        var timecodeEl = new Uint8Array([0xe7, 0x84, 0, 0, 0, 0]);
+        var infoContentNew = concatBytes([timecodeEl, durEl]);
+        var infoEl = concatBytes([[0x15, 0x49, 0xa9, 0x66], writeVint(infoContentNew.length), infoContentNew]);
+        delta = infoEl.length;
+        if (segV.value !== null) segSizeBytes = writeVint(segV.value + delta);
+        parts = [bytes.subarray(0, segVStart), segSizeBytes, infoEl, bytes.subarray(segContent)];
+      } else {
+        var infoSize = readVint(bytes, infoPos + 4);
+        if (!infoSize || infoSize.value === null) return blob;
+        var infoContent = infoPos + 4 + infoSize.len;
+        var infoEnd = Math.min(bytes.length, infoContent + infoSize.value);
+        var dpos = indexOfSeq(bytes, [0x44, 0x89], infoContent, infoEnd);
+        var infoHead = [bytes.subarray(0, segVStart), segSizeBytes, bytes.subarray(segContent, infoPos + 4)];
+        var infoBody;
+        if (dpos === -1) {
+          delta = 11;
+          newInfoSize = infoSize.value + 11;
+          infoBody = [writeVint(newInfoSize), bytes.subarray(infoContent, infoEnd), durEl];
+        } else {
+          var sizeByte = bytes[dpos + 2];
+          var oldLen = sizeByte & 0x7f;
+          if (!(sizeByte & 0x80) || (oldLen !== 2 && oldLen !== 4 && oldLen !== 8)) return blob;
+          if (dpos + 3 + oldLen > infoEnd) return blob;
+          delta = 8 - oldLen;
+          newInfoSize = infoSize.value + delta;
+          infoBody = [writeVint(newInfoSize), bytes.subarray(infoContent, dpos), durEl,
+            bytes.subarray(dpos + 3 + oldLen, infoEnd)];
+        }
+        if (segV.value !== null && delta !== 0) infoHead[1] = writeVint(segV.value + delta);
+        parts = infoHead.concat(infoBody, [bytes.subarray(infoEnd)]);
       }
-      if (pos === -1 || pos + 3 >= bytes.length) return blob;
-      var sizeByte = bytes[pos + 2];
-      var oldLen = sizeByte & 0x7f;
-      if (!(sizeByte & 0x80) || (oldLen !== 2 && oldLen !== 4 && oldLen !== 8)) return blob;
-      if (pos + 3 + oldLen > bytes.length) return blob;
-      var out = new Uint8Array(bytes.length + (8 - oldLen));
-      out.set(bytes.subarray(0, pos + 3));
-      out[pos + 2] = 0x88;
-      new DataView(out.buffer).setFloat64(pos + 3, durationMs, false);
-      out.set(bytes.subarray(pos + 3 + oldLen), pos + 11);
-      return new Blob([out], { type: blob.type });
+      return new Blob([concatBytes(parts)], { type: blob.type });
     }).catch(function () { return blob; });
   }
 
@@ -165,20 +268,28 @@
   }
 
   function startLevelAnalysis(s) {
+    /* Подключаем микрофон через AudioContext: одна ветка — на индикатор
+       уровня, вторая — на MediaStreamDestination, с которого пишет рекордер.
+       Запись с processed-потока AudioContext надёжнее сырого getUserMedia
+       потока в Chromium (известны случаи «тихого» blob при живом индикаторе). */
     try {
       var Ctx = window.AudioContext || window.webkitAudioContext;
-      if (!Ctx) return;
+      if (!Ctx) return s;
       if (!audioCtx) audioCtx = new Ctx();
       if (audioCtx.state === 'suspended' && audioCtx.resume) audioCtx.resume();
       micSource = audioCtx.createMediaStreamSource(s);
       analyser = audioCtx.createAnalyser();
       analyser.fftSize = 512;
       micSource.connect(analyser);
+      destNode = audioCtx.createMediaStreamDestination();
+      micSource.connect(destNode);
       maxLevel = 0;
       if (levelEl) levelEl.classList.add('rec-level-on');
       levelRaf = window.requestAnimationFrame(levelTick);
+      return destNode.stream;
     } catch (e) {
       analyser = null;
+      return s;
     }
   }
 
@@ -191,6 +302,7 @@
       try { micSource.disconnect(); } catch (e) {}
       micSource = null;
     }
+    destNode = null;
     analyser = null;
     if (levelEl) {
       levelEl.classList.remove('rec-level-on');
@@ -348,8 +460,9 @@
       }
       stream = s;
       chunks = [];
+      var recStream = startLevelAnalysis(s);
       var mime = pickMime();
-      mediaRecorder = mime ? new MediaRecorder(s, { mimeType: mime }) : new MediaRecorder(s);
+      mediaRecorder = mime ? new MediaRecorder(recStream, { mimeType: mime }) : new MediaRecorder(recStream);
       mediaRecorder.ondataavailable = function (e) {
         if (e.data && e.data.size > 0) chunks.push(e.data);
       };
@@ -358,7 +471,6 @@
       };
       setControls(true);
       startTimer();
-      startLevelAnalysis(s);
       startedAt = Date.now();
       mediaRecorder.start(250);
     }).catch(function (err) {
