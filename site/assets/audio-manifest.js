@@ -862,5 +862,6 @@ window.AUDIO_MANIFEST = {
   'basic-romantic-specific': {text: 'basic. romantic. specific.'},
   'possibility-activity-reality': {text: 'possibility. activity. reality.'},
   'i-want-to-go-to-the-store': {text: 'I want to go to the store.'},
+  'book-boot': {text: 'book. boot.'},
 };
 
