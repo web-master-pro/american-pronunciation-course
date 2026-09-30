@@ -1,0 +1,31 @@
+# Зависимости
+node_modules/
+
+# Сборка
+dist/
+build/
+out/
+
+# Тесты и покрытие
+coverage/
+test-results/
+playwright-report/
+blob-report/
+
+# Логи
+*.log
+logs/
+
+# ОС
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Локальные файлы
+*.local
+
+# Черновики промптов для агентов
+prompts/
+
+# Scratch-данные суперскдиллов (SDD workspace)
+.superpowers/
