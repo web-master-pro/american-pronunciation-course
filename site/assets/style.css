@@ -1306,6 +1306,34 @@ tr:hover td {
   height: 0.8rem;
 }
 
+.ipa-inline .audio-btn,
+td .audio-btn,
+li .audio-btn,
+p > .audio-btn {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 0.3rem;
+  vertical-align: -0.25em;
+}
+
+.ipa-inline .audio-btn svg,
+td .audio-btn svg,
+li .audio-btn svg,
+p > .audio-btn svg {
+  width: 0.72rem;
+  height: 0.72rem;
+}
+
+@media (max-width: 600px) {
+  .ipa-inline .audio-btn,
+  td .audio-btn,
+  li .audio-btn,
+  p > .audio-btn {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+}
+
 /* ========================================================= */
 /* INDEX & OVERVIEW PAGE COMPONENTS                          */
 /* ========================================================= */
