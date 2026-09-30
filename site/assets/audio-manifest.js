@@ -861,5 +861,6 @@ window.AUDIO_MANIFEST = {
   'decision-conversion-explosion': {text: 'decision. conversion. explosion.'},
   'basic-romantic-specific': {text: 'basic. romantic. specific.'},
   'possibility-activity-reality': {text: 'possibility. activity. reality.'},
+  'i-want-to-go-to-the-store': {text: 'I want to go to the store.'},
 };
 
