@@ -29,3 +29,6 @@ prompts/
 
 # Scratch-данные суперскдиллов (SDD workspace)
 .superpowers/
+
+# Настройки VS Code
+.vscode/sftp.json
