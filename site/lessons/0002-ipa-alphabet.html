@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <script src="../assets/theme.js"></script>
+  <script src="../assets/audio-manifest.js" defer></script>
+  <script src="../assets/audio.js" defer></script>
   <style>
     .ipa-grid {
       display: grid;
@@ -127,9 +129,9 @@
   <!-- ===== Зачем ===== -->
   <h2>Зачем нужен IPA?</h2>
 
-  <p>Английское написание — одно из самых нелогичных в мире. Буква <em>a</em> произносится по-разному в словах <em>cat</em>, <em>car</em>, <em>cake</em>, <em>about</em>. Буква <em>ough</em> имеет <strong>более 10 вариантов произношения</strong> (through, though, thought, tough, cough, hiccough…).</p>
+  <p>Английское написание — одно из самых нелогичных в мире. Буква <em>a</em> произносится по-разному в словах <em>cat</em><button class="audio-btn" data-audio-key="cat" aria-label="Озвучить: cat" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>, <em>car</em><button class="audio-btn" data-audio-key="car" aria-label="Озвучить: car" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>, <em>cake</em><button class="audio-btn" data-audio-key="cake" aria-label="Озвучить: cake" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>, <em>about</em><button class="audio-btn" data-audio-key="about" aria-label="Озвучить: about" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>. Буква <em>ough</em> имеет <strong>более 10 вариантов произношения</strong> (through, though, thought, tough, cough, hiccough…).</p>
 
-  <p>IPA решает эту проблему: <strong>один символ = один звук</strong>. Когда вы видите транскрипцию <code>/kæt/</code>, вы точно знаете, как произносить слово <em>cat</em> — независимо от написания.</p>
+  <p>IPA решает эту проблему: <strong>один символ = один звук</strong>. Когда вы видите транскрипцию <code>/kæt/</code>, вы точно знаете, как произносить слово <em>cat</em><button class="audio-btn" data-audio-key="cat" aria-label="Озвучить: cat" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button> — независимо от написания.</p>
 
   <div class="insight">
     IPA — это не «наука для учёных». Это <strong>практический инструмент</strong>, который используется в каждом словаре. Учась читать IPA, вы получаете доступ к точному произношению <em>любого</em> слова в мире.
@@ -225,11 +227,11 @@
       <tr><th>Дифтонг</th><th>Пример</th><th>Траектория</th></tr>
     </thead>
     <tbody>
-      <tr><td><span class="ipa">/aɪ/</span></td><td><em>price</em>, <em>my</em></td><td>Низкий → высокий передний</td></tr>
-      <tr><td><span class="ipa">/aʊ/</span></td><td><em>mouth</em>, <em>now</span></td><td>Низкий → высокий задний (губы округляются)</td></tr>
-      <tr><td><span class="ipa">/ɔɪ/</span></td><td><em>choice</em>, <em>boy</em></td><td>Средне-задний → высокий передний</td></tr>
-      <tr><td><span class="ipa">/oʊ/</span></td><td><em>goat</em>, <em>no</em></td><td>Средне-задний → высокий задний</td></tr>
-      <tr><td><span class="ipa">/eɪ/</span></td><td><em>face</em>, <em>day</em></td><td>Средне-передний → высокий передний</td></tr>
+      <tr><td><span class="ipa">/aɪ/</span></td><td><em>price</em><button class="audio-btn" data-audio-key="price" aria-label="Озвучить: price" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>, <em>my</em><button class="audio-btn" data-audio-key="my" aria-label="Озвучить: my" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button></td><td>Низкий → высокий передний</td></tr>
+      <tr><td><span class="ipa">/aʊ/</span></td><td><em>mouth</em><button class="audio-btn" data-audio-key="mouth" aria-label="Озвучить: mouth" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>, <em>now</em><button class="audio-btn" data-audio-key="now" aria-label="Озвучить: now" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button></td><td>Низкий → высокий задний (губы округляются)</td></tr>
+      <tr><td><span class="ipa">/ɔɪ/</span></td><td><em>choice</em><button class="audio-btn" data-audio-key="choice" aria-label="Озвучить: choice" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>, <em>boy</em><button class="audio-btn" data-audio-key="boy" aria-label="Озвучить: boy" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button></td><td>Средне-задний → высокий передний</td></tr>
+      <tr><td><span class="ipa">/oʊ/</span></td><td><em>goat</em><button class="audio-btn" data-audio-key="goat" aria-label="Озвучить: goat" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>, <em>no</em><button class="audio-btn" data-audio-key="no" aria-label="Озвучить: no" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button></td><td>Средне-задний → высокий задний</td></tr>
+      <tr><td><span class="ipa">/eɪ/</span></td><td><em>face</em><button class="audio-btn" data-audio-key="face" aria-label="Озвучить: face" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>, <em>day</em><button class="audio-btn" data-audio-key="day" aria-label="Озвучить: day" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button></td><td>Средне-передний → высокий передний</td></tr>
     </tbody>
   </table>
 
@@ -293,41 +295,49 @@
   <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
     <span class="word">hello</span>
     <span class="ipa">/həˈloʊ/</span>
+    <button class="audio-btn" data-audio-key="hello" aria-label="Озвучить: hello" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
     <span class="toggle-hint">нажмите</span>
   </div>
   <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
     <span class="word">water</span>
     <span class="ipa">/ˈwɑːt̬ɚ/</span>
+    <button class="audio-btn" data-audio-key="water" aria-label="Озвучить: water" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
     <span class="toggle-hint">нажмите</span>
   </div>
   <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
     <span class="word">think</span>
     <span class="ipa">/θɪŋk/</span>
+    <button class="audio-btn" data-audio-key="think" aria-label="Озвучить: think" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
     <span class="toggle-hint">нажмите</span>
   </div>
   <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
     <span class="word">church</span>
     <span class="ipa">/tʃɝtʃ/</span>
+    <button class="audio-btn" data-audio-key="church" aria-label="Озвучить: church" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
     <span class="toggle-hint">нажмите</span>
   </div>
   <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
     <span class="word">beautiful</span>
     <span class="ipa">/ˈbjuːt̬ɪfəl/</span>
+    <button class="audio-btn" data-audio-key="beautiful" aria-label="Озвучить: beautiful" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
     <span class="toggle-hint">нажмите</span>
   </div>
   <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
     <span class="word">comfortable</span>
     <span class="ipa">/ˈkʌmftɚbəl/</span>
+    <button class="audio-btn" data-audio-key="comfortable" aria-label="Озвучить: comfortable" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
     <span class="toggle-hint">нажмите</span>
   </div>
   <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
     <span class="word">rhythm</span>
     <span class="ipa">/ˈɹɪðəm/</span>
+    <button class="audio-btn" data-audio-key="rhythm" aria-label="Озвучить: rhythm" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
     <span class="toggle-hint">нажмите</span>
   </div>
   <div class="transcription-practice" onclick="this.classList.toggle('revealed')">
     <span class="word">psychology</span>
     <span class="ipa">/saɪˈkɑːlədʒi/</span>
+    <button class="audio-btn" data-audio-key="psychology" aria-label="Озвучить: psychology" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
     <span class="toggle-hint">нажмите</span>
   </div>
 
@@ -341,12 +351,12 @@
   <div class="exercise">
     <p><strong>Попробуйте записать IPA-транскрипцию этих слов.</strong> Используйте <a href="https://tophonetics.com" target="_blank">ToPhonetics.com</a> для проверки:</p>
     <ol>
-      <li>mother → <span class="ipa">/ˈmʌðɚ/</span></li>
-      <li>three → <span class="ipa">/θɹiː/</span></li>
-      <li>judge → <span class="ipa">/dʒʌdʒ/</span></li>
-      <li>sing → <span class="ipa">/sɪŋ/</span></li>
-      <li>would → <span class="ipa">/wʊd/</span></li>
-      <li>knowledge → <span class="ipa">/ˈnɑːlɪdʒ/</span></li>
+      <li>mother → <span class="ipa">/ˈmʌðɚ/</span><button class="audio-btn" data-audio-key="mother" aria-label="Озвучить: mother" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button></li>
+      <li>three → <span class="ipa">/θɹiː/</span><button class="audio-btn" data-audio-key="three" aria-label="Озвучить: three" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button></li>
+      <li>judge → <span class="ipa">/dʒʌdʒ/</span><button class="audio-btn" data-audio-key="judge" aria-label="Озвучить: judge" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button></li>
+      <li>sing → <span class="ipa">/sɪŋ/</span><button class="audio-btn" data-audio-key="sing" aria-label="Озвучить: sing" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button></li>
+      <li>would → <span class="ipa">/wʊd/</span><button class="audio-btn" data-audio-key="would" aria-label="Озвучить: would" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button></li>
+      <li>knowledge → <span class="ipa">/ˈnɑːlɪdʒ/</span><button class="audio-btn" data-audio-key="knowledge" aria-label="Озвучить: knowledge" title="Озвучить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button></li>
     </ol>
     <p><em>Сначала попробуйте сами, затем проверьте. Не подглядывайте!</em></p>
   </div>
